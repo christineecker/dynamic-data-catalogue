@@ -212,8 +212,8 @@ import base64
 def datauri(fn,mime): return 'data:%s;base64,%s'%(mime,base64.b64encode(open(H+'/assets/'+fn,'rb').read()).decode())
 LOGOS={'/*__LOGO_DYN__*/':datauri('dynamic-logo.png','image/png'),'/*__LOGO_LOEWE__*/':datauri('loewe-logo.jpg','image/jpeg')}
 import sys
-ART={'home':'https://claude.ai/artifact/LyY6ymdMfPR1R7EBk8XxUU','explore':'https://claude.ai/artifact/NjCsdFmLpjRtz31XAFb9Yx','catalogue':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c'}
-SITE={'home':'index.html','explore':'explore.html','catalogue':'catalogue.html'}
+ART={'home':'https://claude.ai/artifact/LyY6ymdMfPR1R7EBk8XxUU','explore':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c','catalogue':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c'}
+SITE={'home':'index.html','explore':'catalogue.html','catalogue':'catalogue.html'}
 def render(tpl,page,links):
     html=open(H+'/'+tpl).read().replace('/*__FILTERBAR__*/',open(H+'/filterbar.js').read()).replace('/*__FILTERBAR_CSS__*/',open(H+'/filterbar.css').read()).replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
     for k,v in LOGOS.items(): html=html.replace(k,v)
@@ -222,13 +222,11 @@ site=sys.argv[sys.argv.index('--site')+1] if '--site' in sys.argv else None
 if site:
     os.makedirs(site,exist_ok=True)
     open(site+'/index.html','w').write(render('showcase.html','story',SITE))
-    open(site+'/explore.html','w').write(render('showcase.html','explore',SITE))
     open(site+'/catalogue.html','w').write(render('template.html','catalogue',SITE))
     json.dump(out,open(site+'/catalogue.json','w'),ensure_ascii=False,indent=0)
     print('site written to',site)
 else:
     open(H+'/../data-showcase.html','w').write(render('showcase.html','story',ART))
-    open(H+'/../data-explore.html','w').write(render('showcase.html','explore',ART))
     open(H+'/../data-catalogue.html','w').write(render('template.html','catalogue',ART))
 # ---- report
 print('papers',len(papers),'samples',len(S),'datasets',len(ds),'named',sum(d['named'] for d in ds.values()),'quotes',qc['quotes'],'problems',len(PROBLEMS),'rescued',dict(applied))
