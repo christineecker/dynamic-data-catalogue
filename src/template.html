@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CohortScope Catalogue</title>
+<title>DYNAMIC Data Catalogue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
@@ -127,7 +127,7 @@ dialog textarea{width:100%;height:240px;font:12px var(--mono)}
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><div class="brandname"><h1>CohortScope <span class="ver">v/*__VERSION__*/</span></h1><span class="tagline">Every cohort, data type and participant behind the DYNAMIC papers</span></div></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft"></div></header>
+<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><div class="brandname"><h1>Data Catalogue <span class="ver">v/*__VERSION__*/</span></h1><span class="tagline">Every cohort, data type and participant behind the DYNAMIC papers</span></div></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft"></div></header>
 <div class="subbar"><div class="subbar-in"><span class="src" id="src"></span><nav class="sitenav" id="sitenav" aria-label="Site"></nav></div></div>
 <div class="wrap">
   <aside class="side"><div class="sidet">Views</div><nav class="ch" aria-label="Views" id="tabs"></nav></aside>
@@ -514,7 +514,7 @@ document.addEventListener("click",e=>{const t=e.target,c=s=>t.closest&&t.closest
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();if(e.key==="Enter"&&e.target.matches&&e.target.matches("[data-ds],[data-paper]")&&e.target.tagName!=="BUTTON")e.target.click()});
 let qT;$("q").addEventListener("input",e=>{clearTimeout(qT);qT=setTimeout(()=>{F.text=e.target.value.trim();render()},160)});
 const LINKS=/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"};
-$("sitenav").innerHTML=`<a href="${LINKS.home}">Story</a><a href="${LINKS.catalogue}" class="on">Catalogue</a>`;$("src").textContent=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers`;
+$("sitenav").innerHTML=`<a href="${LINKS.home}">${ico("story")}Overview</a><a href="${LINKS.catalogue}" class="on" aria-current="page">${ico("catalogue")}Catalogue</a>`;$("src").textContent=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers`;
 let rT;new ResizeObserver(()=>{clearTimeout(rT);rT=setTimeout(()=>{if(["landscape","people","connections"].includes(view)&&!fbOpen)render()},180)}).observe(document.querySelector("main"));
 route();
 </script>

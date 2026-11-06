@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CohortScope Story</title>
+<title>DYNAMIC Data Catalogue Overview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
@@ -144,7 +144,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:80ch;margin-top:30px}
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><div class="brandname"><h1>CohortScope <span class="ver">v/*__VERSION__*/</span></h1><span class="tagline">Every cohort, data type and participant behind the DYNAMIC papers</span></div></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft" style="mix-blend-mode:multiply"></div></header>
+<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><div class="brandname"><h1>Data Catalogue <span class="ver">v/*__VERSION__*/</span></h1><span class="tagline">Every cohort, data type and participant behind the DYNAMIC papers</span></div></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft" style="mix-blend-mode:multiply"></div></header>
 <div class="subbar"><div class="subbar-in"><span class="src" id="src"></span><nav class="sitenav" id="sitenav" aria-label="Site"></nav></div></div>
 <div class="wrap"><aside class="side"><div class="sidet">Chapters</div><nav class="ch" id="nav" aria-label="Chapters"></nav></aside><main id="main"></main></div>
 <div class="scrim" id="scrim"></div>
@@ -183,7 +183,7 @@ function fp(mods,sz=10){const has=new Set(mods);let x=0,o="";const g=2,gg=7;
 const famLegend=(extra="")=>`<div class="legend">${FAM.map(f=>`<span><i style="background:${FCOL[f.id]}"></i>${esc(f.l)}</span>`).join("")}${extra}</div>`;
 /* ---------- chapters ---------- */
 const CH=[["universe","Universe"],["breadth","Breadth"],["together","Together"],["cohorts","Cohorts"],["people","People"],["spectrum","Spectrum"],["growth","Growth"],["possible","Possible"],["explore","Explore"]];
-$("sitenav").innerHTML=`<a href="${LINKS.home}" class="on">Story</a><a href="${LINKS.catalogue}">Catalogue</a>`;
+$("sitenav").innerHTML=`<a href="${LINKS.home}" class="on" aria-current="page">${ico("story")}Overview</a><a href="${LINKS.catalogue}">${ico("catalogue")}Catalogue</a>`;
 $("nav").innerHTML=PAGE==="story"?CH.filter(c=>c[0]!=="explore").map(c=>`<a href="#${c[0]}">${ico(c[0])}<span>${c[1]}</span></a>`).join(""):"";
 const modsUsed=uniq(S.flatMap(s=>s.m)).length,condsUsed=uniq(S.flatMap(s=>s.c)).length,ctry=uniq(S.flatMap(s=>s.ct)).length,inst=uniq(S.flatMap(s=>s.insn)).length,named=D.datasets.filter(d=>d.named).length,multi=S.filter(s=>uniq(s.m.map(m=>FAMOF[m])).length>=2).length;
 const yrs=uniq(D.papers.map(p=>p.y)).sort();
@@ -192,7 +192,7 @@ const STORY=`
  <h2 class="claim">Papers from the centre have analysed <span class="hi">${fmt(TOTAL)} people</span> across ${D.datasets.length} datasets and ${modsUsed} kinds of data.</h2>
  <p class="lede">One circle per analysed sample, from the full text of ${D.meta.papers} papers (${yrs[0]}–${yrs[yrs.length-1]}). Area = participants analysed. Colour = the most distinctive data family the sample holds, so a cohort with brain imaging shows blue even when it also has questionnaires. Hollow circles are consortia, registries and meta-analytic pools: shown, never counted. Regroup to see the same people by condition, data family, dataset type, age or year. Click any circle for its dataset sheet and the sentence each number comes from.</p>
  <p class="lede" style="margin-top:10px"><b>Looking for the tool?</b> The <a href="${LINKS.catalogue}">Catalogue</a> filters and compares these datasets, and adds the coverage map, participant charts and instrument network.</p></div>
- <div class="viz"><header><span class="seg" id="ugroup"></span><span class="hint">Hover a circle. Labels show samples per group.</span></header><div id="uni"></div>${famLegend(`<span><i class="hollow"></i>Pooled, not counted</span>`)}</div>
+ <div class="viz"><header><span class="seg" id="ugroup"></span><span class="tip">${ico("tip")}Hover a circle. Labels show samples per group.</span></header><div id="uni"></div>${famLegend(`<span><i class="hollow"></i>Pooled, not counted</span>`)}</div>
  <div class="stats">
   <div class="stat"><b>${fmt(TOTAL)}</b><span>participants, largest n per dataset, pools excluded</span></div>
   <div class="stat"><b>${D.datasets.length}</b><span>datasets, ${named} of them named</span></div>

@@ -13,10 +13,13 @@ header.top img.lw{height:72px!important;width:auto;margin-left:auto}
 .subbar{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
 .subbar-in{max-width:1500px;margin:0 auto;padding:8px 24px;display:flex;justify-content:flex-end;align-items:center;gap:14px}
 .subbar .src{font-size:12.5px;color:var(--muted)}
-.sitenav{background:var(--grey);border:0;padding:3px}
-.sitenav a{color:var(--ink);font-weight:500}
-.sitenav a:hover{background:var(--grey2)}
-.sitenav a.on{background:var(--dyn);color:var(--dyn-on);font-weight:600;box-shadow:none}
+.sitenav{background:var(--grey2);border:0;padding:3px;gap:2px;border-radius:999px}
+.sitenav a{display:inline-flex;align-items:center;gap:7px;padding:6px 15px 6px 12px;border-radius:999px;color:var(--ink);font-size:13.5px;font-weight:500;line-height:1.3;transition:background .15s,color .15s,box-shadow .15s}
+.sitenav a .ni{width:16px;height:16px;color:var(--muted)}
+.sitenav a:hover{background:none;color:var(--strong)}
+.sitenav a.on{background:#fff;color:var(--strong);font-weight:600;box-shadow:0 1px 2px #2E33381F,0 2px 8px #2E333814}
+.sitenav a.on .ni{color:var(--dyn)}
+@media (prefers-reduced-motion:reduce){.sitenav a{transition:none}}
 .wrap{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:232px minmax(0,1fr);gap:0}
 aside.side{position:sticky;top:60px;align-self:start;padding:22px 12px 24px 24px;height:calc(100vh - 60px);overflow:auto;border-right:1px solid var(--rule)}
 .sidet{font:500 12px var(--body);letter-spacing:0;text-transform:none;color:var(--muted);margin:0 0 8px 10px}
@@ -30,6 +33,8 @@ nav.ch a.on::before{content:"";position:absolute;left:-6px;top:8px;bottom:8px;wi
 @media (prefers-reduced-motion:reduce){nav.ch a{transition:none}}
 .wrap>main{max-width:none;margin:0;min-width:0}
 section.chapter{scroll-margin-top:60px}
+.tip{display:inline-flex;align-items:center;gap:8px;padding:6px 13px 6px 10px;border-radius:999px;background:var(--dyn-soft);color:var(--dyn-on);font-size:14px;font-weight:600}
+.tip .ni{flex:none;color:var(--dyn-ink)}
 /* controls */
 .fb.act,.fb.open{background:var(--dyn-soft);border-color:var(--dyn);box-shadow:none;color:var(--dyn-ink)}
 .fbn{background:var(--dyn);color:var(--dyn-on)}
