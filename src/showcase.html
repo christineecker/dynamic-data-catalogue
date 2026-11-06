@@ -28,8 +28,13 @@ h1,h2,h3{color:var(--strong);text-wrap:balance;margin:0;letter-spacing:-.02em}
 header.top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
 .top-in{display:flex;gap:18px;align-items:center;padding:10px 24px;max-width:1440px;margin:0 auto;flex-wrap:wrap}
 .top-in h1{font-size:17px;font-weight:600;white-space:nowrap}
-nav.ch{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
-nav.ch a{padding:5px 9px;text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;font-size:13px;font-weight:500;border-radius:4px 4px 0 0}
+.sitenav{display:inline-flex;gap:3px;border:1px solid var(--ctl);border-radius:9px;padding:3px;background:var(--paper)}
+.sitenav a{padding:6px 14px;border-radius:7px;font-weight:600;font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.sitenav a:hover{background:var(--sel)}
+.sitenav a.on{background:var(--strong);color:#fff}
+nav.ch{display:flex;gap:2px;flex-wrap:wrap;flex-basis:100%;margin:-2px 0 -10px}
+nav.ch:empty{display:none}
+nav.ch a{padding:6px 10px;text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;font-size:13px;font-weight:500;border-radius:4px 4px 0 0}
 nav.ch a:hover{color:var(--strong)} nav.ch a.on{color:var(--strong);border-bottom-color:var(--accent)}
 main{max-width:1440px;margin:0 auto;padding:0 24px 80px}
 section.chapter{padding:56px 0 28px;border-bottom:1px solid var(--rule)}
@@ -138,7 +143,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:80ch;margin-top:30px}
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1>Data Universe</h1></div><span class="small muted" id="src"></span><nav class="ch" id="nav"></nav><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft" style="height:34px;width:auto;mix-blend-mode:multiply"></div></header>
+<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1 id="ptitle">Data Universe</h1></div><nav class="sitenav" id="sitenav" aria-label="Site"></nav><span class="small muted" id="src"></span><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft" style="height:34px;width:auto;mix-blend-mode:multiply;margin-left:auto"><nav class="ch" id="nav" aria-label="Chapters"></nav></div></header>
 <main id="main"></main>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="Dataset sheet"></aside>
@@ -175,7 +180,8 @@ function fp(mods,sz=10){const has=new Set(mods);let x=0,o="";const g=2,gg=7;
 const famLegend=(extra="")=>`<div class="legend">${FAM.map(f=>`<span><i style="background:${FCOL[f.id]}"></i>${esc(f.l)}</span>`).join("")}${extra}</div>`;
 /* ---------- chapters ---------- */
 const CH=[["universe","Universe"],["breadth","Breadth"],["together","Together"],["cohorts","Cohorts"],["people","People"],["spectrum","Spectrum"],["growth","Growth"],["possible","Possible"],["explore","Explore"]];
-$("nav").innerHTML=PAGE==="story"?CH.filter(c=>c[0]!=="explore").map(c=>`<a href="#${c[0]}">${c[1]}</a>`).join("")+`<a href="${LINKS.explore}" style="color:var(--accent-ink)">Explore tool ↗</a>`:`<a href="${LINKS.home}">← Story</a><a href="#explore" class="on">Explorer</a><a href="${LINKS.catalogue}">Full catalogue ↗</a>`;
+$("sitenav").innerHTML=`<a href="${LINKS.home}" class="${PAGE==="story"?"on":""}">Story</a><a href="${LINKS.explore}" class="${PAGE==="explore"?"on":""}">Explorer</a><a href="${LINKS.catalogue}">Catalogue</a>`;
+$("nav").innerHTML=PAGE==="story"?CH.filter(c=>c[0]!=="explore").map(c=>`<a href="#${c[0]}">${c[1]}</a>`).join(""):"";
 const modsUsed=uniq(S.flatMap(s=>s.m)).length,condsUsed=uniq(S.flatMap(s=>s.c)).length,ctry=uniq(S.flatMap(s=>s.ct)).length,inst=uniq(S.flatMap(s=>s.insn)).length,named=D.datasets.filter(d=>d.named).length,multi=S.filter(s=>uniq(s.m.map(m=>FAMOF[m])).length>=2).length;
 const yrs=uniq(D.papers.map(p=>p.y)).sort();
 const STORY=`
@@ -223,12 +229,12 @@ const STORY=`
  <p><a class="slbtn" style="font-size:14px;padding:7px 14px;display:inline-block" href="${LINKS.explore}">Open the Explore tool ↗</a> <a class="slbtn" style="font-size:14px;padding:7px 14px;display:inline-block;margin-left:8px" href="${LINKS.catalogue}">Full catalogue ↗</a></p>
  <footer>Snapshot ${esc(D.meta.snapshot)} · ${D.meta.papers} papers, ${D.meta.fulltext} read in full text · ${D.meta.qc.quotes} verbatim quotes, every one found in the source by machine · a blind second extraction of ${D.meta.agree.papers} papers repeated the largest n exactly in ${D.meta.agree.n_exact}% · preprints excluded.</footer></section>`;
 const EXPLORE=`<section class="chapter" id="explore"><div class="eyebrow">Explore</div><h2 class="claim">For the researcher: <span class="hi">filter, compare, shortlist</span> and draft a data request.</h2>
- <p class="lede">The <a href="${LINKS.home}">Data Universe</a> as a working tool. Filters on the left apply to the cards, tables and counts here. Click a card for its sheet and the sentence each number comes from; shortlist datasets to compare them and draft a request to their holders. The <a href="${CATALOGUE}">full catalogue</a> adds a coverage map, participant charts, instrument network and CSV of every field.</p>
+ <p class="lede">The <a href="${LINKS.home}">Data Universe</a> as a working tool. Filters above apply to the cards, tables and counts. Click a card for its sheet and the sentence each number comes from; shortlist datasets to compare them and draft a request to their holders. The <a href="${CATALOGUE}">full catalogue</a> adds a coverage map, participant charts, instrument network and CSV of every field.</p>
  <div class="xmain"><div class="fbwrap"><div class="fbrow"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search"><span id="facets"></span></div><div id="fbpop"></div></div><div class="chips" id="active"></div><div class="answer" id="answer"></div><div id="xview"></div>
  <div class="viz" id="plan" style="margin-top:8px"></div></div>
  <footer>Snapshot ${esc(D.meta.snapshot)} · ${D.meta.papers} papers, ${D.meta.fulltext} read in full text · ${D.meta.qc.quotes} verbatim quotes, every one found in the source by machine · a blind second extraction of ${D.meta.agree.papers} papers repeated the largest n exactly in ${D.meta.agree.n_exact}% · preprints excluded. Method notes and known gaps: <a href="${CATALOGUE}">DYNAMIC Data Catalogue</a>.</footer></section>`;
 $("main").innerHTML=PAGE==="story"?STORY:EXPLORE;
-$("src").textContent=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers · full-text extraction`;if(PAGE==="explore")document.title="DYNAMIC Data Explorer";
+$("src").textContent=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers · full-text extraction`;if(PAGE==="explore"){document.title="DYNAMIC Data Explorer";$("ptitle").textContent="Data Explorer"}
 /* ---------- universe ---------- */
 const UG=[["cond","Condition"],["fam","Data family"],["kind","Dataset type"],["age","Age group"],["year","Year"],["design","Design"]];
 let ukey="cond";
