@@ -215,7 +215,7 @@ import sys
 ART={'home':'https://claude.ai/artifact/LyY6ymdMfPR1R7EBk8XxUU','explore':'https://claude.ai/artifact/NjCsdFmLpjRtz31XAFb9Yx','catalogue':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c'}
 SITE={'home':'index.html','explore':'explore.html','catalogue':'catalogue.html'}
 def render(tpl,page,links):
-    html=open(H+'/'+tpl).read().replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
+    html=open(H+'/'+tpl).read().replace('/*__FILTERBAR__*/',open(H+'/filterbar.js').read()).replace('/*__FILTERBAR_CSS__*/',open(H+'/filterbar.css').read()).replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
     for k,v in LOGOS.items(): html=html.replace(k,v)
     return html
 site=sys.argv[sys.argv.index('--site')+1] if '--site' in sys.argv else None

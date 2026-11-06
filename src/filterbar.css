@@ -1,0 +1,28 @@
+.fbwrap{display:flex;flex-direction:column;gap:0}
+.fbrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fbrow .search{margin:0;flex:1 1 240px;min-width:200px;width:auto}
+#facets{display:contents}
+.fb{border:1px solid var(--ctl);background:var(--paper);border-radius:7px;padding:6px 11px;font-size:13px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;color:var(--ink)}
+.fb:hover{background:var(--sel)}
+.fb.act{border-color:var(--accent);color:var(--strong);background:var(--soft)}
+.fb.open{box-shadow:inset 0 0 0 1px var(--accent)}
+.fbn{font:500 11px var(--mono);background:var(--accent);color:#2E3338;border-radius:9px;padding:0 6px}
+.fb .car{color:var(--muted);font-size:9px}
+#fbpop{display:none;border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;background:var(--paper);box-shadow:0 8px 28px #2E333814}
+.fbhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px;font-size:12.5px;color:var(--muted)}
+.fbgrid{display:grid;gap:2px 18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.fbfam{display:grid;gap:10px 18px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.fbcols{display:grid;gap:12px 20px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.fbt{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.frow{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:7px;align-items:center;width:100%;border:0;background:none;padding:3px 4px;border-radius:4px;cursor:pointer;text-align:left;font-size:13px;min-height:24px;color:var(--ink)}
+.frow:hover{background:var(--sel)}
+.frow.on{color:var(--strong);font-weight:500}
+.frow.zero{color:var(--faint)}
+.frow .cb{width:13px;height:13px;border:1.5px solid var(--ctl);border-radius:3px;display:inline-block}
+.frow.on .cb{background:var(--accent);border-color:var(--accent)}
+.frow .sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+.frow.famh{font-weight:600;color:var(--strong)}
+.frow .ct{font:12px var(--mono);color:var(--muted)}
+.fnote{display:flex;gap:6px;align-items:center;font-size:12.5px;margin:5px 0 3px}
+.rng{display:flex;gap:6px;align-items:center;margin:4px 0 6px}
+.rng input[type=number]{width:74px;padding:3px 5px;border:1px solid var(--ctl);border-radius:5px;font:12px var(--mono);background:var(--paper)}

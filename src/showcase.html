@@ -90,7 +90,7 @@ table.t th{text-align:left;font-weight:600;font-size:12px;color:var(--muted);bor
 table.t td{border-bottom:1px solid var(--rule2);padding:6px 8px;vertical-align:top}
 table.t tr.cl{cursor:pointer} table.t tr.cl:hover td{background:var(--sel)}
 td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
-.search{width:min(420px,100%);padding:7px 10px;border:1px solid var(--ctl);border-radius:7px;background:var(--paper);margin-bottom:10px}
+.search{padding:7px 10px;border:1px solid var(--ctl);border-radius:7px;background:var(--paper)}
 .scroll{overflow-x:auto}
 #tt{position:fixed;z-index:60;pointer-events:none;background:var(--strong);color:#fff;font-size:12.5px;line-height:1.4;padding:7px 9px;border-radius:7px;max-width:340px;display:none}
 #tt b{color:#fff}
@@ -110,19 +110,6 @@ blockquote{margin:6px 0 0;padding:0 0 0 9px;border-left:2px solid var(--rule);fo
 .chip.on{background:var(--soft);border-color:var(--accent);color:var(--strong)}
 .chip .x{color:var(--muted)} .chip.fil{background:var(--soft);border-color:transparent;color:var(--strong)}
 .lnk{background:none;border:0;padding:0;color:var(--link);cursor:pointer;font-size:12px;text-decoration:underline}
-.fgroup{border-top:1px solid var(--rule2);padding:9px 0}
-.fgroup>summary{cursor:pointer;font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);list-style-position:outside}
-.frow{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:6px;align-items:center;width:100%;border:0;background:none;padding:2px 3px;border-radius:4px;cursor:pointer;text-align:left;font-size:13px;min-height:24px}
-.frow:hover{background:var(--sel)}
-.frow.on{background:var(--soft);color:var(--strong);font-weight:500}
-.frow.zero{color:var(--faint)}
-.frow .sw{width:10px;height:10px;border-radius:2px;background:var(--faint)}
-.frow .ct{font:12px var(--mono);color:var(--muted)}
-.famh{font-weight:600;color:var(--strong)}
-.indent{margin-left:12px}
-.fnote{display:flex;gap:6px;align-items:center;font-size:12px;margin:5px 0 3px}
-.rng{display:flex;gap:6px;align-items:center;margin-top:6px}
-.rng input[type=number]{width:74px;padding:3px 5px;border:1px solid var(--rule);border-radius:5px;font:12px var(--mono)}
 .card.sl{box-shadow:inset 0 0 0 1px var(--accent)}
 .card .stat{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
 .card .stat b{font:500 18px var(--mono);color:var(--strong)}
@@ -135,8 +122,7 @@ blockquote{margin:6px 0 0;padding:0 0 0 9px;border-left:2px solid var(--rule);fo
 .planbar{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));align-items:end}
 .more{display:block;margin:10px auto 0;padding:5px 14px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);cursor:pointer}
 .empty{padding:26px;text-align:center;color:var(--muted)}
-.xwrap{display:grid;grid-template-columns:272px minmax(0,1fr);gap:18px;align-items:start}
-aside.rail{border:1px solid var(--rule);border-radius:12px;padding:12px 14px;position:sticky;top:64px;max-height:calc(100vh - 80px);overflow:auto}
+/*__FILTERBAR_CSS__*/
 .xmain{display:flex;flex-direction:column;gap:12px;min-width:0}
 .answer{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;padding-bottom:10px;border-bottom:1px solid var(--rule2)}
 .answer b{font:600 22px/1 var(--body);color:var(--strong);letter-spacing:-.02em}
@@ -146,7 +132,6 @@ aside.rail{border:1px solid var(--rule);border-radius:12px;padding:12px 14px;pos
 .brandlogos{display:flex;align-items:center;gap:14px}
 .brandlogos img{height:30px;width:auto;display:block;mix-blend-mode:multiply}
 .brandlogos .lw{height:34px}
-@media(max-width:1000px){.xwrap{grid-template-columns:minmax(0,1fr)}aside.rail{position:static;max-height:none}}
 
 footer{font-size:12.5px;color:var(--muted);max-width:80ch;margin-top:30px}
 @media(max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}.claim{font-size:24px}.hero .claim{font-size:30px}main{padding:0 16px 60px}.top-in{padding:10px 16px}}
@@ -190,7 +175,7 @@ function fp(mods,sz=10){const has=new Set(mods);let x=0,o="";const g=2,gg=7;
 const famLegend=(extra="")=>`<div class="legend">${FAM.map(f=>`<span><i style="background:${FCOL[f.id]}"></i>${esc(f.l)}</span>`).join("")}${extra}</div>`;
 /* ---------- chapters ---------- */
 const CH=[["universe","Universe"],["breadth","Breadth"],["together","Together"],["cohorts","Cohorts"],["people","People"],["spectrum","Spectrum"],["growth","Growth"],["possible","Possible"],["explore","Explore"]];
-$("nav").innerHTML=PAGE==="story"?CH.filter(c=>c[0]!=="explore").map(c=>`<a href="#${c[0]}">${c[1]}</a>`).join("")+`<a href="${LINKS.explore}" style="color:var(--accent-ink)">Explore tool ↗</a>`:`<a href="${LINKS.home}">← Story</a><a href="#explore" class="on">Explore</a><a href="${LINKS.catalogue}">Full catalogue ↗</a>`;
+$("nav").innerHTML=PAGE==="story"?CH.filter(c=>c[0]!=="explore").map(c=>`<a href="#${c[0]}">${c[1]}</a>`).join("")+`<a href="${LINKS.explore}" style="color:var(--accent-ink)">Explore tool ↗</a>`:`<a href="${LINKS.home}">← Story</a><a href="#explore" class="on">Explorer</a><a href="${LINKS.catalogue}">Full catalogue ↗</a>`;
 const modsUsed=uniq(S.flatMap(s=>s.m)).length,condsUsed=uniq(S.flatMap(s=>s.c)).length,ctry=uniq(S.flatMap(s=>s.ct)).length,inst=uniq(S.flatMap(s=>s.insn)).length,named=D.datasets.filter(d=>d.named).length,multi=S.filter(s=>uniq(s.m.map(m=>FAMOF[m])).length>=2).length;
 const yrs=uniq(D.papers.map(p=>p.y)).sort();
 const STORY=`
@@ -239,9 +224,8 @@ const STORY=`
  <footer>Snapshot ${esc(D.meta.snapshot)} · ${D.meta.papers} papers, ${D.meta.fulltext} read in full text · ${D.meta.qc.quotes} verbatim quotes, every one found in the source by machine · a blind second extraction of ${D.meta.agree.papers} papers repeated the largest n exactly in ${D.meta.agree.n_exact}% · preprints excluded.</footer></section>`;
 const EXPLORE=`<section class="chapter" id="explore"><div class="eyebrow">Explore</div><h2 class="claim">For the researcher: <span class="hi">filter, compare, shortlist</span> and draft a data request.</h2>
  <p class="lede">The <a href="${LINKS.home}">Data Universe</a> as a working tool. Filters on the left apply to the cards, tables and counts here. Click a card for its sheet and the sentence each number comes from; shortlist datasets to compare them and draft a request to their holders. The <a href="${CATALOGUE}">full catalogue</a> adds a coverage map, participant charts, instrument network and CSV of every field.</p>
- <div class="xwrap"><aside class="rail" aria-label="Filters"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search" style="width:100%"><div id="facets"></div></aside>
- <div class="xmain"><div class="answer" id="answer"></div><div class="chips" id="active"></div><div id="xview"></div>
- <div class="viz" id="plan" style="margin-top:8px"></div></div></div>
+ <div class="xmain"><div class="fbwrap"><div class="fbrow"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search"><span id="facets"></span></div><div id="fbpop"></div></div><div class="chips" id="active"></div><div class="answer" id="answer"></div><div id="xview"></div>
+ <div class="viz" id="plan" style="margin-top:8px"></div></div>
  <footer>Snapshot ${esc(D.meta.snapshot)} · ${D.meta.papers} papers, ${D.meta.fulltext} read in full text · ${D.meta.qc.quotes} verbatim quotes, every one found in the source by machine · a blind second extraction of ${D.meta.agree.papers} papers repeated the largest n exactly in ${D.meta.agree.n_exact}% · preprints excluded. Method notes and known gaps: <a href="${CATALOGUE}">DYNAMIC Data Catalogue</a>.</footer></section>`;
 $("main").innerHTML=PAGE==="story"?STORY:EXPLORE;
 $("src").textContent=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers · full-text extraction`;if(PAGE==="explore")document.title="DYNAMIC Data Explorer";
@@ -358,15 +342,8 @@ function match(s,skip){for(const [k,,g] of FIELDS){if(k===skip||!F[k].size)conti
   if(F.text){const h=(s.D.name+" "+s.D.aliases.join(" ")+" "+(s.nm||"")+" "+s.P.t+" "+s.P.au+" "+s.P.j+" "+s.P.pmid+" "+s.ins.join(" ")+" "+s.c.join(" ")+" "+s.P.tp).toLowerCase();if(!F.text.toLowerCase().split(/\s+/).every(w=>h.includes(w)))return false}
   return true}
 const sel=()=>S.filter(s=>match(s));
-let openFacet=new Set(["mods","cond","kind"]);
-function renderFacets(){let o="";const ctM={},ctF={};S.filter(s=>match(s,"mods")).forEach(s=>s.m.forEach(m=>ctM[m]=(ctM[m]||0)+1));S.filter(s=>match(s,"fam")).forEach(s=>uniq(s.m.map(m=>FAMOF[m])).forEach(f=>ctF[f]=(ctF[f]||0)+1));
-  o+=`<details class="fgroup" data-f="mods" ${openFacet.has("mods")?"open":""}><summary>Data modality</summary><div class="fnote">Match <span class="seg"><button data-modmode="any" class="${F.modMode==="any"?"on":""}">any</button><button data-modmode="all" class="${F.modMode==="all"?"on":""}">all</button></span> selected, same sample</div>`;
-  FAM.forEach(f=>{o+=`<button class="frow famh ${F.fam.has(f.id)?"on":""}" data-tog="fam" data-v="${f.id}"><span class="sw" style="background:${FCOL[f.id]}"></span><span>${esc(f.l)}</span><span class="ct">${ctF[f.id]||0}</span></button>`;f.m.forEach(m=>{const c=ctM[m]||0;o+=`<button class="frow indent ${F.mods.has(m)?"on":""} ${c?"":"zero"}" data-tog="mods" data-v="${esc(m)}" style="width:calc(100% - 12px)"><span></span><span>${esc(m)}</span><span class="ct">${c}</span></button>`})});o+=`</details>`;
-  FIELDS.forEach(([k,l,g])=>{const ct={};S.filter(s=>match(s,k)).forEach(s=>g(s).forEach(v=>{if(v!=null)ct[v]=(ct[v]||0)+1}));o+=`<details class="fgroup" data-f="${k}" ${openFacet.has(k)||F[k].size?"open":""}><summary>${esc(l)}</summary>${D.facets[k].map(v=>{const c=ct[v]||0;return `<button class="frow ${F[k].has(v)?"on":""} ${c?"":"zero"}" data-tog="${k}" data-v="${esc(v)}"><span></span><span>${esc(v)}</span><span class="ct">${c}</span></button>`}).join("")}</details>`});
-  o+=`<details class="fgroup" open><summary>Sample</summary><div class="rng"><label class="small" for="nmin">n from</label><input id="nmin" type="number" min="0" value="${F.nmin??""}"><label class="small" for="nmax">to</label><input id="nmax" type="number" min="0" value="${F.nmax??""}"></div><label class="fnote"><input id="flon" type="checkbox" ${F.lon?"checked":""}> Longitudinal only</label><label class="fnote"><input id="ftab" type="checkbox" ${F.tab1?"checked":""}> Listed in Vollantrag Tab. 1 only</label></details>`;
-  const fc=$("facets"),st=fc.parentElement.scrollTop;fc.innerHTML=o;fc.parentElement.scrollTop=st;
-  fc.querySelectorAll("details[data-f]").forEach(d=>d.addEventListener("toggle",()=>{d.open?openFacet.add(d.dataset.f):openFacet.delete(d.dataset.f)}));
-  $("nmin").onchange=e=>{F.nmin=e.target.value===""?null:+e.target.value;renderX()};$("nmax").onchange=e=>{F.nmax=e.target.value===""?null:+e.target.value;renderX()};$("flon").onchange=e=>{F.lon=e.target.checked;renderX()};$("ftab").onchange=e=>{F.tab1=e.target.checked;renderX()}}
+const FB_RENDER=()=>renderX();
+/*__FILTERBAR__*/
 const XRECIPES=[["Depression × sMRI",()=>{F.cond.add("Major depression");F.mods.add("sMRI")}],["Any EMA",()=>{F.mods.add("EMA")}],["Speech or video",()=>{F.mods.add("Speech/language");F.mods.add("Video/nonverbal")}],["Children & adolescents",()=>{["Children","Adolescents","Youth (mixed)"].forEach(a=>F.age.add(a))}],["Open data",()=>{F.access.add("Open repository")}],["Longitudinal, n ≥ 500",()=>{F.lon=true;F.nmin=500}]];
 function renderActive(){const c=[];F.mods.forEach(v=>c.push(["mods",v,"Modality"]));F.fam.forEach(v=>c.push(["fam",v,"Family",FAML[v]]));FIELDS.forEach(([k,l])=>F[k].forEach(v=>c.push([k,v,l])));F.ds.forEach(v=>c.push(["ds",v,"Dataset",DSB[v].name]));
   let o=c.map(([k,v,l,show])=>`<button class="chip fil" data-tog="${k}" data-v="${esc(v)}"><span class="muted">${esc(l)}</span> ${esc(show||v)} <span class="x" aria-hidden="true">×</span></button>`).join("");

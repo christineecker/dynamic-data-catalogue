@@ -1,0 +1,20 @@
+/* Shared filter bar: one row of buttons, each opening a panel below. Expects F, FIELDS, S, match, FAM, FCOL, FAMOF, D, uniq, esc, $ and FB_RENDER. */
+let fbOpen=null;
+const FBMAIN=["cond","kind","age","design"],FBMORE=["rec","reuse","access","approach","ctry","year"];
+const FBL=Object.fromEntries(FIELDS.map(f=>[f[0],f[1]]));
+function fbRow(k,v,on,c,sw){return `<button class="frow ${on?"on":""} ${c?"":"zero"}" data-tog="${k}" data-v="${esc(v)}">${sw?`<span class="sw" style="background:${sw}"></span>`:`<span class="cb" aria-hidden="true"></span>`}<span>${esc(v)}</span><span class="ct">${c}</span></button>`}
+function renderFacets(){
+  const ctM={},ctF={};S.filter(s=>match(s,"mods")).forEach(s=>s.m.forEach(m=>ctM[m]=(ctM[m]||0)+1));S.filter(s=>match(s,"fam")).forEach(s=>uniq(s.m.map(m=>FAMOF[m])).forEach(f=>ctF[f]=(ctF[f]||0)+1));
+  const moreN=FBMORE.reduce((t,k)=>t+F[k].size,0)+((F.nmin!=null||F.nmax!=null)?1:0)+(F.lon?1:0)+(F.tab1?1:0);
+  const btn=(k,label,n)=>`<button class="fb ${fbOpen===k?"open":""} ${n?"act":""}" data-fb="${k}" aria-expanded="${fbOpen===k}">${label}${n?` <span class="fbn">${n}</span>`:""}<span class="car">▾</span></button>`;
+  $("facets").innerHTML=btn("mods","Modality",F.mods.size+F.fam.size)+FBMAIN.map(k=>btn(k,FBL[k],F[k].size)).join("")+btn("more","More",moreN);
+  let p="";
+  if(fbOpen==="mods"){p=`<div class="fbhead"><span>Pick data families or single modalities. Counts = samples in the current selection.</span><span>Match <span class="seg"><button data-modmode="any" class="${F.modMode==="any"?"on":""}">any</button><button data-modmode="all" class="${F.modMode==="all"?"on":""}">all</button></span> selected modalities in the same sample</span></div><div class="fbfam">${FAM.map(f=>`<div>${fbRow("fam",f.id,F.fam.has(f.id),ctF[f.id]||0,FCOL[f.id]).replace(`>${esc(f.id)}<`,`>${esc(f.l)}<`).replace('class="frow','class="frow famh')}${f.m.map(m=>fbRow("mods",m,F.mods.has(m),ctM[m]||0)).join("")}</div>`).join("")}</div>`}
+  else if(FBMAIN.includes(fbOpen)){const k=fbOpen,g=FIELDS.find(x=>x[0]===k)[2],ct={};S.filter(s=>match(s,k)).forEach(s=>g(s).forEach(v=>{if(v!=null)ct[v]=(ct[v]||0)+1}));p=`<div class="fbhead"><span>${esc(FBL[k])}. Several values match any of them.</span></div><div class="fbgrid">${D.facets[k].map(v=>fbRow(k,v,F[k].has(v),ct[v]||0)).join("")}</div>`}
+  else if(fbOpen==="more"){p=`<div class="fbcols">${FBMORE.map(k=>{const g=FIELDS.find(x=>x[0]===k)[2],ct={};S.filter(s=>match(s,k)).forEach(s=>g(s).forEach(v=>{if(v!=null)ct[v]=(ct[v]||0)+1}));return `<div><div class="fbt">${esc(FBL[k])}</div>${D.facets[k].slice(0,k==="ctry"?10:99).map(v=>fbRow(k,v,F[k].has(v),ct[v]||0)).join("")}</div>`}).join("")}<div><div class="fbt">Sample</div><div class="rng"><label class="small" for="nmin">n from</label><input id="nmin" type="number" min="0" value="${F.nmin??""}"><label class="small" for="nmax">to</label><input id="nmax" type="number" min="0" value="${F.nmax??""}"></div><label class="fnote"><input id="flon" type="checkbox" ${F.lon?"checked":""}> Longitudinal only</label><label class="fnote"><input id="ftab" type="checkbox" ${F.tab1?"checked":""}> Vollantrag Tab. 1 only</label></div></div>`}
+  const pop=$("fbpop");pop.innerHTML=p;pop.style.display=p?"block":"none";
+  if(fbOpen==="more"){$("nmin").onchange=e=>{F.nmin=e.target.value===""?null:+e.target.value;FB_RENDER()};$("nmax").onchange=e=>{F.nmax=e.target.value===""?null:+e.target.value;FB_RENDER()};$("flon").onchange=e=>{F.lon=e.target.checked;FB_RENDER()};$("ftab").onchange=e=>{F.tab1=e.target.checked;FB_RENDER()}}
+}
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-fb]");if(b){fbOpen=fbOpen===b.dataset.fb?null:b.dataset.fb;renderFacets();return}
+  if(fbOpen&&!(e.target.closest&&e.target.closest("#fbpop, #facets"))){fbOpen=null;renderFacets()}},true);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&fbOpen){fbOpen=null;renderFacets()}});
