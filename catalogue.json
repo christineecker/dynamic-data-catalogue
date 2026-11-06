@@ -349,7 +349,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 1,
+"rcr": 4.285508044876424,
+"rp": false,
+"pc": 90.2,
+"ci": 20
 },
 {
 "id": "38497207",
@@ -375,7 +381,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 3,
+"rcr": 0.35683337228384954,
+"rp": false,
+"pc": 21.3,
+"ci": 1
 },
 {
 "id": "38555826",
@@ -401,7 +413,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": "DRKS00023907"
+"reg": "DRKS00023907",
+"oy": 2024,
+"om": 3,
+"rcr": 0.3777001753041613,
+"rp": false,
+"pc": 22.5,
+"ci": 2
 },
 {
 "id": "38589553",
@@ -427,7 +445,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 4,
+"rcr": 4.83695677695116,
+"rp": false,
+"pc": 91.8,
+"ci": 16
 },
 {
 "id": "38593025",
@@ -453,7 +477,13 @@
 "url": "https://osf.io/5b29f/",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 4,
+"rcr": 0.3618040801965173,
+"rp": false,
+"pc": 21.6,
+"ci": 1
 },
 {
 "id": "38635978",
@@ -479,7 +509,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 4,
+"rcr": 3.0094120646377283,
+"rp": false,
+"pc": 83.9,
+"ci": 11
 },
 {
 "id": "38688158",
@@ -503,7 +539,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 3,
+"rcr": 9.830981093052628,
+"rp": false,
+"pc": 97.4,
+"ci": 35
 },
 {
 "id": "38801091",
@@ -529,7 +571,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 5,
+"rcr": 1.8111676062063045,
+"rp": false,
+"pc": 70.3,
+"ci": 8
 },
 {
 "id": "38884177",
@@ -553,7 +601,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 6,
+"rcr": 0.6891571132384545,
+"rp": false,
+"pc": 37.8,
+"ci": 3
 },
 {
 "id": "38889066",
@@ -577,7 +631,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 6,
+"rcr": 1.3055903385914964,
+"rp": false,
+"pc": 59.4,
+"ci": 4
 },
 {
 "id": "38903470",
@@ -603,7 +663,13 @@
 "url": "https://osf.io/75cyr/",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 6,
+"rcr": 3.6475905375987523,
+"rp": false,
+"pc": 87.6,
+"ci": 9
 },
 {
 "id": "38938460",
@@ -629,7 +695,13 @@
 "url": "https://doi.org/10.6084/m9.figshare.25895704.v1",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 6,
+"rcr": 0.3173192010873536,
+"rp": false,
+"pc": 19.2,
+"ci": 1
 },
 {
 "id": "39024740",
@@ -655,7 +727,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 7,
+"rcr": 3.0480074071986247,
+"rp": false,
+"pc": 84.1,
+"ci": 12
 },
 {
 "id": "39046822",
@@ -683,7 +761,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 7,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "39095370",
@@ -709,7 +793,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 8,
+"rcr": 2.8041201376333444,
+"rp": false,
+"pc": 82.3,
+"ci": 18
 },
 {
 "id": "39119222",
@@ -733,7 +823,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 3,
+"rcr": 0.6237746380087119,
+"rp": false,
+"pc": 34.9,
+"ci": 2
 },
 {
 "id": "39186743",
@@ -760,7 +856,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "tj6tb"
+"reg": "tj6tb",
+"oy": 2024,
+"om": 8,
+"rcr": 1.682104087811288,
+"rp": false,
+"pc": 67.9,
+"ci": 7
 },
 {
 "id": "39235861",
@@ -786,7 +888,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00033084"
+"reg": "DRKS00033084",
+"oy": 2024,
+"om": 9,
+"rcr": 1.2934855275052177,
+"rp": false,
+"pc": 59.1,
+"ci": 4
 },
 {
 "id": "39283418",
@@ -810,7 +918,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": null,
+"rcr": 0.829861975923215,
+"rp": false,
+"pc": 43.8,
+"ci": 5
 },
 {
 "id": "39328424",
@@ -836,7 +950,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 9,
+"rcr": 1.331218066066575,
+"rp": false,
+"pc": 60.1,
+"ci": 5
 },
 {
 "id": "39359967",
@@ -862,7 +982,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 9,
+"rcr": 1.4173898015478077,
+"rp": false,
+"pc": 62.2,
+"ci": 4
 },
 {
 "id": "39369190",
@@ -886,7 +1012,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00031206"
+"reg": "DRKS00031206",
+"oy": 2024,
+"om": 10,
+"rcr": 0.2817929285741111,
+"rp": false,
+"pc": 17.2,
+"ci": 1
 },
 {
 "id": "39380071",
@@ -912,7 +1044,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 10,
+"rcr": 0.5518657172617762,
+"rp": false,
+"pc": 31.4,
+"ci": 2
 },
 {
 "id": "39412777",
@@ -938,7 +1076,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 12,
+"rcr": 2.37611088385995,
+"rp": false,
+"pc": 78.2,
+"ci": 16
 },
 {
 "id": "39423456",
@@ -964,7 +1108,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "https://osf.io/rjc2b"
+"reg": "https://osf.io/rjc2b",
+"oy": 2024,
+"om": 10,
+"rcr": 0.2818579927460284,
+"rp": false,
+"pc": 17.2,
+"ci": 1
 },
 {
 "id": "39472472",
@@ -990,7 +1140,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 10,
+"rcr": 0.2838239866503253,
+"rp": false,
+"pc": 17.3,
+"ci": 1
 },
 {
 "id": "39487121",
@@ -1017,7 +1173,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 11,
+"rcr": 0.8833046067894712,
+"rp": false,
+"pc": 45.9,
+"ci": 3
 },
 {
 "id": "39551574",
@@ -1043,7 +1205,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 11,
+"rcr": 1.0341465707324666,
+"rp": true,
+"pc": 51.3,
+"ci": 2
 },
 {
 "id": "39578982",
@@ -1070,7 +1238,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 1,
+"rcr": 1.527457912240446,
+"rp": true,
+"pc": 64.7,
+"ci": 3
 },
 {
 "id": "39615758",
@@ -1096,7 +1270,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00024823"
+"reg": "DRKS00024823",
+"oy": 2024,
+"om": 11,
+"rcr": 6.5492760621965465,
+"rp": true,
+"pc": 94.9,
+"ci": 15
 },
 {
 "id": "39668233",
@@ -1120,7 +1300,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 12,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "39693869",
@@ -1146,7 +1332,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCT05424250"
+"reg": "NCT05424250",
+"oy": 2024,
+"om": 12,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "39701384",
@@ -1172,7 +1364,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 12,
+"rcr": 0.22490445767764117,
+"rp": true,
+"pc": 14,
+"ci": 1
 },
 {
 "id": "39702504",
@@ -1199,7 +1397,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCT06517589"
+"reg": "NCT06517589",
+"oy": 2024,
+"om": 12,
+"rcr": 0.44666189776181825,
+"rp": false,
+"pc": 26.1,
+"ci": 2
 },
 {
 "id": "39706901",
@@ -1225,7 +1429,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 12,
+"rcr": 3.356482776137826,
+"rp": false,
+"pc": 86.1,
+"ci": 13
 },
 {
 "id": "39732083",
@@ -1251,7 +1461,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCT05225740"
+"reg": "NCT05225740",
+"oy": 2024,
+"om": 12,
+"rcr": 2.084276859714276,
+"rp": true,
+"pc": 74.5,
+"ci": 4
 },
 {
 "id": "39755292",
@@ -1277,7 +1493,13 @@
 "url": "https://osf.io/z32yx/",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 1,
+"rcr": 10.249921812335318,
+"rp": true,
+"pc": 97.6,
+"ci": 21
 },
 {
 "id": "39763023",
@@ -1303,7 +1525,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 1,
+"rcr": 1.120748365242119,
+"rp": true,
+"pc": 54.1,
+"ci": 3
 },
 {
 "id": "39809242",
@@ -1329,7 +1557,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCRC2021M01"
+"reg": "NCRC2021M01",
+"oy": 2025,
+"om": 1,
+"rcr": 5.461729931135558,
+"rp": true,
+"pc": 93.2,
+"ci": 12
 },
 {
 "id": "39814513",
@@ -1355,7 +1589,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 11,
+"rcr": 6.9746494916109025,
+"rp": true,
+"pc": 95.4,
+"ci": 14
 },
 {
 "id": "39828329",
@@ -1379,7 +1619,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": null,
+"rcr": 3.035660502201555,
+"rp": true,
+"pc": 84.1,
+"ci": 5
 },
 {
 "id": "39868023",
@@ -1405,7 +1651,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": "NCT05372744"
+"reg": "NCT05372744",
+"oy": 2025,
+"om": 1,
+"rcr": 0.7099646433247561,
+"rp": true,
+"pc": 38.8,
+"ci": 1
 },
 {
 "id": "39876999",
@@ -1431,7 +1683,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 1,
+"rcr": 5.198067124254381,
+"rp": true,
+"pc": 92.7,
+"ci": 12
 },
 {
 "id": "39916353",
@@ -1457,7 +1715,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "CRD42023453038"
+"reg": "CRD42023453038",
+"oy": 2025,
+"om": 2,
+"rcr": 9.343914771240737,
+"rp": true,
+"pc": 97.2,
+"ci": 16
 },
 {
 "id": "39940114",
@@ -1481,7 +1745,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 2,
+"rcr": 0.9511980952887904,
+"rp": true,
+"pc": 48.4,
+"ci": 1
 },
 {
 "id": "39951864",
@@ -1505,7 +1775,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 2,
+"rcr": 5.121915299862158,
+"rp": true,
+"pc": 92.5,
+"ci": 8
 },
 {
 "id": "39970620",
@@ -1531,7 +1807,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "CRD42024500781"
+"reg": "CRD42024500781",
+"oy": 2025,
+"om": 2,
+"rcr": 7.77654593940517,
+"rp": true,
+"pc": 96.2,
+"ci": 15
 },
 {
 "id": "40037817",
@@ -1557,7 +1839,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 1.3966793101665944,
+"rp": true,
+"pc": 61.7,
+"ci": 3
 },
 {
 "id": "40037820",
@@ -1583,7 +1871,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 0.35291198959346326,
+"rp": true,
+"pc": 21.1,
+"ci": 1
 },
 {
 "id": "40037822",
@@ -1609,7 +1903,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 1.7352371135378593,
+"rp": true,
+"pc": 68.9,
+"ci": 4
 },
 {
 "id": "40037826",
@@ -1633,7 +1933,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "40063161",
@@ -1657,7 +1963,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 78.97748519942832,
+"rp": true,
+"pc": 100,
+"ci": 126
 },
 {
 "id": "40064389",
@@ -1681,7 +1993,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 2.1519049918645794,
+"rp": true,
+"pc": 75.4,
+"ci": 6
 },
 {
 "id": "40082694",
@@ -1707,7 +2025,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 1.8960276977060704,
+"rp": true,
+"pc": 71.7,
+"ci": 3
 },
 {
 "id": "40100874",
@@ -1734,7 +2058,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 2.1606065226930546,
+"rp": true,
+"pc": 75.6,
+"ci": 4
 },
 {
 "id": "40113972",
@@ -1762,7 +2092,13 @@
 "url": "https://osf.io/4q7d2/",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 3,
+"rcr": 1.4961469617993377,
+"rp": true,
+"pc": 64,
+"ci": 3
 },
 {
 "id": "40169979",
@@ -1788,7 +2124,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 4,
+"rcr": 1.7563302960145044,
+"rp": true,
+"pc": 69.3,
+"ci": 3
 },
 {
 "id": "40210648",
@@ -1814,7 +2156,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 4,
+"rcr": 1.2496279980998086,
+"rp": true,
+"pc": 57.9,
+"ci": 2
 },
 {
 "id": "40210978",
@@ -1840,7 +2188,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 4,
+"rcr": 3.1428965865310325,
+"rp": true,
+"pc": 84.8,
+"ci": 8
 },
 {
 "id": "40256822",
@@ -1866,7 +2220,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 4,
+"rcr": 1.0972981127145796,
+"rp": true,
+"pc": 53.3,
+"ci": 3
 },
 {
 "id": "40268759",
@@ -1890,7 +2250,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 5,
+"rcr": 1.2837293605139561,
+"rp": true,
+"pc": 58.8,
+"ci": 3
 },
 {
 "id": "40313139",
@@ -1916,7 +2282,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 5,
+"rcr": 2.7345567490283766,
+"rp": true,
+"pc": 81.7,
+"ci": 6
 },
 {
 "id": "40402637",
@@ -1943,7 +2315,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 12,
+"rcr": 2.0355858031151426,
+"rp": true,
+"pc": 73.8,
+"ci": 3
 },
 {
 "id": "40436207",
@@ -1967,7 +2345,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 5,
+"rcr": 3.21471526278639,
+"rp": true,
+"pc": 85.2,
+"ci": 10
 },
 {
 "id": "40441626",
@@ -1993,7 +2377,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 5,
+"rcr": 3.617663476358951,
+"rp": true,
+"pc": 87.5,
+"ci": 6
 },
 {
 "id": "40481455",
@@ -2019,7 +2409,13 @@
 "url": "https://osf.io/dxqws/",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 6,
+"rcr": 3.0917365051899504,
+"rp": true,
+"pc": 84.4,
+"ci": 10
 },
 {
 "id": "40506530",
@@ -2045,7 +2441,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 6,
+"rcr": 2.099575155170364,
+"rp": true,
+"pc": 74.7,
+"ci": 6
 },
 {
 "id": "40651720",
@@ -2072,7 +2474,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 7,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 3
 },
 {
 "id": "40655913",
@@ -2096,7 +2504,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 10,
+"rcr": 0.6898711311574168,
+"rp": false,
+"pc": 37.9,
+"ci": 2
 },
 {
 "id": "40667504",
@@ -2122,7 +2536,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 7,
+"rcr": 1.4097505820857161,
+"rp": true,
+"pc": 62,
+"ci": 3
 },
 {
 "id": "40691132",
@@ -2150,7 +2570,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 7,
+"rcr": 1.7519840196076382,
+"rp": true,
+"pc": 69.2,
+"ci": 6
 },
 {
 "id": "40717812",
@@ -2176,7 +2602,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2024,
+"om": 6,
+"rcr": 3.0690809970661204,
+"rp": false,
+"pc": 84.3,
+"ci": 12
 },
 {
 "id": "40751564",
@@ -2203,7 +2635,13 @@
 "url": "https://doi.org/10.15154/3TK5-PB47",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 9,
+"rcr": 0.3733463810174797,
+"rp": true,
+"pc": 22.2,
+"ci": 1
 },
 {
 "id": "40804652",
@@ -2229,7 +2667,13 @@
 "url": "https://doi.org/10.17605/OSF.IO/B3A7D",
 "code": false,
 "pre": true,
-"reg": "10.17605/OSF.IO/B3A7D"
+"reg": "10.17605/OSF.IO/B3A7D",
+"oy": 2025,
+"om": 8,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "40817168",
@@ -2255,7 +2699,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "40852172",
@@ -2281,7 +2731,13 @@
 "url": "http://dx.doi.org/10.15154/1528446",
 "code": true,
 "pre": false,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 7,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "40886717",
@@ -2305,7 +2761,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 8,
+"rcr": 3.8867787116302317,
+"rp": true,
+"pc": 88.7,
+"ci": 12
 },
 {
 "id": "40948223",
@@ -2331,7 +2793,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 9,
+"rcr": 1.2721954039954118,
+"rp": true,
+"pc": 58.5,
+"ci": 3
 },
 {
 "id": "40991280",
@@ -2357,7 +2825,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 11,
+"rcr": 2.5532391531499883,
+"rp": true,
+"pc": 80,
+"ci": 7
 },
 {
 "id": "41053084",
@@ -2384,7 +2858,13 @@
 "url": "https://doi.org/10.5281/zenodo.16813454",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": 0.9912863936200598,
+"rp": true,
+"pc": 49.8,
+"ci": 3
 },
 {
 "id": "41056268",
@@ -2410,7 +2890,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41067133",
@@ -2437,7 +2923,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DDRKS00008743"
+"reg": "DDRKS00008743",
+"oy": 2025,
+"om": 9,
+"rcr": 1.9335702371253498,
+"rp": true,
+"pc": 72.3,
+"ci": 4
 },
 {
 "id": "41073627",
@@ -2461,7 +2953,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": 3.3442453581646037,
+"rp": true,
+"pc": 86,
+"ci": 6
 },
 {
 "id": "41076451",
@@ -2487,7 +2985,13 @@
 "url": "https://doi.org/10.5281/zenodo.11235373",
 "code": false,
 "pre": true,
-"reg": "DRKS00022774"
+"reg": "DRKS00022774",
+"oy": 2025,
+"om": 10,
+"rcr": 2.325505000405488,
+"rp": true,
+"pc": 77.6,
+"ci": 5
 },
 {
 "id": "41086598",
@@ -2514,7 +3018,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00008743"
+"reg": "DRKS00008743",
+"oy": 2025,
+"om": 9,
+"rcr": 1.2037350035253707,
+"rp": true,
+"pc": 56.5,
+"ci": 2
 },
 {
 "id": "41086650",
@@ -2541,7 +3051,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": 0.8514964728167017,
+"rp": true,
+"pc": 44.6,
+"ci": 2
 },
 {
 "id": "41106527",
@@ -2567,7 +3083,13 @@
 "url": null,
 "code": false,
 "pre": false,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41119561",
@@ -2593,7 +3115,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": 0.7961951668054955,
+"rp": true,
+"pc": 42.4,
+"ci": 1
 },
 {
 "id": "41129939",
@@ -2620,7 +3148,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 10,
+"rcr": 1.8436894331339757,
+"rp": true,
+"pc": 70.8,
+"ci": 2
 },
 {
 "id": "41152407",
@@ -2646,7 +3180,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "CRD42024576137"
+"reg": "CRD42024576137",
+"oy": 2025,
+"om": 10,
+"rcr": 4.521393704726486,
+"rp": true,
+"pc": null,
+"ci": 9
 },
 {
 "id": "41160917",
@@ -2672,7 +3212,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00023907"
+"reg": "DRKS00023907",
+"oy": 2025,
+"om": 10,
+"rcr": 0.4223952880636279,
+"rp": true,
+"pc": 24.8,
+"ci": 1
 },
 {
 "id": "41197413",
@@ -2698,7 +3244,13 @@
 "url": "https://osf.io/am69e/",
 "code": true,
 "pre": false,
-"reg": "NCT06962917"
+"reg": "NCT06962917",
+"oy": 2025,
+"om": 11,
+"rcr": 1.518611630895424,
+"rp": true,
+"pc": 64.6,
+"ci": 3
 },
 {
 "id": "41202447",
@@ -2724,7 +3276,13 @@
 "url": "https://osf.io/2mkfq/?",
 "code": false,
 "pre": true,
-"reg": "NCT06258889"
+"reg": "NCT06258889",
+"oy": 2025,
+"om": 10,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41243355",
@@ -2751,7 +3309,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 11,
+"rcr": 0.40786769346897495,
+"rp": true,
+"pc": 24.1,
+"ci": 1
 },
 {
 "id": "41252645",
@@ -2777,7 +3341,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCT01912287"
+"reg": "NCT01912287",
+"oy": 2025,
+"om": 11,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41261989",
@@ -2803,7 +3373,13 @@
 "url": "https://osf.io/n5cd7/",
 "code": false,
 "pre": true,
-"reg": "https://osf.io/6x93n"
+"reg": "https://osf.io/6x93n",
+"oy": 2025,
+"om": 11,
+"rcr": 6.508335560980388,
+"rp": true,
+"pc": 94.9,
+"ci": 10
 },
 {
 "id": "41266876",
@@ -2830,7 +3406,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 11,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "41275967",
@@ -2857,7 +3439,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 11,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41316488",
@@ -2883,7 +3471,13 @@
 "url": "https://doi.org/10.5281/zenodo.17681223",
 "code": false,
 "pre": true,
-"reg": "DRKS00030971"
+"reg": "DRKS00030971",
+"oy": 2025,
+"om": 11,
+"rcr": 2.8358771973701042,
+"rp": true,
+"pc": 82.6,
+"ci": 6
 },
 {
 "id": "41322989",
@@ -2909,7 +3503,13 @@
 "url": null,
 "code": false,
 "pre": false,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 11,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41327287",
@@ -2936,7 +3536,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00021536"
+"reg": "DRKS00021536",
+"oy": 2025,
+"om": 12,
+"rcr": 0.7568705819151664,
+"rp": true,
+"pc": 40.8,
+"ci": 1
 },
 {
 "id": "41338325",
@@ -2962,7 +3568,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 12,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41369840",
@@ -2988,7 +3600,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 12,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41388755",
@@ -3012,7 +3630,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "CRD420251122423"
+"reg": "CRD420251122423",
+"oy": 2025,
+"om": 12,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 2
 },
 {
 "id": "41398324",
@@ -3038,7 +3662,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 12,
+"rcr": 1.2885189595476325,
+"rp": true,
+"pc": 58.9,
+"ci": 2
 },
 {
 "id": "41407866",
@@ -3064,7 +3694,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 12,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 3
 },
 {
 "id": "41420114",
@@ -3091,7 +3727,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 12,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41526712",
@@ -3118,7 +3760,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 1,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "41540261",
@@ -3145,7 +3793,13 @@
 "url": "https://doi.org/10.7910/DVN/ILXIKS",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 1,
+"rcr": 8.0211875089261,
+"rp": true,
+"pc": null,
+"ci": 16
 },
 {
 "id": "41572735",
@@ -3172,7 +3826,13 @@
 "url": "https://github.com/NeuroSTA/NeuroSTA",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 1,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 2
 },
 {
 "id": "41586200",
@@ -3198,7 +3858,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 1,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41587050",
@@ -3222,7 +3888,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 2,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "41601603",
@@ -3248,7 +3920,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 1,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "41617883",
@@ -3274,7 +3952,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 1,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 3
 },
 {
 "id": "41642335",
@@ -3298,7 +3982,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 2,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41725695",
@@ -3324,7 +4014,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 11,
+"rcr": 0.9280072648098658,
+"rp": true,
+"pc": 47.5,
+"ci": 1
 },
 {
 "id": "41764298",
@@ -3351,7 +4047,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 2,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41764586",
@@ -3377,7 +4079,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 2,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41800586",
@@ -3403,7 +4111,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 12,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "41805604",
@@ -3429,7 +4143,13 @@
 "url": "https://osf.io/sx8vu/",
 "code": false,
 "pre": true,
-"reg": "https://osf.io/sx8vu/"
+"reg": "https://osf.io/sx8vu/",
+"oy": 2026,
+"om": 3,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "41816006",
@@ -3455,7 +4175,13 @@
 "url": "https://github.com/naherzog/DLEEGfMRI",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 3,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41844582",
@@ -3481,7 +4207,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 3,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "41857208",
@@ -3507,7 +4239,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00029742"
+"reg": "DRKS00029742",
+"oy": 2026,
+"om": 3,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41872152",
@@ -3533,7 +4271,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 3,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41935030",
@@ -3559,7 +4303,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41966229",
@@ -3585,7 +4335,13 @@
 "url": null,
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41980009",
@@ -3611,7 +4367,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "41993606",
@@ -3638,7 +4400,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 2,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42000524",
@@ -3664,7 +4432,13 @@
 "url": "https://doi.org/10.17605/OSF.IO/VU4H6",
 "code": false,
 "pre": true,
-"reg": "10.17605/OSF.IO/VU4H6"
+"reg": "10.17605/OSF.IO/VU4H6",
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 4
 },
 {
 "id": "42000906",
@@ -3690,7 +4464,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42008786",
@@ -3718,7 +4498,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42010820",
@@ -3745,7 +4531,13 @@
 "url": "https://osf.io/s6jqc",
 "code": false,
 "pre": true,
-"reg": "https://osf.io/s6jqc"
+"reg": "https://osf.io/s6jqc",
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42052505",
@@ -3772,7 +4564,13 @@
 "url": "https://doi.org/10.17605/OSF.IO/PHE9A",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42092045",
@@ -3798,7 +4596,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "CRD42022303509"
+"reg": "CRD42022303509",
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 2
 },
 {
 "id": "42092437",
@@ -3825,7 +4629,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42097784",
@@ -3851,7 +4661,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCT06034613"
+"reg": "NCT06034613",
+"oy": 2025,
+"om": 12,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42105630",
@@ -3877,7 +4693,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42107153",
@@ -3903,7 +4725,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 4,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42119282",
@@ -3929,7 +4757,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42137962",
@@ -3956,7 +4790,13 @@
 "url": null,
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42187272",
@@ -3983,7 +4823,13 @@
 "url": "https://talkbank.org/psychosis/",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42234441",
@@ -4009,7 +4855,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42263052",
@@ -4036,7 +4888,13 @@
 "url": "https://redcap.link/data_sharing",
 "code": false,
 "pre": true,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42263356",
@@ -4063,7 +4921,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42287787",
@@ -4090,7 +4954,13 @@
 "url": null,
 "code": false,
 "pre": false,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42324304",
@@ -4116,7 +4986,13 @@
 "url": "https://osf.io/s9xug/",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42330189",
@@ -4143,7 +5019,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42368888",
@@ -4170,7 +5052,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42384403",
@@ -4196,7 +5084,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "ChiCTR2200057398; NCT06035003"
+"reg": "ChiCTR2200057398; NCT06035003",
+"oy": 2026,
+"om": null,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42398428",
@@ -4222,7 +5116,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 6,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42460405",
@@ -4248,7 +5148,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2025,
+"om": 1,
+"rcr": 0,
+"rp": true,
+"pc": 0,
+"ci": 0
 },
 {
 "id": "42463908",
@@ -4274,7 +5180,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 7,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42518170",
@@ -4300,7 +5212,13 @@
 "url": "https://osf.io/k6mdh/overview",
 "code": false,
 "pre": true,
-"reg": "k6mdh"
+"reg": "k6mdh",
+"oy": 2026,
+"om": 7,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42571020",
@@ -4326,7 +5244,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "DRKS00020516"
+"reg": "DRKS00020516",
+"oy": 2026,
+"om": 7,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42595374",
@@ -4350,7 +5274,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42599846",
@@ -4376,7 +5306,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "ChiCTR2400091400"
+"reg": "ChiCTR2400091400",
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42624880",
@@ -4403,7 +5339,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42627212",
@@ -4429,7 +5371,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42628150",
@@ -4455,7 +5403,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42630828",
@@ -4481,7 +5435,13 @@
 "url": "https://osf.io/gkm9f",
 "code": false,
 "pre": true,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42709645",
@@ -4508,7 +5468,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42716721",
@@ -4534,7 +5500,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42732257",
@@ -4560,7 +5532,13 @@
 "url": "https://osf.io/tdv8u/",
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42734915",
@@ -4586,7 +5564,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42772405",
@@ -4612,7 +5596,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42778181",
@@ -4638,7 +5628,13 @@
 "url": "https://lir-mainz.de/studien",
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 10,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 1
 },
 {
 "id": "42787508",
@@ -4664,7 +5660,13 @@
 "url": null,
 "code": true,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 5,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42795927",
@@ -4688,7 +5690,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42799903",
@@ -4715,7 +5723,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42805955",
@@ -4743,7 +5757,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "https://osf.io/s6jqc/"
+"reg": "https://osf.io/s6jqc/",
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42816754",
@@ -4769,7 +5789,13 @@
 "url": null,
 "code": false,
 "pre": true,
-"reg": "NCT06785259"
+"reg": "NCT06785259",
+"oy": 2026,
+"om": 10,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42830766",
@@ -4795,7 +5821,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 9,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42859254",
@@ -4821,7 +5853,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 10,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42900769",
@@ -4845,7 +5883,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 8,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 },
 {
 "id": "42905697",
@@ -4871,7 +5915,13 @@
 "url": null,
 "code": false,
 "pre": null,
-"reg": null
+"reg": null,
+"oy": 2026,
+"om": 10,
+"rcr": null,
+"rp": null,
+"pc": null,
+"ci": 0
 }
 ],
 "samples": [

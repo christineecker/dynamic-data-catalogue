@@ -161,6 +161,10 @@ for p,r in sorted(R.items()):
         if (p,i) in FE:
             f,q=FE[(p,i)]; assert sq(q) in src(p),(p,q); feeds.append(dict(**{'from':f},sample=sid,quote=q))
 assert not PROBLEMS,PROBLEMS
+# ---- publication months and iCite metrics, fetched 2026-11-06 via pubmed-cyanheads
+_ps=json.load(open(H+'/extraction/pubstats.json'))
+for _p in papers:
+    _o=_ps[_p['id']]; _p.update(oy=_o['y'],om=_o['m'],rcr=_o.get('rcr'),rp=_o.get('prov'),pc=_o.get('pct'),ci=_o.get('cites'))
 # ---- agreement: blind second extraction vs first pass
 dbl=json.load(open(H+'/extraction/double.json')); rows=[]
 big=lambda r:max([s.get('n_analysed') or 0 for s in r.get('samples',[])] or [0])

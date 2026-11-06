@@ -1,17 +1,20 @@
 /* Shared page shell: banner, sub-bar, sidebar. Loaded last, so it overrides each page's older rules.
    Blue #569CE0 from the swatch supplied. White on it is 2.9:1, so solid fills carry navy #0B2A44 (5.1:1); --dyn-ink is the same hue for text on light. */
 :root{--dyn:#569CE0;--dyn-ink:#1D5C99;--dyn-on:#0B2A44;--dyn-soft:#569CE029;--grey:#6B7D8F14;--grey2:#6B7D8F24}
-header.top{position:static;z-index:auto;background:var(--paper);border-bottom:1px solid var(--ctl)}
-.top-in{max-width:1500px;padding:18px 24px;gap:24px;flex-wrap:nowrap;align-items:center;margin:0 auto}
-.brandlogos{gap:22px}
-.brandlogos img{height:64px}
-.brandname{display:flex;flex-direction:column;gap:3px;min-width:0}
-.top-in h1{display:flex;align-items:center;gap:10px;font-size:30px;font-weight:600;letter-spacing:-.03em;white-space:nowrap}
-.ver{font:500 12.5px var(--mono);letter-spacing:0;color:var(--dyn-on);background:var(--dyn-soft);padding:2px 8px;border-radius:999px}
+header.top{position:static;z-index:auto;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:none;padding:28px 32px;gap:32px;flex-wrap:nowrap;align-items:center;margin:0 auto}
+.brandlogos{gap:28px;min-width:0}
+/* the logo file has about 35% empty canvas on its right: crop it so the title sits next to the mark */
+.brandlogos img{height:72px;width:245px;object-fit:cover;object-position:left center;mix-blend-mode:multiply;flex:none}
+.brandname{display:flex;flex-direction:column;gap:4px;min-width:0;padding-left:28px;border-left:1px solid var(--ctl)}
+.top-in h1{display:flex;align-items:center;gap:10px;font-size:36px;line-height:1.1;font-weight:600;letter-spacing:-.035em;white-space:nowrap}
+.ver{font:500 12px var(--mono);letter-spacing:0;color:var(--dyn-ink);background:#FFFFFFB3;box-shadow:inset 0 0 0 1px var(--dyn-soft);padding:2px 9px;border-radius:999px}
 .tagline{font-size:13.5px;color:var(--muted)}
-header.top img.lw{height:72px!important;width:auto;margin-left:auto}
-.subbar{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
-.subbar-in{max-width:1500px;margin:0 auto;padding:8px 24px;display:flex;justify-content:flex-end;align-items:center;gap:14px}
+.funder{margin-left:auto;display:flex;align-items:center;gap:12px;flex:none}
+.funder span{font-size:12px;color:var(--muted);white-space:nowrap}
+header.top img.lw{height:76px;width:auto;mix-blend-mode:multiply}
+.subbar{position:sticky;top:0;z-index:30;background:#FCFCFCE6;backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.subbar-in{max-width:none;margin:0;padding:8px 32px;display:flex;justify-content:flex-end;align-items:center;gap:14px}
 .subbar .src{font-size:12.5px;color:var(--muted)}
 .sitenav{background:var(--grey2);border:0;padding:3px;gap:2px;border-radius:999px}
 .sitenav a{display:inline-flex;align-items:center;gap:7px;padding:6px 15px 6px 12px;border-radius:999px;color:var(--ink);font-size:13.5px;font-weight:500;line-height:1.3;transition:background .15s,color .15s,box-shadow .15s}
@@ -20,8 +23,8 @@ header.top img.lw{height:72px!important;width:auto;margin-left:auto}
 .sitenav a.on{background:#fff;color:var(--strong);font-weight:600;box-shadow:0 1px 2px #2E33381F,0 2px 8px #2E333814}
 .sitenav a.on .ni{color:var(--dyn)}
 @media (prefers-reduced-motion:reduce){.sitenav a{transition:none}}
-.wrap{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:232px minmax(0,1fr);gap:0}
-aside.side{position:sticky;top:60px;align-self:start;padding:22px 12px 24px 24px;height:calc(100vh - 60px);overflow:auto;border-right:1px solid var(--rule)}
+.wrap{max-width:none;margin:0;display:grid;grid-template-columns:240px minmax(0,1fr);gap:0}
+aside.side{position:sticky;top:60px;align-self:start;padding:22px 12px 24px 32px;height:calc(100vh - 60px);overflow:auto;border-right:1px solid var(--rule)}
 .sidet{font:500 12px var(--body);letter-spacing:0;text-transform:none;color:var(--muted);margin:0 0 8px 10px}
 nav.ch{display:flex;flex-direction:column;gap:1px;flex-basis:auto;margin:0}
 nav.ch a{position:relative;display:flex;align-items:center;gap:10px;padding:7px 10px;border:0;border-radius:8px;color:var(--ink);font-size:14px;font-weight:500;line-height:1.3;text-decoration:none;background:none;transition:background .12s}
@@ -31,10 +34,12 @@ nav.ch a.on{color:var(--strong);font-weight:600;background:var(--grey2);border:0
 nav.ch a.on .ni{color:var(--dyn)}
 nav.ch a.on::before{content:"";position:absolute;left:-6px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--dyn)}
 @media (prefers-reduced-motion:reduce){nav.ch a{transition:none}}
-.wrap>main{max-width:none;margin:0;min-width:0}
+.wrap>main{max-width:none;margin:0;min-width:0;padding-right:32px}
 section.chapter{scroll-margin-top:60px}
 .tip{display:inline-flex;align-items:center;gap:8px;padding:6px 13px 6px 10px;border-radius:999px;background:var(--dyn-soft);color:var(--dyn-on);font-size:14px;font-weight:600}
 .tip .ni{flex:none;color:var(--dyn-ink)}
+/* fingerprint at size 11 needs 329px, so cards must not go narrower */
+#featured{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr))}
 /* controls */
 .fbrow{gap:6px}
 .fb{border:0;border-radius:999px;background:var(--grey);color:var(--strong);padding:8px 10px 8px 12px;font-size:13.5px;font-weight:600;gap:7px;transition:background .15s,color .15s}
@@ -62,10 +67,13 @@ section.chapter{scroll-margin-top:60px}
 :focus-visible{outline-color:var(--dyn-ink)}
 @media(max-width:1000px){
  .top-in{padding:12px 16px;gap:12px;flex-wrap:wrap}
- .brandlogos img{height:44px}
+ .brandlogos{gap:14px}
+ .brandlogos img{height:40px;width:136px}
+ .brandname{padding-left:14px}
  .top-in h1{font-size:22px}
  .tagline{display:none}
- header.top img.lw{height:48px!important}
+ header.top img.lw{height:44px}
+ .funder span{display:none}
  .subbar-in{padding:6px 16px}
  .wrap{grid-template-columns:minmax(0,1fr)}
  aside.side{position:static;height:auto;border-right:0;padding:12px 16px 0}

@@ -1,0 +1,1752 @@
+{
+"38337673": {
+"y": 2024,
+"m": 1,
+"src": "electronic",
+"rcr": 4.285508044876424,
+"prov": false,
+"pct": 90.2,
+"cites": 20,
+"res": true
+},
+"38497207": {
+"y": 2024,
+"m": 3,
+"src": "electronic",
+"rcr": 0.35683337228384954,
+"prov": false,
+"pct": 21.3,
+"cites": 1,
+"res": true
+},
+"38555826": {
+"y": 2024,
+"m": 3,
+"src": "electronic",
+"rcr": 0.3777001753041613,
+"prov": false,
+"pct": 22.5,
+"cites": 2,
+"res": true
+},
+"38589553": {
+"y": 2024,
+"m": 4,
+"src": "electronic",
+"rcr": 4.83695677695116,
+"prov": false,
+"pct": 91.8,
+"cites": 16,
+"res": true
+},
+"38593025": {
+"y": 2024,
+"m": 4,
+"src": "electronic",
+"rcr": 0.3618040801965173,
+"prov": false,
+"pct": 21.6,
+"cites": 1,
+"res": true
+},
+"38635978": {
+"y": 2024,
+"m": 4,
+"src": "electronic",
+"rcr": 3.0094120646377283,
+"prov": false,
+"pct": 83.9,
+"cites": 11,
+"res": true
+},
+"38688158": {
+"y": 2024,
+"m": 3,
+"src": "electronic",
+"rcr": 9.830981093052628,
+"prov": false,
+"pct": 97.4,
+"cites": 35,
+"res": false
+},
+"38801091": {
+"y": 2024,
+"m": 5,
+"src": "electronic",
+"rcr": 1.8111676062063045,
+"prov": false,
+"pct": 70.3,
+"cites": 8,
+"res": true
+},
+"38884177": {
+"y": 2024,
+"m": 6,
+"src": "electronic",
+"rcr": 0.6891571132384545,
+"prov": false,
+"pct": 37.8,
+"cites": 3,
+"res": false
+},
+"38889066": {
+"y": 2024,
+"m": 6,
+"src": "electronic",
+"rcr": 1.3055903385914964,
+"prov": false,
+"pct": 59.4,
+"cites": 4,
+"res": false
+},
+"38903470": {
+"y": 2024,
+"m": 6,
+"src": "electronic",
+"rcr": 3.6475905375987523,
+"prov": false,
+"pct": 87.6,
+"cites": 9,
+"res": true
+},
+"38938460": {
+"y": 2024,
+"m": 6,
+"src": "electronic",
+"rcr": 0.3173192010873536,
+"prov": false,
+"pct": 19.2,
+"cites": 1,
+"res": true
+},
+"39024740": {
+"y": 2024,
+"m": 7,
+"src": "electronic",
+"rcr": 3.0480074071986247,
+"prov": false,
+"pct": 84.1,
+"cites": 12,
+"res": true
+},
+"39046822": {
+"y": 2025,
+"m": 7,
+"src": "journal",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"39095370": {
+"y": 2024,
+"m": 8,
+"src": "electronic",
+"rcr": 2.8041201376333444,
+"prov": false,
+"pct": 82.3,
+"cites": 18,
+"res": true
+},
+"39119222": {
+"y": 2024,
+"m": 3,
+"src": "electronic",
+"rcr": 0.6237746380087119,
+"prov": false,
+"pct": 34.9,
+"cites": 2,
+"res": false
+},
+"39186743": {
+"y": 2024,
+"m": 8,
+"src": "electronic",
+"rcr": 1.682104087811288,
+"prov": false,
+"pct": 67.9,
+"cites": 7,
+"res": true
+},
+"39235861": {
+"y": 2024,
+"m": 9,
+"src": "electronic",
+"rcr": 1.2934855275052177,
+"prov": false,
+"pct": 59.1,
+"cites": 4,
+"res": true
+},
+"39283418": {
+"y": 2024,
+"m": null,
+"src": "year-only",
+"rcr": 0.829861975923215,
+"prov": false,
+"pct": 43.8,
+"cites": 5,
+"res": true
+},
+"39328424": {
+"y": 2024,
+"m": 9,
+"src": "electronic",
+"rcr": 1.331218066066575,
+"prov": false,
+"pct": 60.1,
+"cites": 5,
+"res": true
+},
+"39359967": {
+"y": 2024,
+"m": 9,
+"src": "electronic",
+"rcr": 1.4173898015478077,
+"prov": false,
+"pct": 62.2,
+"cites": 4,
+"res": true
+},
+"39369190": {
+"y": 2024,
+"m": 10,
+"src": "electronic",
+"rcr": 0.2817929285741111,
+"prov": false,
+"pct": 17.2,
+"cites": 1,
+"res": true
+},
+"39380071": {
+"y": 2024,
+"m": 10,
+"src": "electronic",
+"rcr": 0.5518657172617762,
+"prov": false,
+"pct": 31.4,
+"cites": 2,
+"res": true
+},
+"39412777": {
+"y": 2024,
+"m": 12,
+"src": "journal",
+"rcr": 2.37611088385995,
+"prov": false,
+"pct": 78.2,
+"cites": 16,
+"res": true
+},
+"39423456": {
+"y": 2024,
+"m": 10,
+"src": "electronic",
+"rcr": 0.2818579927460284,
+"prov": false,
+"pct": 17.2,
+"cites": 1,
+"res": true
+},
+"39472472": {
+"y": 2024,
+"m": 10,
+"src": "electronic",
+"rcr": 0.2838239866503253,
+"prov": false,
+"pct": 17.3,
+"cites": 1,
+"res": true
+},
+"39487121": {
+"y": 2024,
+"m": 11,
+"src": "electronic",
+"rcr": 0.8833046067894712,
+"prov": false,
+"pct": 45.9,
+"cites": 3,
+"res": true
+},
+"39551574": {
+"y": 2024,
+"m": 11,
+"src": "electronic",
+"rcr": 1.0341465707324666,
+"prov": true,
+"pct": 51.3,
+"cites": 2,
+"res": true
+},
+"39578982": {
+"y": 2025,
+"m": 1,
+"src": "journal",
+"rcr": 1.527457912240446,
+"prov": true,
+"pct": 64.7,
+"cites": 3,
+"res": true
+},
+"39615758": {
+"y": 2024,
+"m": 11,
+"src": "electronic",
+"rcr": 6.5492760621965465,
+"prov": true,
+"pct": 94.9,
+"cites": 15,
+"res": true
+},
+"39668233": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": false
+},
+"39693869": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"39701384": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 0.22490445767764117,
+"prov": true,
+"pct": 14,
+"cites": 1,
+"res": true
+},
+"39702504": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 0.44666189776181825,
+"prov": false,
+"pct": 26.1,
+"cites": 2,
+"res": true
+},
+"39706901": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 3.356482776137826,
+"prov": false,
+"pct": 86.1,
+"cites": 13,
+"res": true
+},
+"39732083": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 2.084276859714276,
+"prov": true,
+"pct": 74.5,
+"cites": 4,
+"res": true
+},
+"39755292": {
+"y": 2025,
+"m": 1,
+"src": "electronic",
+"rcr": 10.249921812335318,
+"prov": true,
+"pct": 97.6,
+"cites": 21,
+"res": true
+},
+"39763023": {
+"y": 2025,
+"m": 1,
+"src": "electronic",
+"rcr": 1.120748365242119,
+"prov": true,
+"pct": 54.1,
+"cites": 3,
+"res": true
+},
+"39809242": {
+"y": 2025,
+"m": 1,
+"src": "electronic",
+"rcr": 5.461729931135558,
+"prov": true,
+"pct": 93.2,
+"cites": 12,
+"res": true
+},
+"39814513": {
+"y": 2024,
+"m": 11,
+"src": "electronic",
+"rcr": 6.9746494916109025,
+"prov": true,
+"pct": 95.4,
+"cites": 14,
+"res": true
+},
+"39828329": {
+"y": 2025,
+"m": null,
+"src": "year-only",
+"rcr": 3.035660502201555,
+"prov": true,
+"pct": 84.1,
+"cites": 5,
+"res": true
+},
+"39868023": {
+"y": 2025,
+"m": 1,
+"src": "electronic",
+"rcr": 0.7099646433247561,
+"prov": true,
+"pct": 38.8,
+"cites": 1,
+"res": true
+},
+"39876999": {
+"y": 2025,
+"m": 1,
+"src": "electronic",
+"rcr": 5.198067124254381,
+"prov": true,
+"pct": 92.7,
+"cites": 12,
+"res": true
+},
+"39916353": {
+"y": 2025,
+"m": 2,
+"src": "electronic",
+"rcr": 9.343914771240737,
+"prov": true,
+"pct": 97.2,
+"cites": 16,
+"res": false
+},
+"39940114": {
+"y": 2025,
+"m": 2,
+"src": "electronic",
+"rcr": 0.9511980952887904,
+"prov": true,
+"pct": 48.4,
+"cites": 1,
+"res": false
+},
+"39951864": {
+"y": 2025,
+"m": 2,
+"src": "electronic",
+"rcr": 5.121915299862158,
+"prov": true,
+"pct": 92.5,
+"cites": 8,
+"res": true
+},
+"39970620": {
+"y": 2025,
+"m": 2,
+"src": "electronic",
+"rcr": 7.77654593940517,
+"prov": true,
+"pct": 96.2,
+"cites": 15,
+"res": true
+},
+"40037817": {
+"y": 2025,
+"m": 3,
+"src": "journal",
+"rcr": 1.3966793101665944,
+"prov": true,
+"pct": 61.7,
+"cites": 3,
+"res": true
+},
+"40037820": {
+"y": 2025,
+"m": 3,
+"src": "journal",
+"rcr": 0.35291198959346326,
+"prov": true,
+"pct": 21.1,
+"cites": 1,
+"res": true
+},
+"40037822": {
+"y": 2025,
+"m": 3,
+"src": "journal",
+"rcr": 1.7352371135378593,
+"prov": true,
+"pct": 68.9,
+"cites": 4,
+"res": true
+},
+"40037826": {
+"y": 2025,
+"m": 3,
+"src": "journal",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"40063161": {
+"y": 2025,
+"m": 3,
+"src": "electronic",
+"rcr": 78.97748519942832,
+"prov": true,
+"pct": 100,
+"cites": 126,
+"res": false
+},
+"40064389": {
+"y": 2025,
+"m": 3,
+"src": "electronic",
+"rcr": 2.1519049918645794,
+"prov": true,
+"pct": 75.4,
+"cites": 6,
+"res": false
+},
+"40082694": {
+"y": 2025,
+"m": 3,
+"src": "electronic",
+"rcr": 1.8960276977060704,
+"prov": true,
+"pct": 71.7,
+"cites": 3,
+"res": true
+},
+"40100874": {
+"y": 2025,
+"m": 3,
+"src": "electronic",
+"rcr": 2.1606065226930546,
+"prov": true,
+"pct": 75.6,
+"cites": 4,
+"res": true
+},
+"40113972": {
+"y": 2025,
+"m": 3,
+"src": "electronic",
+"rcr": 1.4961469617993377,
+"prov": true,
+"pct": 64,
+"cites": 3,
+"res": true
+},
+"40169979": {
+"y": 2025,
+"m": 4,
+"src": "electronic",
+"rcr": 1.7563302960145044,
+"prov": true,
+"pct": 69.3,
+"cites": 3,
+"res": true
+},
+"40210648": {
+"y": 2025,
+"m": 4,
+"src": "electronic",
+"rcr": 1.2496279980998086,
+"prov": true,
+"pct": 57.9,
+"cites": 2,
+"res": true
+},
+"40210978": {
+"y": 2025,
+"m": 4,
+"src": "electronic",
+"rcr": 3.1428965865310325,
+"prov": true,
+"pct": 84.8,
+"cites": 8,
+"res": true
+},
+"40256822": {
+"y": 2025,
+"m": 4,
+"src": "journal",
+"rcr": 1.0972981127145796,
+"prov": true,
+"pct": 53.3,
+"cites": 3,
+"res": true
+},
+"40268759": {
+"y": 2025,
+"m": 5,
+"src": "journal",
+"rcr": 1.2837293605139561,
+"prov": true,
+"pct": 58.8,
+"cites": 3,
+"res": false
+},
+"40313139": {
+"y": 2025,
+"m": 5,
+"src": "electronic",
+"rcr": 2.7345567490283766,
+"prov": true,
+"pct": 81.7,
+"cites": 6,
+"res": true
+},
+"40402637": {
+"y": 2024,
+"m": 12,
+"src": "electronic",
+"rcr": 2.0355858031151426,
+"prov": true,
+"pct": 73.8,
+"cites": 3,
+"res": true
+},
+"40436207": {
+"y": 2025,
+"m": 5,
+"src": "electronic",
+"rcr": 3.21471526278639,
+"prov": true,
+"pct": 85.2,
+"cites": 10,
+"res": false
+},
+"40441626": {
+"y": 2025,
+"m": 5,
+"src": "electronic",
+"rcr": 3.617663476358951,
+"prov": true,
+"pct": 87.5,
+"cites": 6,
+"res": true
+},
+"40481455": {
+"y": 2025,
+"m": 6,
+"src": "electronic",
+"rcr": 3.0917365051899504,
+"prov": true,
+"pct": 84.4,
+"cites": 10,
+"res": true
+},
+"40506530": {
+"y": 2025,
+"m": 6,
+"src": "electronic",
+"rcr": 2.099575155170364,
+"prov": true,
+"pct": 74.7,
+"cites": 6,
+"res": true
+},
+"40651720": {
+"y": 2025,
+"m": 7,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 3,
+"res": true
+},
+"40655913": {
+"y": 2024,
+"m": 10,
+"src": "electronic",
+"rcr": 0.6898711311574168,
+"prov": false,
+"pct": 37.9,
+"cites": 2,
+"res": false
+},
+"40667504": {
+"y": 2025,
+"m": 7,
+"src": "electronic",
+"rcr": 1.4097505820857161,
+"prov": true,
+"pct": 62,
+"cites": 3,
+"res": true
+},
+"40691132": {
+"y": 2025,
+"m": 7,
+"src": "electronic",
+"rcr": 1.7519840196076382,
+"prov": true,
+"pct": 69.2,
+"cites": 6,
+"res": true
+},
+"40717812": {
+"y": 2024,
+"m": 6,
+"src": "electronic",
+"rcr": 3.0690809970661204,
+"prov": false,
+"pct": 84.3,
+"cites": 12,
+"res": true
+},
+"40751564": {
+"y": 2025,
+"m": 9,
+"src": "journal",
+"rcr": 0.3733463810174797,
+"prov": true,
+"pct": 22.2,
+"cites": 1,
+"res": true
+},
+"40804652": {
+"y": 2025,
+"m": 8,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"40817168": {
+"y": 2025,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"40852172": {
+"y": 2025,
+"m": 7,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"40886717": {
+"y": 2025,
+"m": 8,
+"src": "electronic",
+"rcr": 3.8867787116302317,
+"prov": true,
+"pct": 88.7,
+"cites": 12,
+"res": false
+},
+"40948223": {
+"y": 2025,
+"m": 9,
+"src": "electronic",
+"rcr": 1.2721954039954118,
+"prov": true,
+"pct": 58.5,
+"cites": 3,
+"res": true
+},
+"40991280": {
+"y": 2025,
+"m": 11,
+"src": "journal",
+"rcr": 2.5532391531499883,
+"prov": true,
+"pct": 80,
+"cites": 7,
+"res": true
+},
+"41053084": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 0.9912863936200598,
+"prov": true,
+"pct": 49.8,
+"cites": 3,
+"res": true
+},
+"41056268": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41067133": {
+"y": 2025,
+"m": 9,
+"src": "electronic",
+"rcr": 1.9335702371253498,
+"prov": true,
+"pct": 72.3,
+"cites": 4,
+"res": true
+},
+"41073627": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 3.3442453581646037,
+"prov": true,
+"pct": 86,
+"cites": 6,
+"res": false
+},
+"41076451": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 2.325505000405488,
+"prov": true,
+"pct": 77.6,
+"cites": 5,
+"res": true
+},
+"41086598": {
+"y": 2025,
+"m": 9,
+"src": "electronic",
+"rcr": 1.2037350035253707,
+"prov": true,
+"pct": 56.5,
+"cites": 2,
+"res": true
+},
+"41086650": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 0.8514964728167017,
+"prov": true,
+"pct": 44.6,
+"cites": 2,
+"res": true
+},
+"41106527": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41119561": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 0.7961951668054955,
+"prov": true,
+"pct": 42.4,
+"cites": 1,
+"res": true
+},
+"41129939": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 1.8436894331339757,
+"prov": true,
+"pct": 70.8,
+"cites": 2,
+"res": true
+},
+"41152407": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 4.521393704726486,
+"prov": true,
+"pct": null,
+"cites": 9,
+"res": true
+},
+"41160917": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 0.4223952880636279,
+"prov": true,
+"pct": 24.8,
+"cites": 1,
+"res": true
+},
+"41197413": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 1.518611630895424,
+"prov": true,
+"pct": 64.6,
+"cites": 3,
+"res": true
+},
+"41202447": {
+"y": 2025,
+"m": 10,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41243355": {
+"y": 2025,
+"m": 11,
+"src": "journal",
+"rcr": 0.40786769346897495,
+"prov": true,
+"pct": 24.1,
+"cites": 1,
+"res": true
+},
+"41252645": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41261989": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 6.508335560980388,
+"prov": true,
+"pct": 94.9,
+"cites": 10,
+"res": true
+},
+"41266876": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"41275967": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41316488": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 2.8358771973701042,
+"prov": true,
+"pct": 82.6,
+"cites": 6,
+"res": true
+},
+"41322989": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41327287": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": 0.7568705819151664,
+"prov": true,
+"pct": 40.8,
+"cites": 1,
+"res": true
+},
+"41338325": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41369840": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41388755": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 2,
+"res": false
+},
+"41398324": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": 1.2885189595476325,
+"prov": true,
+"pct": 58.9,
+"cites": 2,
+"res": true
+},
+"41407866": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 3,
+"res": false
+},
+"41420114": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41526712": {
+"y": 2026,
+"m": 1,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"41540261": {
+"y": 2026,
+"m": 1,
+"src": "electronic",
+"rcr": 8.0211875089261,
+"prov": true,
+"pct": null,
+"cites": 16,
+"res": true
+},
+"41572735": {
+"y": 2026,
+"m": 1,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 2,
+"res": true
+},
+"41586200": {
+"y": 2026,
+"m": 1,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41587050": {
+"y": 2026,
+"m": 2,
+"src": "journal",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"41601603": {
+"y": 2026,
+"m": 1,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"41617883": {
+"y": 2026,
+"m": 1,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 3,
+"res": true
+},
+"41642335": {
+"y": 2026,
+"m": 2,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": false
+},
+"41725695": {
+"y": 2025,
+"m": 11,
+"src": "electronic",
+"rcr": 0.9280072648098658,
+"prov": true,
+"pct": 47.5,
+"cites": 1,
+"res": true
+},
+"41764298": {
+"y": 2026,
+"m": 2,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41764586": {
+"y": 2026,
+"m": 2,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41800586": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"41805604": {
+"y": 2026,
+"m": 3,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"41816006": {
+"y": 2026,
+"m": 3,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41844582": {
+"y": 2026,
+"m": 3,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"41857208": {
+"y": 2026,
+"m": 3,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41872152": {
+"y": 2026,
+"m": 3,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41935030": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41966229": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41980009": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"41993606": {
+"y": 2026,
+"m": 2,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42000524": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 4,
+"res": true
+},
+"42000906": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42008786": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42010820": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42052505": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42092045": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 2,
+"res": true
+},
+"42092437": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42097784": {
+"y": 2025,
+"m": 12,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42105630": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42107153": {
+"y": 2026,
+"m": 4,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42119282": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42137962": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42187272": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42234441": {
+"y": 2026,
+"m": 8,
+"src": "journal",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42263052": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42263356": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42287787": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42324304": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42330189": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42368888": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42384403": {
+"y": 2026,
+"m": null,
+"src": "year-only",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42398428": {
+"y": 2026,
+"m": 6,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42460405": {
+"y": 2025,
+"m": 1,
+"src": "electronic",
+"rcr": 0,
+"prov": true,
+"pct": 0,
+"cites": 0,
+"res": true
+},
+"42463908": {
+"y": 2026,
+"m": 7,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42518170": {
+"y": 2026,
+"m": 7,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42571020": {
+"y": 2026,
+"m": 7,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42595374": {
+"y": 2026,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": false
+},
+"42599846": {
+"y": 2026,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42624880": {
+"y": 2026,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42627212": {
+"y": 2026,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42628150": {
+"y": 2026,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42630828": {
+"y": 2026,
+"m": 8,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42709645": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42716721": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42732257": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42734915": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42772405": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42778181": {
+"y": 2026,
+"m": 10,
+"src": "journal",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 1,
+"res": true
+},
+"42787508": {
+"y": 2026,
+"m": 5,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42795927": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42799903": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42805955": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42816754": {
+"y": 2026,
+"m": 10,
+"src": "journal",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42830766": {
+"y": 2026,
+"m": 9,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42859254": {
+"y": 2026,
+"m": 10,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+},
+"42900769": {
+"y": 2026,
+"m": 8,
+"src": "journal",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": false
+},
+"42905697": {
+"y": 2026,
+"m": 10,
+"src": "electronic",
+"rcr": null,
+"prov": null,
+"pct": null,
+"cites": 0,
+"res": true
+}
+}
