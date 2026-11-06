@@ -133,7 +133,7 @@ dialog textarea{width:100%;height:240px;font:12px var(--mono)}
   <aside class="side"><div class="sidet">Views</div><nav class="ch" aria-label="Views" id="tabs"></nav></aside>
   <main>
     <div id="vh"></div>
-    <div class="fbwrap"><div class="fblabel">Search and filter</div><div class="fbrow"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search"><span id="facets"></span></div><div id="fbpop"></div></div>
+    <div class="fbwrap"><div class="fblabel">Search and filter</div><div class="fbrow"><input id="q" class="search" type="search" placeholder="Search datasets, authors, instruments" aria-label="Search"><span id="facets"></span></div><div id="fbpop"></div></div>
     <div class="chips" id="active"></div>
     <div class="answer" id="answer"></div>
     <div id="view" style="display:flex;flex-direction:column;gap:14px;min-width:0"></div>
@@ -515,7 +515,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();if(e.k
 let qT;$("q").addEventListener("input",e=>{clearTimeout(qT);qT=setTimeout(()=>{F.text=e.target.value.trim();render()},160)});
 const LINKS=/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"};
 $("sitenav").innerHTML=`<a href="${LINKS.home}">${ico("story")}Overview</a><a href="${LINKS.catalogue}" class="on" aria-current="page">${ico("catalogue")}Catalogue</a>`;$("src").textContent=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers`;
-let rT;new ResizeObserver(()=>{clearTimeout(rT);rT=setTimeout(()=>{if(["landscape","people","connections"].includes(view)&&!fbOpen)render()},180)}).observe(document.querySelector("main"));
+let rT;let mW=document.querySelector("main").clientWidth;new ResizeObserver(()=>{const w=document.querySelector("main").clientWidth;if(w===mW)return;mW=w;clearTimeout(rT);rT=setTimeout(()=>{if(["landscape","people","connections"].includes(view))render()},180)}).observe(document.querySelector("main"));
 route();
 </script>
 </body>

@@ -1,12 +1,12 @@
 /* Shared filter bar: one row of buttons, each opening a panel below. Expects F, FIELDS, S, match, FAM, FCOL, FAMOF, D, uniq, esc, $ and FB_RENDER. */
-let fbOpen=null;
+let fbOpen=document.getElementById("facets")?"mods":null;
 const FBMAIN=["cond","kind","age","design"],FBMORE=["rec","reuse","access","approach","ctry","year"];
 const FBL=Object.fromEntries(FIELDS.map(f=>[f[0],f[1]]));
 function fbRow(k,v,on,c,sw){return `<button class="frow ${on?"on":""} ${c?"":"zero"}" data-tog="${k}" data-v="${esc(v)}">${sw?`<span class="sw" style="background:${sw}"></span>`:`<span class="cb" aria-hidden="true"></span>`}<span>${esc(v)}</span><span class="ct">${c}</span></button>`}
 function renderFacets(){
   const ctM={},ctF={};S.filter(s=>match(s,"mods")).forEach(s=>s.m.forEach(m=>ctM[m]=(ctM[m]||0)+1));S.filter(s=>match(s,"fam")).forEach(s=>uniq(s.m.map(m=>FAMOF[m])).forEach(f=>ctF[f]=(ctF[f]||0)+1));
   const moreN=FBMORE.reduce((t,k)=>t+F[k].size,0)+((F.nmin!=null||F.nmax!=null)?1:0)+(F.lon?1:0)+(F.tab1?1:0);
-  const btn=(k,label,n)=>`<button class="fb ${fbOpen===k?"open":""} ${n?"act":""}" data-fb="${k}" aria-expanded="${fbOpen===k}">${label}${n?` <span class="fbn">${n}</span>`:""}<span class="car">▾</span></button>`;
+  const btn=(k,label,n)=>`<button class="fb ${fbOpen===k?"open":""} ${n?"act":""}" data-fb="${k}" aria-expanded="${fbOpen===k}">${ico("fb_"+k)}${label}${n?`<span class="fbn">${n}</span>`:""}<span class="car">${ico("chev")}</span></button>`;
   $("facets").innerHTML=btn("mods","Modality",F.mods.size+F.fam.size)+FBMAIN.map(k=>btn(k,FBL[k],F[k].size)).join("")+btn("more","More",moreN);
   let p="";
   if(fbOpen==="mods"){p=`<div class="fbhead"><span>Pick data families or single modalities. Counts = samples in the current selection.</span><span>Match <span class="seg"><button data-modmode="any" class="${F.modMode==="any"?"on":""}">any</button><button data-modmode="all" class="${F.modMode==="all"?"on":""}">all</button></span> selected modalities in the same sample</span></div><div class="fbfam">${FAM.map(f=>`<div>${fbRow("fam",f.id,F.fam.has(f.id),ctF[f.id]||0,FCOL[f.id]).replace(`>${esc(f.id)}<`,`>${esc(f.l)}<`).replace('class="frow','class="frow famh')}${f.m.map(m=>fbRow("mods",m,F.mods.has(m),ctM[m]||0)).join("")}</div>`).join("")}</div>`}
