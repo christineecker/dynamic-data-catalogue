@@ -31,11 +31,11 @@ header.top{position:sticky;top:0;z-index:30;background:var(--paper);border-botto
 .sitenav{display:inline-flex;gap:3px;border:1px solid var(--ctl);border-radius:9px;padding:3px;background:var(--paper)}
 .sitenav a{padding:6px 14px;border-radius:7px;font-weight:600;font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap}
 .sitenav a:hover{background:var(--sel)}
-.sitenav a.on{background:var(--strong);color:#fff}
-nav.ch{display:flex;gap:2px;flex-wrap:wrap;flex-basis:100%;margin:-2px 0 -10px}
+.sitenav a.on{background:var(--soft);color:var(--strong);box-shadow:inset 0 0 0 1.5px var(--accent)}
+nav.ch{display:flex;gap:4px;flex-wrap:wrap;flex-basis:100%;margin:2px 0 -11px}
 nav.ch:empty{display:none}
-nav.ch a{padding:6px 10px;text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;font-size:13px;font-weight:500;border-radius:4px 4px 0 0}
-nav.ch a:hover{color:var(--strong)} nav.ch a.on{color:var(--strong);border-bottom-color:var(--accent)}
+nav.ch a{padding:9px 14px;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent;font-size:14.5px;font-weight:600;border-radius:7px 7px 0 0}
+nav.ch a:hover{color:var(--strong);background:var(--sel)} nav.ch a.on{color:var(--strong);border-bottom-color:var(--accent);background:var(--soft)}
 main{max-width:1440px;margin:0 auto;padding:0 24px 80px}
 section.chapter{padding:56px 0 28px;border-bottom:1px solid var(--rule)}
 section.chapter:last-of-type{border-bottom:0}
@@ -132,12 +132,10 @@ blockquote{margin:6px 0 0;padding:0 0 0 9px;border-left:2px solid var(--rule);fo
 .fbrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .fbrow .search{margin:0;flex:1 1 260px;min-width:200px;width:auto;padding:10px 12px;font-size:15px;border:1.5px solid var(--ctl)}
 #facets{display:contents}
-.fb{border:1.5px solid var(--strong);background:var(--paper);border-radius:8px;padding:9px 14px;font-size:14.5px;font-weight:600;cursor:pointer;display:inline-flex;gap:7px;align-items:center;color:var(--strong)}
+.fb{border:1.5px solid var(--ctl);background:var(--paper);border-radius:8px;padding:9px 14px;font-size:14.5px;font-weight:600;cursor:pointer;display:inline-flex;gap:7px;align-items:center;color:var(--strong)}
 .fb:hover{background:var(--sel)}
 .fb.act{border-color:var(--accent);background:var(--soft)}
-.fb.open{background:var(--strong);color:#fff}
-.fb.open .car{color:#fff}
-.fb.open .fbn{background:var(--accent)}
+.fb.open{background:var(--soft);border-color:var(--accent);box-shadow:0 0 0 2px var(--soft)}
 .fbn{font:600 12px var(--mono);background:var(--accent);color:#2E3338;border-radius:10px;padding:1px 7px}
 .fb .car{color:var(--muted);font-size:11px}
 #fbpop{display:none;border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;background:var(--paper);box-shadow:0 8px 28px #2E333814}
@@ -218,7 +216,8 @@ const yrs=uniq(D.papers.map(p=>p.y)).sort();
 const STORY=`
 <section class="chapter hero" id="universe"><div class="eyebrow">Every analysed sample, in one picture</div><div class="herohead">
  <h2 class="claim">Papers from the centre have analysed <span class="hi">${fmt(TOTAL)} people</span> across ${D.datasets.length} datasets and ${modsUsed} kinds of data.</h2>
- <p class="lede">One circle per analysed sample, from the full text of ${D.meta.papers} papers (${yrs[0]}–${yrs[yrs.length-1]}). Area = participants analysed. Colour = the most distinctive data family the sample holds, so a cohort with brain imaging shows blue even when it also has questionnaires. Hollow circles are consortia, registries and meta-analytic pools: shown, never counted. Regroup to see the same people by condition, data family, dataset type, age or year. Click any circle for its dataset sheet and the sentence each number comes from.</p></div>
+ <p class="lede">One circle per analysed sample, from the full text of ${D.meta.papers} papers (${yrs[0]}–${yrs[yrs.length-1]}). Area = participants analysed. Colour = the most distinctive data family the sample holds, so a cohort with brain imaging shows blue even when it also has questionnaires. Hollow circles are consortia, registries and meta-analytic pools: shown, never counted. Regroup to see the same people by condition, data family, dataset type, age or year. Click any circle for its dataset sheet and the sentence each number comes from.</p>
+ <p class="lede" style="margin-top:10px"><b>Looking for the tool?</b> The <a href="${LINKS.explore}">Explorer</a> filters these datasets, compares them and drafts a data request; the <a href="${LINKS.catalogue}">Catalogue</a> adds the coverage map, participant charts, instrument network and method notes.</p></div>
  <div class="viz"><header><span class="seg" id="ugroup"></span><span class="hint">Hover a circle. Labels show samples per group.</span></header><div id="uni"></div>${famLegend(`<span><i class="hollow"></i>Pooled, not counted</span>`)}</div>
  <div class="stats">
   <div class="stat"><b>${fmt(TOTAL)}</b><span>participants, largest n per dataset, pools excluded</span></div>
