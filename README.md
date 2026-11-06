@@ -23,11 +23,11 @@ Dataset reference rows (name, approximate size, diagnosis, availability, respons
 
 ## Rebuilding
 
-The build reads the paper library (`papers/<PMID>/metadata.json` and `fulltext.md`) to re-verify every quote. The library is not in this repository: papers are copyrighted. From a machine that has it:
+The build reads the paper library (`papers/<PMID>/metadata.json` and `fulltext.md`) to re-verify every quote, and a list of authors and affiliations for the co-authorship counts. Neither is in this repository: papers are copyrighted, and only counts leave the build, not individual names. Rebuild from the working copy in the DYNAMIC library:
 
 ```
 cd <DYNAMIC library>
-python <this repo>/src/build.py --site <this repo>
+python atlas/catalogue/build.py --site <this repo>
 ```
 
 `src/extraction/` holds the extraction output, `SCHEMA.md` with the rules the extraction agents followed, and the quote checkers `verify.py` and `verify2.py`.

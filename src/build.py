@@ -161,6 +161,59 @@ for p,r in sorted(R.items()):
         if (p,i) in FE:
             f,q=FE[(p,i)]; assert sq(q) in src(p),(p,q); feeds.append(dict(**{'from':f},sample=sid,quote=q))
 assert not PROBLEMS,PROBLEMS
+# ---- co-authorship network from PubMed author lists and affiliations (extract_sites.py)
+import itertools as _I
+_as=json.load(open(H+'/extraction/authorsites.json'))
+_orc=C.defaultdict(set)
+for _r in _as.values():
+    for _n,_s,_o,_i in _r:
+        if _o:_orc[_n].add(_o)
+_key=lambda n,i:(n.rsplit(' ',1)[0]+' '+i) if len(_orc[n])>1 and i else n   # same surname+initial, different ORCID: keep apart
+BIG=40  # consortium-sized author lists would connect everyone trivially
+_pp=C.defaultdict(set);_site=C.defaultdict(C.Counter);_cross=C.defaultdict(lambda:[0,0]);_pairs=C.Counter();_every=set()
+_oy={k:v['y'] for k,v in json.load(open(H+'/extraction/pubstats.json')).items()}
+for _p,_r in _as.items():
+    _names=[(_key(n,i),s) for n,s,_o,i in _r];_every|={n for n,_ in _names}
+    if len(_r)>BIG:continue
+    _S=set()
+    for n,s in _names:
+        _pp[n].add(_p);_S|=set(s)
+        for k in s:_site[n][k]+=1
+    _cross[_oy[_p]][1]+=1
+    if len(_S)>=2:
+        _cross[_oy[_p]][0]+=1;_pairs.update('+'.join(q) for q in _I.combinations(sorted(_S),2))
+_core=sorted(n for n,v in _pp.items() if len(v)>=3)
+_siteFam=C.defaultdict(C.Counter);_sitePapers=C.Counter()
+for _p,_r in _as.items():
+    if len(_r)>BIG:continue
+    _S=set(k for _n,s,_o,_i in _r for k in s);_F={FAMOF[m] for x in samples if x['p']==_p for m in x['m']}
+    for k in _S:
+        _sitePapers[k]+=1
+        for f in _F:_siteFam[k][f]+=1
+_ix={n:i for i,n in enumerate(_core)};_w=C.Counter()
+for _p,_r in _as.items():
+    if len(_r)>BIG:continue
+    _h=sorted({_key(n,i) for n,s,_o,i in _r}&set(_core))
+    _w.update(_I.combinations(_h,2))
+def _comp(nodes,edges):
+    adj=C.defaultdict(set)
+    for u,v in edges:adj[u].add(v);adj[v].add(u)
+    seen=set();out=[]
+    for n in nodes:
+        if n in seen:continue
+        st=[n];c=0
+        while st:
+            x=st.pop()
+            if x in seen:continue
+            seen.add(x);c+=1;st+=list(adj[x])
+        out.append(c)
+    return sorted(out,reverse=True)
+_allE=set()
+for _p,_r in _as.items():
+    if len(_r)<=BIG:_allE|=set(_I.combinations(sorted({_key(n,i) for n,s,_o,i in _r}),2))
+_c1=_comp(_core,list(_w));_c2=_comp(list(_pp),_allE)
+network=dict(  # counts only: no individual names leave the build
+ stats=dict(authors=len(_every),inNet=len(_pp),core=len(_core),coreLargest=_c1[0],allLargest=_c2[0],big=sum(len(r)>BIG for r in _as.values()),cross={str(k):v for k,v in sorted(_cross.items())},pairs=_pairs.most_common(),siteFam={k:dict(v) for k,v in _siteFam.items()},sitePapers=dict(_sitePapers)))
 # ---- publication months and iCite metrics, fetched 2026-11-06 via pubmed-cyanheads
 _ps=json.load(open(H+'/extraction/pubstats.json'))
 for _p in papers:
@@ -210,20 +263,30 @@ gaps=[f"{len(papers)-sum(p['ev']=='Full text' for p in papers)} papers rest on a
  "Planned cohorts and proposal sizes come from the Vollantrag and are targets. Nothing here reports recruitment.",
  "TP assignment, milestones and collaboration are left to the atlas; none of them is in this catalogue."]
 lineage=[['Evidence map with fixed scale and whole-library ring','atlas.html Explorer','Coverage tab; gains Datasets measure and rows by type, age, design'],['Condition → cohort → data flow','atlas.html Explorer','Connections tab, rebuilt on full-text data'],['Cohort tracks and non-independence warning','atlas.html Explorer','Reuse tracks; warning on every reused card'],['UpSet of modality combinations','atlas.html Explorer','Coverage tab'],['7 families, modality taxonomy','PLAN-atlas.md Data model','Kept, plus Video/nonverbal'],['De-duplication; consortia and registries not counted','PLAN-atlas.md','Kept in every total'],['Tab. 1 × modality rings and dots','atlas.html, final-mockup.html','Available vs analysed tab, now with real links'],['Pooling query','final-mockup.html, PLAN-atlas.md','Grown into the Pooling planner'],['Family trends','data-landscape-mockup.html','Left out: 3 publication years give too little to plot'],['Reviewer tour, TP and milestone views','All atlas files','Left out: evaluation story, different audience'],['Full-text extraction for all 175 papers','PLAN-atlas.md Phase 1 (planned)','New: done here, replacing abstract-level and illustrative values'],['Blind double extraction','PLAN-atlas.md Phase 5 (planned)','New: 15 % run, results above'],['Dataset sheets, modality fingerprint, shortlist and compare, data-request draft','New','Researcher looking for data, not a reviewer'],['Participants view: age × sex, age spans, size by condition, reporting gaps','New','Who was studied, and what papers leave out'],['Instrument-overlap network and matrix','Extends Z-protocol idea','Which datasets can be harmonised']]
-out=dict(meta=dict(snapshot=SNAP,papers=len(papers),fulltext=sum(p['ev']=='Full text' for p in papers),qc=dict(quotes=qc['quotes']),agree=agree,gaps=gaps,lineage=lineage,rescued=dict(applied)),families=FAM,facets=fac,papers=papers,samples=samples,datasets=list(ds.values()),feeds=feeds,tab1=tab1,planned=planned)
+out=dict(meta=dict(snapshot=SNAP,papers=len(papers),fulltext=sum(p['ev']=='Full text' for p in papers),qc=dict(quotes=qc['quotes']),agree=agree,gaps=gaps,lineage=lineage,rescued=dict(applied)),families=FAM,facets=fac,papers=papers,samples=samples,datasets=list(ds.values()),feeds=feeds,tab1=tab1,planned=planned,network=network)
 json.dump(out,open(H+'/catalogue.json','w'),ensure_ascii=False,indent=0)
 payload=json.dumps(out,ensure_ascii=False).replace('</','<\\/')
 import base64
 def datauri(fn,mime): return 'data:%s;base64,%s'%(mime,base64.b64encode(open(H+'/assets/'+fn,'rb').read()).decode())
-LOGOS={'/*__LOGO_DYN__*/':datauri('dynamic-logo.png','image/png'),'/*__LOGO_LOEWE__*/':datauri('loewe-logo.jpg','image/jpeg')}
+LOGOS={'/*__LOGO_MR__*/':datauri('uni-marburg.svg','image/svg+xml'),'/*__LOGO_F__*/':datauri('uni-frankfurt.png','image/png'),'/*__LOGO_GI__*/':datauri('uni-giessen.svg','image/svg+xml'),'/*__LOGO_DA__*/':datauri('uni-darmstadt.svg','image/svg+xml'),'/*__LOGO_DYN__*/':datauri('dynamic-logo.png','image/png'),'/*__LOGO_LOEWE__*/':datauri('loewe-logo.jpg','image/jpeg')}
 import sys
 ART={'home':'https://claude.ai/artifact/LyY6ymdMfPR1R7EBk8XxUU','explore':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c','catalogue':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c'}
 SITE={'home':'index.html','explore':'catalogue.html','catalogue':'catalogue.html'}
 def render(tpl,page,links):
-    html=open(H+'/'+tpl).read().replace('/*__FILTERBAR__*/',open(H+'/filterbar.js').read()).replace('/*__FILTERBAR_CSS__*/',open(H+'/filterbar.css').read()).replace('/*__SHELL_CSS__*/',open(H+'/shell.css').read()).replace('/*__SHELL_JS__*/',open(H+'/shell.js').read()).replace('/*__VERSION__*/',VERSION).replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
+    html=open(H+'/'+tpl).read().replace('/*__FILTERBAR__*/',open(H+'/filterbar.js').read()).replace('/*__FILTERBAR_CSS__*/',open(H+'/filterbar.css').read()).replace('/*__SHELL_CSS__*/',open(H+'/shell.css').read()).replace('/*__SHELL_JS__*/',open(H+'/shell.js').read()).replace('/*__GRAPH3D__*/',open(H+'/graph3d.js').read()).replace('/*__VERSION__*/',VERSION).replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
     for k,v in LOGOS.items(): html=html.replace(k,v)
     return html
 site=sys.argv[sys.argv.index('--site')+1] if '--site' in sys.argv else None
+# 3D prototype: only the fields it draws
+_dn={d['id']:d for d in out['datasets']};_pn={p['id']:p for p in out['papers']}
+_world=dict(snapshot=SNAP,papers=len(papers),datasets=len(out['datasets']),total=sum(max([s['n'] or 0 for s in samples if s['ds']==k] or [0]) for k,d in ds.items() if not d['pool']),families=[dict(id=f['id'],l=f['l'],m=f['m']) for f in FAM],
+ samples=[dict(ds=_dn[s['ds']]['name'],au=_pn[s['p']]['au'],y=_pn[s['p']]['y'],n=s['n'],m=s['m'],pool=bool(_dn[s['ds']]['pool']) or s['k'] in('Consortium','Registry','Meta-analysis pool')) for s in samples],
+ links=dict(home=ART['home'],catalogue=ART['catalogue']))
+def world():
+    html=open(H+'/world.html').read().replace('/*__WORLD__*/null',json.dumps(_world,ensure_ascii=False).replace('</','<\\/'))
+    for k,v in LOGOS.items(): html=html.replace(k,v)
+    open(H+'/../data-world.html','w').write(html)
+if not site: world()
 if site:
     os.makedirs(site,exist_ok=True)
     open(site+'/index.html','w').write(render('showcase.html','story',SITE))

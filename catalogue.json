@@ -17546,5 +17546,96 @@
 ],
 "src": "Anhang Tab. 2; MS 4.7.1–4.7.3"
 }
+],
+"network": {
+"stats": {
+"authors": 1203,
+"inNet": 890,
+"core": 169,
+"coreLargest": 169,
+"allLargest": 864,
+"big": 10,
+"cross": {
+"2024": [
+7,
+36
+],
+"2025": [
+10,
+72
+],
+"2026": [
+15,
+57
 ]
+},
+"pairs": [
+[
+"F+MR",
+25
+],
+[
+"GI+MR",
+9
+],
+[
+"F+GI",
+3
+],
+[
+"DA+GI",
+1
+],
+[
+"DA+MR",
+1
+],
+[
+"DA+F",
+1
+]
+],
+"siteFam": {
+"F": {
+"bio": 11,
+"clin": 44,
+"digital": 11,
+"img": 15,
+"ephys": 6,
+"cog": 6,
+"lang": 1
+},
+"GI": {
+"clin": 22,
+"cog": 13,
+"ephys": 9,
+"img": 7,
+"bio": 1,
+"lang": 1,
+"digital": 1
+},
+"MR": {
+"digital": 10,
+"clin": 82,
+"cog": 22,
+"img": 28,
+"ephys": 5,
+"lang": 7,
+"bio": 9
+},
+"DA": {
+"img": 1,
+"cog": 1,
+"clin": 2,
+"bio": 1
+}
+},
+"sitePapers": {
+"F": 57,
+"GI": 28,
+"MR": 110,
+"DA": 3
+}
+}
+}
 }

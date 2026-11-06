@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DYNAMIC Data World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<style>
+/* Layout: a fixed 3D scene with the story scrolling over it. Scroll position flies the camera from one data family to the next.
+   Light by choice, to match the rest of the site: same surface, blue and family colours; fog fades distant spheres into the page. */
+:root{--paper:#FCFCFC;--ink:#5C6166;--strong:#2E3338;--muted:#787B80;--rule:#6B7D8F24;--dyn:#569CE0;--dyn-ink:#1D5C99;--dyn-soft:#569CE029;
+ --body:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font:15.5px/1.5 var(--body)}
+#scene{position:fixed;inset:0;z-index:0;display:block;width:100%;height:100%}
+#labels{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hub{position:absolute;left:0;top:0;white-space:nowrap;text-align:center;font-weight:600;font-size:14px;color:var(--strong);text-shadow:0 0 6px #FCFCFC,0 0 3px #FCFCFC;will-change:transform}
+.hub small{display:block;font:500 11.5px var(--mono);color:var(--muted)}
+header.bar{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;gap:16px;padding:12px 24px;pointer-events:none;background:#FCFCFCF0;backdrop-filter:blur(10px)}
+header.bar>*{pointer-events:auto}
+.bar img{height:40px;width:136px;object-fit:cover;object-position:left center;mix-blend-mode:multiply}
+.bar b{font-size:17px;color:var(--strong);letter-spacing:-.02em}
+.tagp{font:500 11.5px var(--mono);color:var(--dyn-ink);background:#FFFFFFD9;box-shadow:inset 0 0 0 1px var(--dyn-soft);padding:2px 9px;border-radius:999px}
+.back{margin-left:auto;font-size:13.5px;font-weight:500;color:var(--strong);text-decoration:none;background:#FFFFFFD9;box-shadow:0 1px 2px #2E33381F,0 2px 8px #2E333814;padding:7px 14px;border-radius:999px}
+.back:hover{color:var(--dyn-ink)}
+:focus-visible{outline:2px solid var(--dyn-ink);outline-offset:2px}
+#story{position:relative;z-index:2;pointer-events:none}
+.st{min-height:125vh;display:flex;align-items:center;padding:0 24px}
+.st:first-child{min-height:105vh}
+.cardw{width:min(410px,100%);pointer-events:auto;background:#FFFFFFE8;backdrop-filter:blur(10px);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;box-shadow:0 8px 28px #2E333812}
+.eye{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9A5B00;margin-bottom:8px}
+h1,h2{margin:0;color:var(--strong);letter-spacing:-.025em;line-height:1.14;font-weight:600;text-wrap:balance}
+h1{font-size:34px}h2{font-size:25px}
+.cardw p{margin:10px 0 0}
+.big{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}
+.big div{font-size:12.5px;color:var(--muted)}
+.big b{display:block;font-size:24px;line-height:1.1;font-weight:600;color:var(--strong);letter-spacing:-.03em}
+.mods{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px}
+.mods span{font-size:12px;padding:1px 8px;border-radius:999px;background:#6B7D8F14;color:var(--ink)}
+.mods i{font:normal 500 11px var(--mono);color:var(--muted);margin-left:3px}
+.swatch{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+.cue{margin-top:14px;font-size:13px;color:var(--dyn-ink);font-weight:500}
+.cta{display:inline-block;margin-top:14px;margin-right:8px;font-size:14px;font-weight:600;padding:8px 15px;border-radius:999px;text-decoration:none;color:var(--dyn-ink);background:var(--dyn-soft)}
+#rail{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:4;display:flex;flex-direction:column;gap:9px}
+#rail button{width:11px;height:11px;border-radius:50%;border:0;padding:0;cursor:pointer;background:#6B7D8F40}
+#rail button.on{background:var(--dyn);box-shadow:0 0 0 3px var(--dyn-soft)}
+#tt{position:fixed;z-index:6;pointer-events:none;display:none;background:#2E3338;color:#fff;font-size:12.5px;line-height:1.4;padding:7px 9px;border-radius:7px;max-width:320px}
+#tt b{font-weight:600}
+#nogl{display:none;position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:6;background:#FFF;border:1px solid var(--rule);padding:8px 14px;border-radius:9px;font-size:13px}
+@media(max-width:700px){h1{font-size:27px}h2{font-size:22px}header.bar{padding:10px 12px;gap:8px}.bar b,.tagp{display:none}.st{padding:0 12px;align-items:flex-end;padding-bottom:40px}#rail{display:none}}
+</style>
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div id="labels" aria-hidden="true"></div>
+<header class="bar"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><b>Data World</b><span class="tagp">prototype</span><a class="back" id="back" href="#">Back to the Overview</a></header>
+<main id="story"></main>
+<nav id="rail" aria-label="Stops"></nav>
+<div id="tt" role="tooltip"></div>
+<div id="nogl">3D is unavailable in this browser. The text and numbers below are complete.</div>
+<script>
+const W=/*__WORLD__*/null;
+const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]),fmt=n=>Math.round(n).toLocaleString("en");
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const COL={img:"#399EE6",ephys:"#FA8D3E",digital:"#4CBF99",bio:"#A37ACC",clin:"#86B300",cog:"#55B4D4",lang:"#F07171"};
+/* the rarest family a sample holds decides its cluster, as in the Overview's Universe */
+const DOM=["img","bio","digital","ephys","lang","cog","clin"],FAMOF={},FL={};W.families.forEach(f=>{FL[f.id]=f.l;f.m.forEach(m=>FAMOF[m]=f.id)});
+const fams=s=>[...new Set(s.m.map(m=>FAMOF[m]))],dom=s=>DOM.find(d=>fams(s).includes(d))||null;
+/* visiting order: largest family first, smallest last */
+const ORDER=["clin","img","cog","bio","ephys","digital","lang"];
+const multi=W.samples.filter(s=>fams(s).length>=2).length,modsUsed=new Set(W.samples.flatMap(s=>s.m)).size;
+const stats=id=>{const f=W.families.find(x=>x.id===id),ss=W.samples.filter(s=>fams(s).includes(id)),mc=f.m.map(m=>[m,W.samples.filter(s=>s.m.includes(m)).length]).filter(x=>x[1]>0),with_=ss.filter(s=>fams(s).length>=2).length,best=new Map();ss.forEach(s=>{if(s.n&&!s.pool&&(!best.has(s.ds)||best.get(s.ds)<s.n))best.set(s.ds,s.n)});const top=[...best.entries()].sort((a,b)=>b[1]-a[1]).slice(0,3);return{f,ss,mc,with_,people:[...best.values()].reduce((a,b)=>a+b,0),top}};
+const BLURB={clin:"The shared language of the centre. Most samples have interviews or questionnaires, which gives the other data types a common reference.",img:"Brain structure, function and connectivity, the largest family beyond clinical data.",cog:"Experimental tasks that probe how people respond, not only how they report feeling.",bio:"Genetics, omics, microbiome and blood markers, up from 3% of samples in 2024 to 16% in 2026.",digital:"Life measured as it happens: momentary assessment, wearables and sensing, the raw material for individual dynamic networks.",ephys:"Fast signals from brain and body, on a timescale imaging cannot reach.",lang:"Speech and video recordings, the smallest family here."};
+/* ---------- story cards ---------- */
+const STOPS=[{k:"intro"},...ORDER.map(k=>({k})),{k:"out"}];
+$("story").innerHTML=STOPS.map((st,i)=>{if(st.k==="intro")return `<section class="st" data-i="${i}"><div class="cardw"><div class="eye">Every analysed sample, in one world</div><h1>${fmt(W.total)} people. ${W.datasets} datasets. ${modsUsed} kinds of data.</h1><p>Each sphere is one sample analysed in a DYNAMIC paper, sized by its participants. Scroll to fly through the seven data families.</p><p class="cue">Scroll to begin ↓</p></div></section>`;
+ if(st.k==="out")return `<section class="st" data-i="${i}"><div class="cardw"><div class="eye">The whole network</div><h2>${multi} samples bridge two or more data families.</h2><p>Each thread links a sample to another family it also holds. Mental health is studied here the way it is understood: as connected levels, not separate measures.</p><div class="big"><div><b>${W.samples.length}</b>samples</div><div><b>${W.papers}</b>papers</div></div><a class="cta" id="cta1" href="#">Open the Overview</a><a class="cta" id="cta2" href="#">Search the Catalogue</a><p class="small" style="font-size:12.5px;color:var(--muted)">Consortia and pools appear as faint spheres and are not counted. Snapshot ${esc(W.snapshot)}.</p></div></section>`;
+ const d=stats(st.k);return `<section class="st" data-i="${i}"><div class="cardw"><div class="eye"><span class="swatch" style="background:${COL[st.k]}"></span>${i} of ${ORDER.length}</div><h2>${esc(d.f.l)}</h2><p>${BLURB[st.k]}</p><div class="big"><div><b>${d.ss.length}</b>samples</div><div><b>${d.with_}</b>also hold another family</div></div><div class="mods">${d.mc.map(([m,c])=>`<span>${esc(m)}<i>${c}</i></span>`).join("")}</div>${d.top.length?`<p style="font-size:13px;color:var(--muted)">Largest: ${d.top.map(([n,v])=>`${esc(n)} (${fmt(v)})`).join(", ")}</p>`:""}</div></section>`}).join("");
+const home=W.links.home,cat=W.links.catalogue;$("back").href=home;$("cta1").href=home;$("cta2").href=cat;
+$("rail").innerHTML=STOPS.map((s,i)=>`<button data-i="${i}" aria-label="${s.k==="intro"?"Start":s.k==="out"?"Whole network":esc(FL[s.k])}"></button>`).join("");
+const secs=[...document.querySelectorAll(".st")];
+$("rail").onclick=e=>{const b=e.target.closest("button");if(!b)return;const s=secs[+b.dataset.i],y=s.offsetTop+s.offsetHeight/2-innerHeight/2;scrollTo({top:y,behavior:RM?"auto":"smooth"})};
+/* ---------- 3D ---------- */
+let gl=null;try{gl=new THREE.WebGLRenderer({canvas:$("scene"),antialias:true,alpha:false})}catch(e){gl=null}
+if(!gl){$("nogl").style.display="block";$("scene").style.display="none"}else{
+ const scene=new THREE.Scene(),BG=0xFCFCFC;scene.background=new THREE.Color(BG);scene.fog=new THREE.Fog(BG,70,190);
+ gl.setPixelRatio(Math.min(devicePixelRatio,2));
+ const cam=new THREE.PerspectiveCamera(46,1,.5,900);
+ scene.add(new THREE.HemisphereLight(0xffffff,0xc9d2dc,.74));const dl=new THREE.DirectionalLight(0xffffff,.46);dl.position.set(40,70,60);scene.add(dl);
+ /* seeded random so the world is the same for every visitor */
+ let seed=20261106;const rnd=()=>{seed=(seed*1664525+1013904223)%4294967296;return seed/4294967296};
+ /* hubs sit on a loose helix so the camera always has somewhere new to turn to */
+ const world=new THREE.Group();scene.add(world);const hubs={};ORDER.forEach((k,i)=>{const a=i*2.15;hubs[k]=new THREE.Vector3(Math.cos(a)*30,Math.sin(a*.9)*14,-i*34)});
+ const rad=s=>.46+Math.sqrt(Math.min(s.n||9,2800))*.04,solid=[],hollow=[],byHub={};ORDER.forEach(k=>byHub[k]=[]);
+ W.samples.forEach(s=>{const k=dom(s);if(!k)return;byHub[k].push(s)});
+ Object.entries(byHub).forEach(([k,ss])=>{ss.sort((a,b)=>(b.n||0)-(a.n||0));const area=ss.reduce((t,s)=>t+Math.pow(rad(s)+.5,3),0),R=Math.max(4.2,Math.cbrt(area)*1.75);hubs[k].R=R;
+  ss.forEach((s,i)=>{const y=1-2*(i+.5)/ss.length,t=Math.sqrt(1-y*y),phi=i*2.39996,d=R*(.5+.5*Math.cbrt((i+1)/ss.length))*(.9+rnd()*.2);s.pos=new THREE.Vector3(hubs[k].x+Math.cos(phi)*t*d,hubs[k].y+y*d,hubs[k].z+Math.sin(phi)*t*d);s.hub=k;(s.pool?hollow:solid).push(s)});
+  /* push overlapping spheres apart */
+  for(let it=0;it<60;it++)for(let a=0;a<ss.length;a++)for(let b=a+1;b<ss.length;b++){const d=new THREE.Vector3().subVectors(ss[b].pos,ss[a].pos),m=rad(ss[a])+rad(ss[b])+.22,l=d.length()||.01;if(l<m){d.multiplyScalar((m-l)/l*.5);ss[a].pos.sub(d);ss[b].pos.add(d)}}});
+ const geo=new THREE.SphereGeometry(1,20,14),mkI=(list,opts)=>{const m=new THREE.InstancedMesh(geo,new THREE.MeshLambertMaterial(opts),list.length),o=new THREE.Object3D(),c=new THREE.Color();list.forEach((s,i)=>{o.position.copy(s.pos);o.scale.setScalar(rad(s));o.updateMatrix();m.setMatrixAt(i,o.matrix);m.setColorAt(i,c.set(COL[s.hub]))});m.instanceMatrix.needsUpdate=true;m.instanceColor.needsUpdate=true;world.add(m);return m};
+ const mSolid=mkI(solid,{}),mHollow=mkI(hollow,{transparent:true,opacity:.22,depthWrite:false});
+ /* hub cores and threads. Own-family threads make each cluster read as a star; cross-family threads are the bridges */
+ const core=new THREE.SphereGeometry(1,24,16),threads={},spokes={};ORDER.forEach(k=>{const c=new THREE.Mesh(core,new THREE.MeshLambertMaterial({color:new THREE.Color(COL[k]).multiplyScalar(.72)}));c.position.copy(hubs[k]);c.scale.setScalar(.95);world.add(c);
+  threads[k]=new THREE.Group();threads[k].mat=new THREE.MeshBasicMaterial({color:COL[k],transparent:true,opacity:.2,depthWrite:false});spokes[k]=new THREE.MeshBasicMaterial({color:COL[k],transparent:true,opacity:.3,depthWrite:false});world.add(threads[k])});
+ W.samples.forEach(s=>{if(!s.pos)return;const own=new THREE.LineCurve3(s.pos,hubs[s.hub]);world.add(new THREE.Mesh(new THREE.TubeGeometry(own,1,.038,5,false),spokes[s.hub]));
+  fams(s).filter(k=>k!==s.hub).forEach(k=>{const a=s.pos,b=hubs[k],mid=new THREE.Vector3().addVectors(a,b).multiplyScalar(.5);mid.y+=a.distanceTo(b)*.13;threads[k].add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(a,mid,b),18,.055,5,false),threads[k].mat))})});
+ /* hub labels are HTML so they stay sharp and readable */
+ const labs=ORDER.map(k=>{const d=document.createElement("div");d.className="hub";d.innerHTML=`${esc(FL[k])}<small>${stats(k).ss.length} samples</small>`;$("labels").appendChild(d);return{k,d}});
+ /* camera keyframes: whole world, each hub from the side the card leaves free, whole world again */
+ const c0=new THREE.Vector3();ORDER.forEach(k=>c0.add(hubs[k]));c0.multiplyScalar(1/ORDER.length);const span=Math.max(...ORDER.map(k=>hubs[k].distanceTo(c0)+hubs[k].R));
+ const wide=(d)=>({p:c0.clone().add(new THREE.Vector3(.86,.3,.42).normalize().multiplyScalar(d)),t:c0.clone()});
+ const KF=[wide(span*2.25),...ORDER.map(k=>{const h=hubs[k],dist=h.R*2.9+6,dir=new THREE.Vector3(h.x-c0.x,h.y*.35,dist).normalize();return{p:h.clone().add(dir.multiplyScalar(dist)),t:h.clone()}}),wide(span*2.1)];
+ const pCurve=new THREE.CatmullRomCurve3(KF.map(k=>k.p),false,"centripetal"),tCurve=new THREE.CatmullRomCurve3(KF.map(k=>k.t),false,"centripetal");
+ /* each stop is reached when its card is centred; between cards the camera eases along the path */
+ let mids=[];const measure=()=>{mids=secs.map(s=>s.offsetTop+s.offsetHeight/2-innerHeight/2);mids[0]=0;mids[mids.length-1]=Math.max(mids[mids.length-1],document.documentElement.scrollHeight-innerHeight-1)};
+ const progress=()=>{const y=scrollY;let i=0;while(i<mids.length-2&&y>mids[i+1])i++;const a=mids[i],b=mids[i+1],u=b>a?Math.min(1,Math.max(0,(y-a)/(b-a))):0,e=u*u*(3-2*u);return(i+e)/(KF.length-1)};
+ let cur=progress.call?0:0,hold=-1;
+ const resize=()=>{const w=innerWidth,h=innerHeight;gl.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();/* shift the view right of the card on wide screens */cam.setViewOffset(w,h,w>900?-Math.min(190,w*.13):0,0,w,h);measure()};addEventListener("resize",resize);resize();
+ const v=new THREE.Vector3(),tgt=new THREE.Vector3(),clock=new THREE.Clock();let idle=0;
+ const frame=()=>{const dt=Math.min(.05,clock.getDelta());const goal=progress();cur=RM?goal:cur+(goal-cur)*Math.min(1,dt*5);pCurve.getPoint(cur,cam.position);tCurve.getPoint(cur,tgt);cam.lookAt(tgt);{const fd=cam.position.distanceTo(tgt);scene.fog.near=fd*(.7+.5*Math.min(1,fd/120));scene.fog.far=fd*(2.2+.9*Math.min(1,fd/120))}if(!RM){idle+=dt;world.rotation.y=Math.sin(idle*.12)*.018;world.position.y=Math.sin(idle*.3)*.12}
+  /* threads brighten for the current family and everywhere at the two wide views */
+  const pos=cur*(KF.length-1),near=Math.round(pos),wideness=Math.max(1-pos,pos-(KF.length-2),0);ORDER.forEach((k,i)=>{const on=Math.max(0,1-Math.abs(pos-(i+1)));threads[k].mat.opacity=.09+on*.6+wideness*.38});
+  labs.forEach(({k,d})=>{v.copy(hubs[k]);v.y+=hubs[k].R*1.02;world.localToWorld(v);v.project(cam);const dist=cam.position.distanceTo(hubs[k]),vis=v.z<1?Math.max(0,Math.min(1,1.25-(dist-scene.fog.near)/(scene.fog.far-scene.fog.near))):0;d.style.opacity=vis.toFixed(2);d.style.transform=`translate(-50%,-100%) translate(${((v.x+1)/2*innerWidth).toFixed(1)}px,${((1-v.y)/2*innerHeight).toFixed(1)}px)`});
+  const ri=Math.min(STOPS.length-1,Math.round(pos));if(ri!==hold){hold=ri;document.querySelectorAll("#rail button").forEach((b,i)=>b.classList.toggle("on",i===ri))}
+  gl.render(scene,cam);requestAnimationFrame(frame)};
+ cur=progress();
+ /* hover a sphere for what it is */
+ const ray=new THREE.Raycaster(),mp=new THREE.Vector2(),tt=$("tt");let lastHit=-1;
+ addEventListener("mousemove",e=>{if(e.target.closest&&e.target.closest(".cardw,#rail,header.bar")){tt.style.display="none";return}mp.set(e.clientX/innerWidth*2-1,-(e.clientY/innerHeight)*2+1);ray.setFromCamera(mp,cam);const h=ray.intersectObjects([mSolid,mHollow]);if(h.length){const s=(h[0].object===mSolid?solid:hollow)[h[0].instanceId];tt.innerHTML=`<b>${esc(s.ds)}</b><br>${esc(s.au)} ${s.y}<br>n ${s.n==null?"not reported":fmt(s.n)}${s.pool?" (pooled, not counted)":""}<br>${esc(s.m.join(", "))}`;tt.style.display="block";const r=tt.getBoundingClientRect();tt.style.left=Math.min(e.clientX+14,innerWidth-r.width-8)+"px";tt.style.top=Math.min(e.clientY+12,innerHeight-r.height-8)+"px";$("scene").style.cursor="pointer"}else tt.style.display="none"});
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);addEventListener("load",measure);frame();
+ window.__world={progress,get cur(){return cur},samples:solid.length+hollow.length,probe:i=>{const p=solid[i].pos.clone();world.localToWorld(p);p.project(cam);return[(p.x+1)/2*innerWidth,(1-p.y)/2*innerHeight,solid[i].ds]}};
+}
+</script>
+</body>
+</html>

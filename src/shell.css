@@ -1,7 +1,7 @@
 /* Shared page shell: banner, sub-bar, sidebar. Loaded last, so it overrides each page's older rules.
    Blue #569CE0 from the swatch supplied. White on it is 2.9:1, so solid fills carry navy #0B2A44 (5.1:1); --dyn-ink is the same hue for text on light. */
 :root{--dyn:#569CE0;--dyn-ink:#1D5C99;--dyn-on:#0B2A44;--dyn-soft:#569CE029;--grey:#6B7D8F14;--grey2:#6B7D8F24}
-header.top{position:static;z-index:auto;background:var(--paper);border-bottom:1px solid var(--rule)}
+header.top{position:static;z-index:auto;background:var(--paper);border-bottom:0}
 .top-in{max-width:none;padding:28px 32px;gap:32px;flex-wrap:nowrap;align-items:center;margin:0 auto}
 .brandlogos{gap:28px;min-width:0}
 /* the logo file has about 35% empty canvas on its right: crop it so the title sits next to the mark */
@@ -40,6 +40,11 @@ section.chapter{scroll-margin-top:60px}
 .tip .ni{flex:none;color:var(--dyn-ink)}
 /* fingerprint at size 11 needs 329px, so cards must not go narrower */
 #featured{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr))}
+.g3d{overflow:hidden;border-radius:8px}
+.g3l{position:absolute;left:0;top:0;white-space:nowrap;text-align:center;font-size:12px;font-weight:500;color:var(--strong);text-shadow:0 0 5px #FCFCFC,0 0 3px #FCFCFC,0 0 2px #FCFCFC;will-change:transform}
+.g3l small{display:block;font:500 10.5px var(--mono);color:var(--muted)}
+.g3logo{background:#fff;padding:6px 9px;border-radius:10px;box-shadow:0 1px 3px #2E33382E,0 3px 10px #2E333814}
+.g3logo img{display:block;height:36px;width:auto;max-width:150px}
 /* controls */
 .fbrow{gap:6px}
 .fb{border:0;border-radius:999px;background:var(--grey);color:var(--strong);padding:8px 10px 8px 12px;font-size:13.5px;font-weight:600;gap:7px;transition:background .15s,color .15s}
