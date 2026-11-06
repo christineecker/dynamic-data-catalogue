@@ -1,4 +1,6 @@
-# DYNAMIC Data Catalogue
+# CohortScope
+
+The data catalogue of the LOEWE Center DYNAMIC. Live: https://christineecker.github.io/dynamic-data-catalogue/
 
 What the papers of the LOEWE Center DYNAMIC analysed: cohorts, data modalities, sample sizes and participant details, extracted from the full text of every paper in the centre's library and checked against verbatim quotes.
 
@@ -6,7 +8,7 @@ Two pages, both built from the same `catalogue.json`:
 
 | Page | For whom |
 |---|---|
-| [index.html](index.html) · Data Universe | A story of the data: every analysed sample in one picture, then breadth, multimodality, cohorts, people, growth and what pooling makes possible |
+| [index.html](index.html) · Story | A story of the data: every analysed sample in one picture, then breadth, multimodality, cohorts, people, growth and what pooling makes possible |
 | [catalogue.html](catalogue.html) · Catalogue | Researchers: filters, dataset cards and tables, CSV export, coverage map, participant charts, instrument network, available-vs-analysed, pooling planner with shortlist |
 
 ## How the numbers are made

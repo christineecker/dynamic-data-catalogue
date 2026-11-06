@@ -4,6 +4,7 @@ Merges extraction/*.json + hand-checked links below, re-verifies every quote aga
 import json,glob,os,re,collections as C,statistics as st
 H=os.path.dirname(os.path.abspath(__file__)); ROOT=os.path.abspath(H+'/../..'); PP=ROOT+'/papers'
 SNAP='2026-11-06'
+VERSION='1.0'  # shown in the banner of both pages
 sq=lambda s:re.sub(r'[^a-z0-9]','',(s or '').lower())
 def meta(p): return json.load(open(f'{PP}/{p}/metadata.json'))
 _s={}
@@ -215,7 +216,7 @@ import sys
 ART={'home':'https://claude.ai/artifact/LyY6ymdMfPR1R7EBk8XxUU','explore':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c','catalogue':'https://claude.ai/artifact/PgxkehQRhrJuqXRHU1Dh9c'}
 SITE={'home':'index.html','explore':'catalogue.html','catalogue':'catalogue.html'}
 def render(tpl,page,links):
-    html=open(H+'/'+tpl).read().replace('/*__FILTERBAR__*/',open(H+'/filterbar.js').read()).replace('/*__FILTERBAR_CSS__*/',open(H+'/filterbar.css').read()).replace('/*__SHELL_CSS__*/',open(H+'/shell.css').read()).replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
+    html=open(H+'/'+tpl).read().replace('/*__FILTERBAR__*/',open(H+'/filterbar.js').read()).replace('/*__FILTERBAR_CSS__*/',open(H+'/filterbar.css').read()).replace('/*__SHELL_CSS__*/',open(H+'/shell.css').read()).replace('/*__SHELL_JS__*/',open(H+'/shell.js').read()).replace('/*__VERSION__*/',VERSION).replace('/*__DATA__*/null',payload).replace('/*__PAGE__*/"story"',json.dumps(page)).replace('/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"}',json.dumps(links))
     for k,v in LOGOS.items(): html=html.replace(k,v)
     return html
 site=sys.argv[sys.argv.index('--site')+1] if '--site' in sys.argv else None

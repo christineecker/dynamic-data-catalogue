@@ -1,32 +1,39 @@
-/* Shared page shell: banner, sub-bar, left panel. Loaded last, so it overrides each page's older rules.
-   Blue sampled from the DYNAMIC logo (#4092C6); --dyn-deep is the same hue, dark enough for white text. Grey panel is Ayu ui.panel.bg. */
-:root{--dyn:#4092C6;--dyn-deep:#2B78AE;--dyn-ink:#1F5F8C;--dyn-soft:#4092C61F;--panel:#F3F4F5;--panel-ink:#4F565C}
+/* Shared page shell: banner, sub-bar, sidebar. Loaded last, so it overrides each page's older rules.
+   Blue #569CE0 from the swatch supplied. White on it is 2.9:1, so solid fills carry navy #0B2A44 (5.1:1); --dyn-ink is the same hue for text on light. */
+:root{--dyn:#569CE0;--dyn-ink:#1D5C99;--dyn-on:#0B2A44;--dyn-soft:#569CE029;--grey:#6B7D8F14;--grey2:#6B7D8F24}
 header.top{position:static;z-index:auto;background:var(--paper);border-bottom:1px solid var(--ctl)}
 .top-in{max-width:1500px;padding:18px 24px;gap:24px;flex-wrap:nowrap;align-items:center;margin:0 auto}
 .brandlogos{gap:22px}
 .brandlogos img{height:64px}
-.top-in h1{font-size:28px;font-weight:600;letter-spacing:-.025em}
+.brandname{display:flex;flex-direction:column;gap:3px;min-width:0}
+.top-in h1{display:flex;align-items:center;gap:10px;font-size:30px;font-weight:600;letter-spacing:-.03em;white-space:nowrap}
+.ver{font:500 12.5px var(--mono);letter-spacing:0;color:var(--dyn-on);background:var(--dyn-soft);padding:2px 8px;border-radius:999px}
+.tagline{font-size:13.5px;color:var(--muted)}
 header.top img.lw{height:72px!important;width:auto;margin-left:auto}
 .subbar{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
 .subbar-in{max-width:1500px;margin:0 auto;padding:8px 24px;display:flex;justify-content:flex-end;align-items:center;gap:14px}
 .subbar .src{font-size:12.5px;color:var(--muted)}
-.sitenav{background:var(--panel);border-color:var(--rule)}
-.sitenav a{color:var(--panel-ink)}
-.sitenav a.on{background:var(--dyn-deep);color:#fff;box-shadow:none}
-.wrap{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:244px minmax(0,1fr);gap:4px}
-aside.side{position:sticky;top:62px;align-self:start;padding:24px 4px 24px 24px;max-height:calc(100vh - 62px);overflow:auto}
-.sidebox{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:12px 8px}
-.sidet{font:600 11.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:2px 0 8px 10px}
-nav.ch{display:flex;flex-direction:column;gap:2px;flex-basis:auto;margin:0}
-nav.ch a{padding:9px 10px;border:0;border-radius:8px;color:var(--panel-ink);font-size:14.5px;font-weight:600;text-decoration:none;background:none}
-nav.ch a:hover{color:var(--strong);background:#6B7D8F1F}
-nav.ch a.on{color:#fff;background:var(--dyn-deep);border:0}
+.sitenav{background:var(--grey);border:0;padding:3px}
+.sitenav a{color:var(--ink);font-weight:500}
+.sitenav a:hover{background:var(--grey2)}
+.sitenav a.on{background:var(--dyn);color:var(--dyn-on);font-weight:600;box-shadow:none}
+.wrap{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:232px minmax(0,1fr);gap:0}
+aside.side{position:sticky;top:60px;align-self:start;padding:22px 12px 24px 24px;height:calc(100vh - 60px);overflow:auto;border-right:1px solid var(--rule)}
+.sidet{font:500 12px var(--body);letter-spacing:0;text-transform:none;color:var(--muted);margin:0 0 8px 10px}
+nav.ch{display:flex;flex-direction:column;gap:1px;flex-basis:auto;margin:0}
+nav.ch a{position:relative;display:flex;align-items:center;gap:10px;padding:7px 10px;border:0;border-radius:8px;color:var(--ink);font-size:14px;font-weight:500;line-height:1.3;text-decoration:none;background:none;transition:background .12s}
+nav.ch a .ni{flex:none;color:var(--muted)}
+nav.ch a:hover{color:var(--strong);background:var(--grey)}
+nav.ch a.on{color:var(--strong);font-weight:600;background:var(--grey2);border:0}
+nav.ch a.on .ni{color:var(--dyn)}
+nav.ch a.on::before{content:"";position:absolute;left:-6px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--dyn)}
+@media (prefers-reduced-motion:reduce){nav.ch a{transition:none}}
 .wrap>main{max-width:none;margin:0;min-width:0}
-section.chapter{scroll-margin-top:62px}
-/* controls: blue replaces the orange outline on orange fill */
+section.chapter{scroll-margin-top:60px}
+/* controls */
 .fb.act,.fb.open{background:var(--dyn-soft);border-color:var(--dyn);box-shadow:none;color:var(--dyn-ink)}
-.fbn{background:var(--dyn-deep);color:#fff}
-.frow.on .cb{background:var(--dyn-deep);border-color:var(--dyn-deep)}
+.fbn{background:var(--dyn);color:var(--dyn-on)}
+.frow.on .cb{background:var(--dyn);border-color:var(--dyn)}
 .seg{display:inline-flex;border:1px solid var(--ctl);border-radius:7px;overflow:hidden}
 .seg button{border:0;background:none;padding:4px 11px;font-size:13px;cursor:pointer;color:var(--muted)}
 .seg button.on{background:var(--dyn-soft);color:var(--dyn-ink);font-weight:500}
@@ -34,14 +41,16 @@ section.chapter{scroll-margin-top:62px}
 .slbtn.on{background:var(--dyn-soft);border-color:var(--dyn);color:var(--dyn-ink)}
 .card:hover{border-color:var(--dyn)}
 .card.sl{box-shadow:inset 0 0 0 1px var(--dyn)}
-:focus-visible{outline-color:var(--dyn-deep)}
+:focus-visible{outline-color:var(--dyn-ink)}
 @media(max-width:1000px){
  .top-in{padding:12px 16px;gap:12px;flex-wrap:wrap}
  .brandlogos img{height:44px}
- .top-in h1{font-size:21px}
+ .top-in h1{font-size:22px}
+ .tagline{display:none}
  header.top img.lw{height:48px!important}
  .subbar-in{padding:6px 16px}
  .wrap{grid-template-columns:minmax(0,1fr)}
- aside.side{position:static;max-height:none;padding:12px 16px 0}
+ aside.side{position:static;height:auto;border-right:0;padding:12px 16px 0}
  nav.ch{flex-direction:row;flex-wrap:wrap}
+ nav.ch a.on::before{display:none}
 }

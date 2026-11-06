@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DYNAMIC Data Catalogue</title>
+<title>CohortScope Catalogue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
@@ -127,10 +127,10 @@ dialog textarea{width:100%;height:240px;font:12px var(--mono)}
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1>Data Catalogue</h1></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft"></div></header>
+<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><div class="brandname"><h1>CohortScope <span class="ver">v/*__VERSION__*/</span></h1><span class="tagline">Every cohort, data type and participant behind the DYNAMIC papers</span></div></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft"></div></header>
 <div class="subbar"><div class="subbar-in"><span class="src" id="src"></span><nav class="sitenav" id="sitenav" aria-label="Site"></nav></div></div>
 <div class="wrap">
-  <aside class="side"><div class="sidebox"><div class="sidet">Views</div><nav class="ch" aria-label="Views" id="tabs"></nav></div></aside>
+  <aside class="side"><div class="sidet">Views</div><nav class="ch" aria-label="Views" id="tabs"></nav></aside>
   <main>
     <div id="vh"></div>
     <div class="fbwrap"><div class="fblabel">Search and filter</div><div class="fbrow"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search"><span id="facets"></span></div><div id="fbpop"></div></div>
@@ -146,6 +146,7 @@ dialog textarea{width:100%;height:240px;font:12px var(--mono)}
 <div class="toast" id="toast" role="status"></div>
 <dialog id="copydlg"><p class="small">Copying was blocked here. Select the text and copy it yourself.</p><textarea id="copytxt" aria-label="Text to copy"></textarea><p><button class="slbtn" id="copyclose">Close</button></p></dialog>
 <script>
+/*__SHELL_JS__*/
 const D=/*__DATA__*/null;
 /* ---------- helpers ---------- */
 const $=id=>document.getElementById(id);
@@ -229,7 +230,7 @@ const VIEWS=[["browse","Explore"],["landscape","Coverage"],["people","Participan
 let view="browse";
 function route(){const h=location.hash.slice(1);view=VIEWS.some(v=>v[0]===h)?h:"browse";render()}
 window.addEventListener("hashchange",route);
-$("tabs").innerHTML=VIEWS.map(v=>`<a href="#${v[0]}" data-v="${v[0]}">${v[1]}</a>`).join("");
+$("tabs").innerHTML=VIEWS.map(v=>`<a href="#${v[0]}" data-v="${v[0]}">${ico(v[0])}<span>${v[1]}</span></a>`).join("");
 $("tabs").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();try{location.hash=a.dataset.v}catch(_){}view=a.dataset.v;render();window.scrollTo(0,0)});
 const VH={browse:["Explore","Everything the papers analysed, <span class=hi>one card per dataset</span>.","A dataset groups all papers that analysed it. Filters apply to every view. Click a card for its sheet and the sentence each number comes from."],landscape:["Coverage","What was analysed, in whom, and <span class=hi>which data come together</span>.","Blank cells are evidence gaps. Click a cell, row or column to filter."],people:["Participants","Who was studied, and <span class=hi>what papers leave out</span>.","Every value traces to a verbatim quote; a short bar means the paper did not report it or extraction missed it."],connections:["Connections","Which conditions, datasets and data types <span class=hi>meet in one sample</span>.","And which datasets share enough instruments to be harmonised."],availability:["Available vs analysed","What the proposal lists, <span class=hi>against what papers used</span>.","Rings from Vollantrag Anhang Tab. 1; dots from the papers."],planner:["Pooling planner","Plan a pooled or replication analysis <span class=hi>from data that exists</span>.","Candidates per dataset across all their papers; shortlist to compare them side by side."]};
 function render(){document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.dataset.v===view));const h=VH[view];$("vh").innerHTML=`<div class="eyebrow">${h[0]}</div><h2 class="claim">${h[1]}</h2><p class="lede">${h[2]}</p>`;renderFacets();renderActive();renderAnswer();({browse:vBrowse,landscape:vLand,people:vPeople,connections:vConn,availability:vAvail,planner:vPlan})[view]();$("foot").innerHTML=`Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers, ${D.meta.fulltext} read in full text · every number sits in a verbatim quote found in the source by machine · participants are the largest n per dataset, never summed across papers; consortia, registries and pools are listed, not counted · preprints excluded.`}
