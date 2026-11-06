@@ -1,0 +1,1889 @@
+[
+ {
+  "pmid": "38555826",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Case-control",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Reward anticipation fMRI and physical fitness in schizophrenia versus controls",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 79,
+    "n_derived": true,
+    "n_quote": "resulting in a final sample size of 43 SZs and 36 HCs.",
+    "groups": [
+     {
+      "label": "SZ",
+      "condition": "Schizophrenia/psychosis",
+      "n": 43
+     },
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 36
+     }
+    ],
+    "pct_female": 31.6,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| females               | 15                 |                  | 10                 |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Frankfurt"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "task-fMRI",
+     "sMRI",
+     "Physiology",
+     "Clinical interview/rating",
+     "Questionnaire",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "task-fMRI": "3T Siemens Prisma, Monetary Incentive Delay task",
+     "Physiology": "fitness test battery, body fat, VO2max"
+    },
+    "instruments": [
+     "MID",
+     "PANSS",
+     "PAS",
+     "SAS",
+     "WHODAS",
+     "CDSS"
+    ],
+    "conditions": [
+     "Schizophrenia/psychosis",
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": "DRKS00023907"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "38589553",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Intensive longitudinal (EMA)",
+  "approach": [
+   "Network (idiographic/time-varying)"
+  ],
+  "topic": "Psychological flexibility, affect and cognition in daily life of young adults",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 114,
+    "n_derived": false,
+    "n_quote": "resulting in an analysis involving data from 114 participants.",
+    "groups": [],
+    "pct_female": 70.18,
+    "pct_female_derived": false,
+    "age_mean": 23.77,
+    "age_sd": 2.52,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| Age (Mean, SD)         | 23.77 (2.52)           |\n| Gender                 | Gender                 |\n| Male                   | 34 (29.82)             |\n| Female                 | 80 (70.18)             |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": "5 prompts/day for 21 days",
+    "modalities": [
+     "EMA",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "EMA": "smartphone prompts via Ethica, PBAT items"
+    },
+    "instruments": [
+     "PBAT"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "38938460",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Secondary analysis",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Subliminal facial emotion recognition in panic disorder patients after CBT versus controls",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 77,
+    "n_derived": true,
+    "n_quote": "Patients with PD (n=34) after (exposure-based) cognitive behavior therapy and healthy controls (n=43) performed a subliminal affective recognition task.",
+    "groups": [
+     {
+      "label": "Patients with PD",
+      "condition": "Anxiety disorders",
+      "n": 34
+     },
+     {
+      "label": "Healthy controls",
+      "condition": "Healthy/general population",
+      "n": 43
+     }
+    ],
+    "pct_female": 64.9,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| Gender                | female                    | 19 (57.6)                 |                          |                            |                        | 29 (70.7)                 |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Not reported",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Behavioural task",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "Behavioural task": "subliminal affective recognition task, 33 ms masked faces"
+    },
+    "instruments": [],
+    "conditions": [
+     "Anxiety disorders",
+     "Healthy/general population"
+    ],
+    "reuse": "Unclear"
+   }
+  ],
+  "open_science": {
+   "data_access": "Open repository",
+   "url": "https://doi.org/10.6084/m9.figshare.25895704.v1",
+   "quote": "The original contributions presented in the study are publicly available. This data can be found at https://doi.org/10.6084/m9.figshare.25895704.v1.",
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "39359967",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Japanese Auckland Individualism and Collectivism Scale validation and mental health links",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 476,
+    "n_derived": false,
+    "n_quote": "Overall, 476 Japanese participants (mean age = 45.59, SD = 13.55, 235 males, 241 females) were included in the study.",
+    "groups": [],
+    "pct_female": 50.6,
+    "pct_female_derived": true,
+    "age_mean": 45.59,
+    "age_sd": 13.55,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "Overall, 476 Japanese participants (mean age = 45.59, SD = 13.55, 235 males, 241 females) were included in the study.",
+    "countries": [
+     "JP"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "J-AICS",
+     "DQS"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "On request",
+   "url": null,
+   "quote": "Detailed data are available from the corresponding author upon reasonable request.",
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "39369190",
+  "paper_type": "Protocol",
+  "species": "Human",
+  "design": "Longitudinal cohort",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Protocol: transdiagnostic markers predicting CBT outcome in emotional disorders",
+  "samples": [
+   {
+    "name": "TransTAM",
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 200,
+    "n_derived": false,
+    "n_quote": "we plan to track a minimum of N = 200 patients with emotional disorders during their routine course of cognitive behavioral therapy at two German outpatient clinics.",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": null,
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Giessen",
+     "Marburg"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 3,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Clinical interview/rating",
+     "Behavioural task",
+     "Physiology",
+     "sMRI",
+     "dMRI",
+     "rs-fMRI",
+     "task-fMRI"
+    ],
+    "modality_detail": {
+     "sMRI": "3T T1, Giessen Prisma and Marburg GE SIGNA",
+     "dMRI": "diffusion tensor imaging"
+    },
+    "instruments": [
+     "BSI",
+     "BDI-II",
+     "ASI-3",
+     "PBAT",
+     "CGI",
+     "SOFAS"
+    ],
+    "conditions": [
+     "Mixed/transdiagnostic"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "DRKS00031206"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "39702504",
+  "paper_type": "Protocol",
+  "species": "Human",
+  "design": "RCT",
+  "approach": [
+   "Network (idiographic/time-varying)",
+   "Conventional statistics"
+  ],
+  "topic": "Protocol: process-based therapy versus routine CBT for difficult-to-treat mood and anxiety disorders",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 80,
+    "n_derived": false,
+    "n_quote": "In total, we include 80 patients recruited from a university outpatient clinic.",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": null,
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Frankfurt"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 3,
+    "followup_months": 6,
+    "ema_detail": "daily EMA during baseline phase and treatment",
+    "modalities": [
+     "Questionnaire",
+     "Clinical interview/rating",
+     "EMA"
+    ],
+    "modality_detail": {
+     "EMA": "Status-PBT mobile app, personalised items"
+    },
+    "instruments": [
+     "DASS-21",
+     "DASS-10",
+     "PBAT",
+     "CBTSQ",
+     "CGI",
+     "M.I.N.I.",
+     "EQ-5D"
+    ],
+    "conditions": [
+     "Major depression",
+     "Anxiety disorders"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Open repository",
+   "url": null,
+   "quote": "Individual participant data are intended to be shared after deidentification on a third-party website.",
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "NCT06517589"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "39755292",
+  "paper_type": "Systematic review/meta-analysis",
+  "species": "Human",
+  "design": "Evidence synthesis",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Habituation of biological responses to repeated Trier Social Stress Test exposure",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Meta-analysis pool",
+    "role": "primary",
+    "n_analysed": null,
+    "n_derived": false,
+    "n_quote": "Our review includes a total of 47 studies, with healthy individuals being the most frequently studied group.",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "All ages",
+    "demog_quote": null,
+    "countries": [],
+    "sites": [],
+    "recruitment": "Not reported",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Blood biomarkers",
+     "Physiology"
+    ],
+    "modality_detail": {
+     "Blood biomarkers": "cortisol, immune markers",
+     "Physiology": "autonomic markers"
+    },
+    "instruments": [
+     "TSST"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "On request",
+   "url": "https://osf.io/z32yx/",
+   "quote": "The full code can be found at https://osf.io/z32yx/. Data will be made available on request.",
+   "code_available": true,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40037822",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Schizophrenia polygenic risk and resilience scores versus schizotypy and prodromal symptoms",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 367,
+    "n_derived": false,
+    "n_quote": "We included a total of *n* = 367 psychiatrically healthy subjects (130 male, 237 female; mean age 23.85 years, SD 3.79) in this study.",
+    "groups": [],
+    "pct_female": 64.6,
+    "pct_female_derived": true,
+    "age_mean": 23.85,
+    "age_sd": 3.79,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "We included a total of *n* = 367 psychiatrically healthy subjects (130 male, 237 female; mean age 23.85 years, SD 3.79) in this study.",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg"
+    ],
+    "recruitment": "Not reported",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Genetics",
+     "Questionnaire",
+     "Clinical interview/rating",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "Genetics": "Illumina Global Screening Array, polygenic risk scores"
+    },
+    "instruments": [
+     "OLIFE",
+     "SPQ-B",
+     "MSS",
+     "PQ-16",
+     "SCID-I screening",
+     "MWT-B"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "Unclear"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40169979",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Anxiety sensitivity and the Observe facet of the FFMQ in Japanese clinical panel sample",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 1521,
+    "n_derived": true,
+    "n_quote": "Participants in this sample reported the following diagnoses: PD ( *n* = 198), social anxiety disorder (SAD; *n* = 116), obsessive compulsive disorder (OCD; *n* = 66), major depressive disorder (MDD; *n* = 406), comorbid MDD with anxiety and related disorder ( *n* = 636) or comorbid anxiety and related disorders ( *n* = 99).",
+    "groups": [
+     {
+      "label": "PD",
+      "condition": "Anxiety disorders",
+      "n": 198
+     },
+     {
+      "label": "SAD",
+      "condition": "Anxiety disorders",
+      "n": 116
+     },
+     {
+      "label": "OCD",
+      "condition": "OCD",
+      "n": 66
+     },
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 406
+     },
+     {
+      "label": "Comorbid MDD and anxiety",
+      "condition": "Mixed/transdiagnostic",
+      "n": 636
+     },
+     {
+      "label": "Comorbid anxiety disorders",
+      "condition": "Anxiety disorders",
+      "n": 99
+     }
+    ],
+    "pct_female": 51,
+    "pct_female_derived": false,
+    "age_mean": 42.42,
+    "age_sd": 9.49,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "The mean age in this sample was 42.42 ( *SD =* 9.49), 51% were female and all participants identified as Japanese (see Table 1).",
+    "countries": [
+     "JP"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "FFMQ",
+     "ASI-3"
+    ],
+    "conditions": [
+     "Anxiety disorders",
+     "Major depression",
+     "OCD",
+     "Mixed/transdiagnostic"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40852172",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Longitudinal cohort",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Baseline cortical thickness predicting one-year change in internalizing symptoms in adolescents",
+  "samples": [
+   {
+    "name": "BANDA",
+    "canonical": "Human Connectome",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 203,
+    "n_derived": true,
+    "n_quote": "Adolescents were recruited who had at least one current diagnosis of an anxiety or depressive disorder (n=140), or no lifetime psychiatric disorders (n=63).",
+    "groups": [
+     {
+      "label": "Anxiety/depressive diagnosis",
+      "condition": "Mixed/transdiagnostic",
+      "n": 140
+     },
+     {
+      "label": "No lifetime disorder",
+      "condition": "Healthy/general population",
+      "n": 63
+     }
+    ],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": 14,
+    "age_max": 17,
+    "age_group": "Adolescents",
+    "demog_quote": "The sample includes 225 adolescents (aged 14-17 at baseline) recruited from the greater Boston area",
+    "countries": [
+     "US"
+    ],
+    "sites": [
+     "Boston"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": true,
+    "waves": 2,
+    "followup_months": 12,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Questionnaire",
+     "Clinical interview/rating"
+    ],
+    "modality_detail": {
+     "sMRI": "3T Siemens Prisma, T1 MPRAGE 0.8 mm, FreeSurfer cortical thickness"
+    },
+    "instruments": [
+     "K-SADS",
+     "RCADS",
+     "MFQ",
+     "CBCL"
+    ],
+    "conditions": [
+     "Major depression",
+     "Anxiety disorders",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Open repository",
+   "url": "http://dx.doi.org/10.15154/1528446",
+   "quote": "De-identified data are openly available through the National Institutes of Health Data Archive",
+   "code_available": true,
+   "preregistered": false,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41056268",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Non-randomised intervention",
+  "approach": [
+   "Network (idiographic/time-varying)"
+  ],
+  "topic": "Feasibility of manual for idiographic paper-pencil networks in psychotherapy",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 12,
+    "n_derived": false,
+    "n_quote": "Therefore, we ended data collection after we obtained complete datasets from 12 patients.",
+    "groups": [],
+    "pct_female": 75,
+    "pct_female_derived": true,
+    "age_mean": 32.08,
+    "age_sd": 13.13,
+    "age_min": 19,
+    "age_max": 56,
+    "age_group": "Adults",
+    "demog_quote": "Twelve patients participated (M = 32.08 years, SD = 13.13 years, range = 19-56 years), including nine women and three men.",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [],
+    "conditions": [
+     "Mixed/transdiagnostic"
+    ],
+    "reuse": "New data collection"
+   },
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 8,
+    "n_derived": false,
+    "n_quote": "eight female therapists participated in this feasibility study (M = 27.38 years, SD = 1.92 years, range = 25-31 years).",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": 27.38,
+    "age_sd": 1.92,
+    "age_min": 25,
+    "age_max": 31,
+    "age_group": "Adults",
+    "demog_quote": "eight female therapists participated in this feasibility study (M = 27.38 years, SD = 1.92 years, range = 25-31 years).",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41086598",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Secondary analysis",
+  "approach": [
+   "Conventional statistics",
+   "Computational modelling"
+  ],
+  "topic": "Positive emotions after exposure exercises, threat expectancy and treatment outcome in anxiety patients",
+  "samples": [
+   {
+    "name": "PROTECT-AD",
+    "canonical": "PROTECT-AD",
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 648,
+    "n_derived": false,
+    "n_quote": "In an analysis of 8416 exposure records of 648 anxiety patients undergoing exposure therapy",
+    "groups": [],
+    "pct_female": 55.1,
+    "pct_female_derived": false,
+    "age_mean": 33.39,
+    "age_sd": 11.6,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "Of the 648 patients with exposure records, 357 (55.1 %) were female, with the mean age of the sample at 33.39 years (SD = 11.60).",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 3,
+    "followup_months": 6,
+    "ema_detail": null,
+    "modalities": [
+     "Therapy records",
+     "Clinical interview/rating",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "Therapy records": "exposure records with post-exposure emotions and threat expectancy"
+    },
+    "instruments": [
+     "HAM-A",
+     "CGI",
+     "CIDI",
+     "DSM-5 Cross-D",
+     "LSAS",
+     "PAS"
+    ],
+    "conditions": [
+     "Anxiety disorders"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Restricted/controlled",
+   "url": null,
+   "quote": "The data that has been used is confidential.",
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "DRKS00008743"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41119561",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "German Mental Health Literacy Scale psychometrics and shame as mediator",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 533,
+    "n_derived": false,
+    "n_quote": "a modified German version (MHLS-DE) was developed and tested on an online sample (N=533).",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Not reported",
+    "demog_quote": null,
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "MHLS-DE"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Abstract only"
+ },
+ {
+  "pmid": "41152407",
+  "paper_type": "Systematic review/meta-analysis",
+  "species": "Human",
+  "design": "Evidence synthesis",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Esketamine efficacy and safety for depression, postpartum and postoperative depression",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Meta-analysis pool",
+    "role": "primary",
+    "n_analysed": 11553,
+    "n_derived": false,
+    "n_quote": "Of 12,285 studies identified, 67 trials with 11,553 participants were included: 19 trials on MDD/TRD, 18 studies on PPD and 30 studies on postoperative depression.",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": null,
+    "countries": [],
+    "sites": [],
+    "recruitment": "Not reported",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Clinical interview/rating",
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "MADRS",
+     "HAMD",
+     "EPDS",
+     "PHQ-9"
+    ],
+    "conditions": [
+     "Major depression",
+     "Medical/neurological"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": "Data in this systematic review and meta-analysis were extracted from published studies available on the internet.",
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "CRD42024576137"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41252645",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Secondary analysis",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Homework engagement and treatment response in group CBT, yoga and stress education for GAD",
+  "samples": [
+   {
+    "name": "GATE",
+    "canonical": null,
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 190,
+    "n_derived": false,
+    "n_quote": "All 190 participants (84% of full randomized sample) who attended at least two treatment sessions and submitted at least one homework log were included in analyses.",
+    "groups": [],
+    "pct_female": 71,
+    "pct_female_derived": false,
+    "age_mean": 33,
+    "age_sd": 13,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "a subsample of 190 adults with GAD (71% female, Mean age = 33 ± 13)",
+    "countries": [],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Therapy records",
+     "Clinical interview/rating",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "Therapy records": "weekly homework logs and staff-rated compliance"
+    },
+    "instruments": [
+     "Homework compliance scale"
+    ],
+    "conditions": [
+     "Anxiety disorders"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "On request",
+   "url": null,
+   "quote": "De-identified data from this research study will be made available (as allowable according to IRB standards) by emailing the corresponding author.",
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "NCT01912287"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41316488",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "RCT",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Placebo response to 30 days low-dose CBD oil in stressed students at risk of depression",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 180,
+    "n_derived": true,
+    "n_quote": "| CBD-oil(n = 59)   | Placebo-oil(n = 61)   | No-treatment control(n = 60)   |",
+    "groups": [
+     {
+      "label": "CBD-oil",
+      "condition": "At-risk/subclinical",
+      "n": 59
+     },
+     {
+      "label": "Placebo-oil",
+      "condition": "At-risk/subclinical",
+      "n": 61
+     },
+     {
+      "label": "No-treatment control",
+      "condition": "At-risk/subclinical",
+      "n": 60
+     }
+    ],
+    "pct_female": 81.1,
+    "pct_female_derived": false,
+    "age_mean": 24.06,
+    "age_sd": 3.34,
+    "age_min": 19,
+    "age_max": 40,
+    "age_group": "Adults",
+    "demog_quote": "(81.1% females) aged between 19 and 40 years ( *M* = 24.06, *SD* = 3.34)",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Community",
+    "longitudinal": true,
+    "waves": 3,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "PSS-10",
+     "GEEE"
+    ],
+    "conditions": [
+     "At-risk/subclinical"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "DRKS00030971"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41526712",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Case-control",
+  "approach": [
+   "Network (cross-sectional)"
+  ],
+  "topic": "Structural connectome differences in MDD with and without comorbid anxiety versus controls",
+  "samples": [
+   {
+    "name": "Marburg-Münster Affective Disorders Cohort Study (MACS)",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 1687,
+    "n_derived": true,
+    "n_quote": "Our sample consisted of *n* = 906 HC, *n* = 532 individuals with MDD, and *n* = 249 individuals with MDD + ANX (see Table 1).",
+    "groups": [
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 906
+     },
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 532
+     },
+     {
+      "label": "MDD + ANX",
+      "condition": "Anxiety disorders",
+      "n": 249
+     }
+    ],
+    "pct_female": 63.8,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| Sex (female : male)                                 | 576:330 64:36% | 319:213 60:40%        | 182:67 73:27%        |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg",
+     "Münster"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "dMRI",
+     "sMRI",
+     "Clinical interview/rating",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "dMRI": "two scanners, CATO connectome reconstruction"
+    },
+    "instruments": [
+     "SCID-I",
+     "STAI",
+     "BDI-I"
+    ],
+    "conditions": [
+     "Major depression",
+     "Anxiety disorders",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41816006",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Secondary analysis",
+  "approach": [
+   "Machine/deep learning"
+  ],
+  "topic": "Deep learning to predict ventral striatal BOLD reward signal from EEG",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "training",
+    "n_analysed": 19,
+    "n_derived": false,
+    "n_quote": "The model was trained on consecutive EEG-fMRI data from 19 healthy participants, allowing it to identify patterns that generalize across individuals.",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "They comprise simultaneous EEG–fMRI recordings from 22 healthy male participants performing the two-choice gambling task.",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Hamburg"
+    ],
+    "recruitment": "School",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "EEG/MEG",
+     "task-fMRI",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "EEG/MEG": "62-channel simultaneous EEG-fMRI",
+     "task-fMRI": "3T Siemens Trio, two-choice gambling task"
+    },
+    "instruments": [],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Open repository",
+   "url": "https://github.com/naherzog/DLEEGfMRI",
+   "quote": "The pre-processed data, the codes used to train and evaluate the model, and the final weights are available here: https://github.com/naherzog/DLEEGfMRI.",
+   "code_available": true,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41993606",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Case-control",
+  "approach": [
+   "Network (cross-sectional)"
+  ],
+  "topic": "BMI and structural brain connectome in MDD patients and healthy controls",
+  "samples": [
+   {
+    "name": "Marburg-Münster Affective Disorders Cohort Study (MACS)",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 1598,
+    "n_derived": true,
+    "n_quote": "We analyzed the association of BMI with structural brain connectivity in 746 MDD patients and 852 healthy controls from the Marburg-Münster Affective Disorders Cohort Study (MACS).",
+    "groups": [
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 746
+     },
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 852
+     }
+    ],
+    "pct_female": 64.2,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| Sex (m/f)           | 302/550 (35:65%) | 270/476 (36:64%) | 0.794     |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg",
+     "Münster"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "dMRI",
+     "sMRI",
+     "Questionnaire",
+     "Physiology"
+    ],
+    "modality_detail": {
+     "dMRI": "deterministic tractography, single-shell",
+     "Physiology": "BMI"
+    },
+    "instruments": [
+     "BDI-I",
+     "SHAPS-D"
+    ],
+    "conditions": [
+     "Major depression",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42097784",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Intensive longitudinal (EMA)",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Daily distress tolerance predicting anxiety and depression during a mindfulness intervention",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 83,
+    "n_derived": false,
+    "n_quote": "A total of 83 participants with high emotional distress completed daily diaries of mindfulness, DT, anxiety and depression over one week before, during, and after the intervention.",
+    "groups": [],
+    "pct_female": 77.11,
+    "pct_female_derived": false,
+    "age_mean": 30.23,
+    "age_sd": 8.75,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "The analysis cohort predominantly consisted of females (77.11%, n = 64), average age 30.23 years (SD = 8.75)",
+    "countries": [
+     "CN"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": "daily diary for 1 week baseline, 49-day intervention, 1 week post",
+    "modalities": [
+     "EMA",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "EMA": "daily online questionnaires"
+    },
+    "instruments": [
+     "K10",
+     "MINI"
+    ],
+    "conditions": [
+     "At-risk/subclinical"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "NCT06034613"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42287787",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Non-randomised intervention",
+  "approach": [
+   "Network (cross-sectional)"
+  ],
+  "topic": "Longitudinal structural connectome change during in-patient treatment of major depression",
+  "samples": [
+   {
+    "name": "Münster Neuroimaging Cohort (MNC)",
+    "canonical": null,
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 152,
+    "n_derived": true,
+    "n_quote": "Therefore, the final sample comprised 109 patients with MDD (50 receiving ECT, 59 without ECT) and 43 HC included in all further analyses.",
+    "groups": [
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 109
+     },
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 43
+     }
+    ],
+    "pct_female": 53.9,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| Sex                                  | ♀60 ♂49               | ♀22 ♂21               | .665 2           |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Münster"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 2,
+    "followup_months": 1.5,
+    "ema_detail": null,
+    "modalities": [
+     "dMRI",
+     "Clinical interview/rating"
+    ],
+    "modality_detail": {
+     "dMRI": "3T Philips Gyroscan Intera, 20 directions b=1000"
+    },
+    "instruments": [
+     "SCID-I",
+     "HAMD"
+    ],
+    "conditions": [
+     "Major depression",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": false,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42368888",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Machine/deep learning",
+   "Conventional statistics"
+  ],
+  "topic": "MRI-predicted brain age gap, disability and serum biomarkers in multiple sclerosis",
+  "samples": [
+   {
+    "name": "SATURATE, 360PMS, SAFEGUIDE-MS",
+    "canonical": null,
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 112,
+    "n_derived": true,
+    "n_quote": "A total of 82 patients (10.2 ± 10.5 years since diagnosis) from the three studies and 30 HC were included in the present analysis.",
+    "groups": [
+     {
+      "label": "Relapsing MS",
+      "condition": "Medical/neurological",
+      "n": 82
+     },
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 30
+     }
+    ],
+    "pct_female": 70.5,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "| Female (n (%))                     | 23 (76.7%)    | 56 (68.3%)    |",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Düsseldorf"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Blood biomarkers",
+     "Clinical interview/rating",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "sMRI": "3T Siemens Trio, 3D MPRAGE",
+     "Blood biomarkers": "serum NfL and GFAP"
+    },
+    "instruments": [
+     "EDSS",
+     "9HPT",
+     "T25FW"
+    ],
+    "conditions": [
+     "Medical/neurological",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42460405",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Experimental",
+  "approach": [
+   "Computational modelling"
+  ],
+  "topic": "Agent-based modelling of associative learning in an approach-avoidance conflict task",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 50,
+    "n_derived": false,
+    "n_quote": "best explains the learning behavior of 50 participants.",
+    "groups": [],
+    "pct_female": 66,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": 18,
+    "age_max": 33,
+    "age_group": "Adults",
+    "demog_quote": "(66% female, 34% male). The sample consisted mainly of students (94%; 6% employees) between 18 and 33 years",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Behavioural task",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "Behavioural task": "foraging approach-avoidance task with electrotactile stimulation"
+    },
+    "instruments": [],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42571020",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Secondary analysis",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "IQ as predictor of PTSD symptom change and dropout in youth TF-CBT",
+  "samples": [
+   {
+    "name": "BESTFORCAN",
+    "canonical": "BESTFORCAN",
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 320,
+    "n_derived": false,
+    "n_quote": "After excluding cases with missing standardized IQ or baseline assessments, the final subsample included *n* = 320 youth (69.7% female, 25.9% male, 4.4% diverse).",
+    "groups": [],
+    "pct_female": 69.7,
+    "pct_female_derived": false,
+    "age_mean": 14.48,
+    "age_sd": 3.58,
+    "age_min": 5,
+    "age_max": 21,
+    "age_group": "Youth (mixed)",
+    "demog_quote": "the final subsample included *n* = 320 youth (69.7% female, 25.9% male, 4.4% diverse). Participants had a mean age of *M* = 14.48 years ( *SD* = 3.58, range = 5–21)",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Frankfurt",
+     "Eichstätt-Ingolstadt",
+     "Erlangen",
+     "Marburg"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 2,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "Behavioural task": "standardized IQ tests (CFT 20-R, WISC-V)"
+    },
+    "instruments": [
+     "CATS-2",
+     "FBB",
+     "CFT 20-R",
+     "WISC-V"
+    ],
+    "conditions": [
+     "PTSD/trauma"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "DRKS00020516"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42599846",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "RCT",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Digital mindfulness intervention by trainee instructors versus usual care for psychological distress",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 1281,
+    "n_derived": false,
+    "n_quote": "The remaining 1,281 participants com­pleted a valid baseline assessment and were subsequently randomized to the Intervention (n = 641) or SAU group (n = 640).",
+    "groups": [
+     {
+      "label": "MIED plus SAU",
+      "condition": "At-risk/subclinical",
+      "n": 641
+     },
+     {
+      "label": "SAU",
+      "condition": "At-risk/subclinical",
+      "n": 640
+     }
+    ],
+    "pct_female": 83.06,
+    "pct_female_derived": false,
+    "age_mean": 32.41,
+    "age_sd": 9.15,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "At baseline, the mean age of participants was 32.41 years (SD = 9.15), and the majority were female (83.06%).",
+    "countries": [
+     "CN"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": true,
+    "waves": 5,
+    "followup_months": 2,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "K10",
+     "PHQ-9",
+     "GAD-7",
+     "PSS-SF",
+     "SWLS",
+     "FFMQ-SF",
+     "AMPS",
+     "TIC-P"
+    ],
+    "conditions": [
+     "At-risk/subclinical"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "On request",
+   "url": null,
+   "quote": "However, the data may be made available to interested researchers upon the submission of a detailed research proposal and a formal request to the corresponding author.",
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "ChiCTR2400091400"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42732257",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Network (cross-sectional)"
+  ],
+  "topic": "Sex differences in depression, anxiety and co-occurring symptom networks during Shanghai lockdown",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 1191,
+    "n_derived": false,
+    "n_quote": "A cross‐sectional survey was conducted among adults (N = 1,191, 684 women, aged 18–40) in Shanghai",
+    "groups": [],
+    "pct_female": 57.43,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": 18,
+    "age_max": 40,
+    "age_group": "Adults",
+    "demog_quote": "the final sample consisted of 1191 Chinese adult participants aged between 18 and 40 years, with 57.43% identified as women.",
+    "countries": [
+     "CN"
+    ],
+    "sites": [
+     "Shanghai"
+    ],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "PHQ-9",
+     "GAD",
+     "ISI",
+     "IES-COVID-19",
+     "FCV-19S"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Open repository",
+   "url": "https://osf.io/tdv8u/",
+   "quote": "The data and analysis code that support the findings of this study are openly available in the Open Science Framework (OSF) at",
+   "code_available": true,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ }
+]

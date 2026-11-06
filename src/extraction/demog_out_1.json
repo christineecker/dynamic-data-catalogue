@@ -1,0 +1,531 @@
+[
+ {
+  "pmid": "41266876",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 43.93,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(44.36*178+44.32*146+41.17*48)/372",
+  "quotes": [
+   "| Age                | 44.36 (13.47)                | 44.32 (13.49)                   | 41.17 (12.2)                   | 0.306         |",
+   "| Sex, n (f/m)       | 114 / 64                     | 91 / 55                         | 18 / 30                        | 0.003         | V = 0.18      |"
+  ]
+ },
+ {
+  "pmid": "41275967",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 35.01,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(33.82*487+35.84*205+37.36*175)/867; columns HC/rMDD/cMDD by sex counts",
+  "quotes": [
+   "| Age, Years               | 33.82 (12.74) | 35.84 (13.04) | 37.36 (13.83) | F = 5.29     | .005 a  |",
+   "| Female                   | 295 (60.57%)  | 134 (65.37%)  | 101 (57.71%)  | χ 2 = 2.47   | .291    |",
+   "| Male                     | 192 (39.43%)  | 71 (34.63%)   | 74 (42.29%)   |              |         |"
+  ]
+ },
+ {
+  "pmid": "41398324",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 32.33,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(33.63*49+31.02*49)/98",
+  "quotes": [
+   "| Age in years (Mean, SD)      | 33.63 (8.32)                                            | 31.02 (9.43)*      |"
+  ]
+ },
+ {
+  "pmid": "41420114",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 47.4,
+  "age_mean_derived": false,
+  "age_sd": 12.0,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "Our study cohort comprised of 33,933 individuals with BD aged 30–82 years (mean age 47.4, SD = 12.0) at the beginning of follow-up."
+  ]
+ },
+ {
+  "pmid": "41572735",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": 18,
+  "age_max": 67,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "Participants were aged between 18 and 67 years and fluent in German."
+  ]
+ },
+ {
+  "pmid": "41586200",
+  "i": 0,
+  "pct_female": 26.67,
+  "pct_female_derived": true,
+  "age_mean": 47.13,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": 46,
+  "n_analysed_derived": true,
+  "derivation": "pct_female: 100-73.33; n_analysed: spelled out",
+  "quotes": [
+   "Forty-six physicians (80%) physicians completed the data entry.",
+   "The mean age of included participants was 47.13 (SD.",
+   "73.33%) and 12 participants were female ( *n* = 12;"
+  ]
+ },
+ {
+  "pmid": "41725695",
+  "i": 0,
+  "pct_female": 86.7,
+  "pct_female_derived": false,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "| Female                             | 202                            | 86.7                           |"
+  ]
+ },
+ {
+  "pmid": "41805604",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 25.78,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(25.7*35+25.9*23)/58",
+  "quotes": [
+   "Non-problematic (25.7 years ± 4.3 SD) and pathological pornography users (25.9 years ± 4.9 SD) did not differ with respect to age ( *t* 56 = .105, *p* = .917)."
+  ]
+ },
+ {
+  "pmid": "41816006",
+  "i": 0,
+  "pct_female": 0,
+  "pct_female_derived": true,
+  "age_mean": 23.67,
+  "age_mean_derived": false,
+  "age_sd": 3.2,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "all participants male",
+  "quotes": [
+   "Thus, the data provided to us were from 19 healthy male individuals (age 23.67 ± 3.2 years)."
+  ]
+ },
+ {
+  "pmid": "41872152",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 15.23,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(15.2*52+14.9*55+15.7*43)/150",
+  "quotes": [
+   "| gender (f/m)            | 10/42        | 30/25        | 29/14        | < 0.001        |",
+   "| age                     | 15.2 (2)     | 14.9 (1.8)   | 15.7 (1.9)   | 0.112          |"
+  ]
+ },
+ {
+  "pmid": "41935030",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 34.58,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(36.0*440+33.2*454)/894",
+  "quotes": [
+   "The full patient cohort consisted of 894 adult patients (440 female, M age = 36.0, SD = 9.3;",
+   "454 male, M age = 33.2, SD = 10.8) with a diagnosis of ADHD."
+  ]
+ },
+ {
+  "pmid": "41935030",
+  "i": 1,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 29.9,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(29.5*652+30.6*374)/1026",
+  "quotes": [
+   "For PRS validation, a control group comprising 1026 healthy subjects (652 female, M age = 29.5, SD = 8.7;",
+   "374 male, M age = 30.6, SD = 8.3) without any history of mental disease was employed, as established by the M.I.N.I."
+  ]
+ },
+ {
+  "pmid": "41993606",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 35.28,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(34.4*852+36.28*746)/1598; columns HC/MDD by sex counts",
+  "quotes": [
+   "| Sex (m/f)           | 302/550 (35:65%) | 270/476 (36:64%) | 0.794     |",
+   "| Age (years)         | 34.4 ± 12.95     | 36.28 ± 13.13    | 0.004     |"
+  ]
+ },
+ {
+  "pmid": "42000906",
+  "i": 0,
+  "pct_female": 53.5,
+  "pct_female_derived": true,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "100-46.5",
+  "quotes": [
+   "Sample-size average of mean (range) age across samples for this meta-analysis was 30.1 (12–68) years and samples were on average 46.5% male (27–100%)"
+  ]
+ },
+ {
+  "pmid": "42092437",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 34.42,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(35.7*449+33.3*510)/959",
+  "quotes": [
+   "Cross-sectional structural and diffusion MRI scans from 449 individuals with BD (35.7±12.6 years) and 510 controls (33.3±12.6 years), aged 18–65, were analyzed across 16 ENIGMA-BD sites."
+  ]
+ },
+ {
+  "pmid": "42187272",
+  "i": 0,
+  "pct_female": 25.68,
+  "pct_female_derived": true,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(666-136-359)/666*100",
+  "quotes": [
+   "| Gender, male                                                                         | 666                                 | 136 (70%)                                                  | 359 (76%)                               | 0.11                              |"
+  ]
+ },
+ {
+  "pmid": "42234441",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 36.55,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(35.6*2221+38.6*1031)/3252",
+  "quotes": [
+   "The final sample included 2221 healthy controls (mean [SD] age, 35.6 [13.2] years;",
+   "1274 female [57%]) and 1031 participants with bipolar disorder (mean [SD] age, 38.6 [13.7] years;"
+  ]
+ },
+ {
+  "pmid": "42287787",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 39.66,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": 18,
+  "age_max": 61,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(38.94*109+41.49*43)/152",
+  "quotes": [
+   "| Age (range), years               | 38.94 ± 12.42 (18-61) | 41.49 ± 12.17 (19-57) | .255 3           |"
+  ]
+ },
+ {
+  "pmid": "42330189",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 25.63,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(25.8*228+25.32*129)/357; group n from 128/0.561 and 81/0.628",
+  "quotes": [
+   "| Sex (female), n (%)                                 | 128 (56.1)                    | 81 (62.8)                     | 1.50 (1)g                             | 0.13                          | .22                           |",
+   "| Age (years), mean (SD)                              | 25.8 (4.4)                    | 25.32 (4.6)                   | −1.13 (355)h                          | 0.1                           | .35                           |"
+  ]
+ },
+ {
+  "pmid": "42368888",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 39.69,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(40.93*30+39.24*82)/112",
+  "quotes": [
+   "| Age (mean ± SD)                    | 40.93 ± 15.21 | 39.24 ± 12.0  |"
+  ]
+ },
+ {
+  "pmid": "42463908",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": 18,
+  "age_max": 67,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "Individuals aged 18–67 years, of Caucasian ancestry, receiving in- or outpatient treatment from participating local clinics in Marburg or Münster, or responding to newspaper advertisements, were recruited between 2014 and 2018."
+  ]
+ },
+ {
+  "pmid": "42463908",
+  "i": 1,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": 18,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "Individuals aged 18 years and older were recruited through the Department of Psychiatry of the Radboud University Medical Center, Nijmegen, the Netherlands between 2016 and 2021."
+  ]
+ },
+ {
+  "pmid": "42624880",
+  "i": 1,
+  "pct_female": 65.89,
+  "pct_female_derived": true,
+  "age_mean": 37.88,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "age (37.5*614+39.6*134)/748; pct (64.8*614+70.9*134)/748",
+  "quotes": [
+   "HCs in the FOR2107 cohort had an average age of 37.5 years (SD: 13.3), whereas HCs in the CIMH cohort had an average age of 31.2 years (SD: 11.4).",
+   "While the proportion of female HCs was higher in the FOR2107 cohort ( *64.8%* ), it was lower in the CIMH cohort ( *46.4%* ) (Supplementary Table S4).",
+   "Among individuals with MDD diagnosis, age structure was comparable in the FOR2107 (mean (SD): 39.6 (14.0) years) and CIMH cohorts (mean (SD): 36.8 (11.7) years). The same held for gender ratio (FOR2107: *70.9%* females; CIMH: *74.4%* females)."
+  ]
+ },
+ {
+  "pmid": "42624880",
+  "i": 2,
+  "pct_female": 51.77,
+  "pct_female_derived": true,
+  "age_mean": 32.27,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "age (31.2*181+36.8*43)/224; pct (46.4*181+74.4*43)/224",
+  "quotes": [
+   "HCs in the FOR2107 cohort had an average age of 37.5 years (SD: 13.3), whereas HCs in the CIMH cohort had an average age of 31.2 years (SD: 11.4).",
+   "While the proportion of female HCs was higher in the FOR2107 cohort ( *64.8%* ), it was lower in the CIMH cohort ( *46.4%* ) (Supplementary Table S4).",
+   "Among individuals with MDD diagnosis, age structure was comparable in the FOR2107 (mean (SD): 39.6 (14.0) years) and CIMH cohorts (mean (SD): 36.8 (11.7) years). The same held for gender ratio (FOR2107: *70.9%* females; CIMH: *74.4%* females)."
+  ]
+ },
+ {
+  "pmid": "42628150",
+  "i": 0,
+  "pct_female": 55.37,
+  "pct_female_derived": true,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": 15,
+  "age_max": 70,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(388-165+338-159)/726*100",
+  "quotes": [
+   "| Men, n (%)                              | 165 (42.53)        | 159 (47.04)       |",
+   "Cross-D sum scores of ADwDD (n =338, M =21.25, SD =9.17) were significantly higher than those of ADnoDD (n = 388, M = 17.13, SD = 8.50)",
+   "Other inclusion criteria were an outpatient status, age between 15 and 70 years"
+  ]
+ },
+ {
+  "pmid": "42709645",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": null,
+  "age_mean_derived": false,
+  "age_sd": null,
+  "age_min": 18,
+  "age_max": 65,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "Participants aged 18-65 were recruited at two university psychiatric hospitals"
+  ]
+ },
+ {
+  "pmid": "42772405",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 35.4,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(36.77*43+34.09*45)/88; columns by sex counts",
+  "quotes": [
+   "| Age (years)                 | 36.77 (10.96)        | 34.09 (10.94)        | 1.147       | 0.254   |",
+   "| Sex (female/male)           | 13/30                | 10/35                | X 2 = 0.731 | 0.393   |"
+  ]
+ },
+ {
+  "pmid": "42799903",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 36.43,
+  "age_mean_derived": false,
+  "age_sd": 13.28,
+  "age_min": 18,
+  "age_max": 65,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "This sample consisted of 2743 participants, with a mean age of 36.43 years old (SD= 13.28) and an age range of 18-65 years."
+  ]
+ },
+ {
+  "pmid": "42816754",
+  "i": 0,
+  "pct_female": 88.79,
+  "pct_female_derived": false,
+  "age_mean": 33.13,
+  "age_mean_derived": false,
+  "age_sd": 8.1,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": null,
+  "quotes": [
+   "Notably, female participants accounted for 88.79% of the final sample.",
+   "The mean age was 33.13 years (SD = 8.10)."
+  ]
+ },
+ {
+  "pmid": "42859254",
+  "i": 0,
+  "pct_female": null,
+  "pct_female_derived": false,
+  "age_mean": 25.05,
+  "age_mean_derived": true,
+  "age_sd": null,
+  "age_min": null,
+  "age_max": null,
+  "n_analysed": null,
+  "n_analysed_derived": false,
+  "derivation": "(24.6*18+25.5*18)/36",
+  "quotes": [
+   "The mean age was 24.6 years (SD = 4.41, female/male: 8/10) in the TR group and 25.5 years (SD = 4.48, female/male: 7/11) in the NR group."
+  ]
+ }
+]

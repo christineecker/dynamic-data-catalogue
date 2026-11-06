@@ -1,0 +1,1337 @@
+[
+ {
+  "pmid": "40313139",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Longitudinal cohort",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Childhood maltreatment and depression severity and course during and after inpatient treatment",
+  "samples": [
+   {
+    "name": "Cohort study sample (CoSS)",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 567,
+    "n_derived": false,
+    "n_quote": "Our study involved 438 participants in the clinical CRS and 567 participants in the CoSS.",
+    "groups": [],
+    "pct_female": 55.38,
+    "pct_female_derived": true,
+    "age_mean": 37.59,
+    "age_sd": 12.83,
+    "age_min": 18,
+    "age_max": 65,
+    "age_group": "Adults",
+    "demog_quote": "Age (mean ± S.D.)                                                              | 39.34 ± 16.84 (18–81a)  | 37.59 ± 12.83 (18–65a) | 1.87   | <.001 |\n| Gender (M/F)                                                                   | 199/239                 | 253/314",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg",
+     "Münster"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": 24,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Clinical interview/rating"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "CTQ",
+     "BDI",
+     "HAMD-17",
+     "GAF",
+     "Life Chart Interview"
+    ],
+    "conditions": [
+     "Major depression"
+    ],
+    "reuse": "Existing dataset"
+   },
+   {
+    "name": "Clinical routine sample (CRS)",
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "validation",
+    "n_analysed": 438,
+    "n_derived": false,
+    "n_quote": "Our study involved 438 participants in the clinical CRS and 567 participants in the CoSS.",
+    "groups": [],
+    "pct_female": 54.57,
+    "pct_female_derived": true,
+    "age_mean": 39.34,
+    "age_sd": 16.84,
+    "age_min": 18,
+    "age_max": 81,
+    "age_group": "Adults",
+    "demog_quote": "Age (mean ± S.D.)                                                              | 39.34 ± 16.84 (18–81a)  | 37.59 ± 12.83 (18–65a) | 1.87   | <.001 |\n| Gender (M/F)                                                                   | 199/239                 | 253/314",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Jena"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": 12,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Clinical interview/rating"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "CTQ",
+     "BDI",
+     "HAMD-17",
+     "GAF",
+     "Life Chart Interview"
+    ],
+    "conditions": [
+     "Major depression"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "39186743",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Network (cross-sectional)",
+   "Conventional statistics"
+  ],
+  "topic": "Depressive symptoms and processing of unexpected social feedback in an online sample",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 155,
+    "n_derived": false,
+    "n_quote": "No Mental Health Issue (N = 81)   | Mental Health Issue (N = 74)   | All (N = 155)",
+    "groups": [
+     {
+      "label": "No Mental Health Issue",
+      "condition": "No Mental Health Issue",
+      "n": 81
+     },
+     {
+      "label": "Mental Health Issue",
+      "condition": "Mental Health Issue",
+      "n": 74
+     }
+    ],
+    "pct_female": 52.26,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "female, N (%)                   | 36 (44.44)                        | 45 (60.81)                     | 81 (52.26)",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "Behavioural task": "video-based social feedback task"
+    },
+    "instruments": [
+     "BSI-18"
+    ],
+    "conditions": [
+     "At-risk/subclinical"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "tj6tb"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42330189",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Longitudinal cohort",
+  "approach": [
+   "Machine/deep learning",
+   "NLP"
+  ],
+  "topic": "Predicting 2-year functional outcome in help-seeking young adults from clinical and MRI data",
+  "samples": [
+   {
+    "name": "Early-BipoLife",
+    "canonical": "BipoLife",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 357,
+    "n_derived": false,
+    "n_quote": "We classified 357 help-seeking individuals aged 18-35 years recruited from 9 sites",
+    "groups": [],
+    "pct_female": 58.54,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": 18,
+    "age_max": 35,
+    "age_group": "Adults",
+    "demog_quote": "Sex (female), n (%)                                 | 128 (56.1)                    | 81 (62.8)",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 3,
+    "followup_months": 24,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Clinical interview/rating",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "sMRI": "T1 1 mm, FreeSurfer 6.0/7.x"
+    },
+    "instruments": [
+     "GAF",
+     "SKID-I",
+     "IDS-C",
+     "CTQ",
+     "FAST",
+     "PQ-16",
+     "BPSS-P"
+    ],
+    "conditions": [
+     "Mixed/transdiagnostic"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40817168",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Longitudinal cohort",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Gray matter volume change over two years by episode recurrence in bipolar disorder",
+  "samples": [
+   {
+    "name": "Marburg-Münster Affective Disorders Cohort Study (MACS)",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 124,
+    "n_derived": false,
+    "n_quote": "124 age-sex-matched participants ( *n* = 62 HC; *n* = 62 BD)",
+    "groups": [
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 62
+     },
+     {
+      "label": "BD",
+      "condition": "Bipolar disorder",
+      "n": 62
+     }
+    ],
+    "pct_female": 50.0,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "Sex, n                                                     | F = 31, M = 31          | F = 12, M = 11               | F = 19, M = 20            | 0.966                   | F = 31, M = 31",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg",
+     "Münster"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": 2,
+    "followup_months": 24,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Clinical interview/rating",
+     "Blood biomarkers"
+    ],
+    "modality_detail": {
+     "sMRI": "3T T1, CAT12 VBM"
+    },
+    "instruments": [
+     "SCID-I",
+     "HAM-D",
+     "YMRS",
+     "GAF"
+    ],
+    "conditions": [
+     "Bipolar disorder",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42795927",
+  "paper_type": "Case report",
+  "species": "Human",
+  "design": "Non-randomised intervention",
+  "approach": [],
+  "topic": "Two OCD inpatients treated with multi-target rTMS plus modified exposure protocol",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 2,
+    "n_derived": false,
+    "n_quote": "Y-BOCS total scores decreased from 29 to 11 in Patient 1 and from 29 to 10 in Patient 2",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Not reported",
+    "demog_quote": null,
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Giessen/Marburg"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": 1,
+    "ema_detail": null,
+    "modalities": [
+     "Clinical interview/rating",
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "Y-BOCS",
+     "BDI-II"
+    ],
+    "conditions": [
+     "OCD",
+     "Major depression"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40082694",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Network (cross-sectional)"
+  ],
+  "topic": "Network of psychological and biomedical predictors of preoperative quality of life in cardiac surgery",
+  "samples": [
+   {
+    "name": "PSY-HEART I",
+    "canonical": "PSYHEART",
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 115,
+    "n_derived": false,
+    "n_quote": "The first sample consisted of 115 patients from the PSY-HEART I trial",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": null,
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Blood biomarkers"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "SF-12",
+     "B-IPQ",
+     "Pain Disability Index",
+     "EuroSCORE II"
+    ],
+    "conditions": [
+     "Medical/neurological"
+    ],
+    "reuse": "Existing dataset"
+   },
+   {
+    "name": "ValvEx",
+    "canonical": null,
+    "kind": "Trial",
+    "role": "primary",
+    "n_analysed": 89,
+    "n_derived": false,
+    "n_quote": "The second sample included 89 patients from the ValvEx study",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": null,
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire",
+     "Blood biomarkers"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "SF-12",
+     "B-IPQ",
+     "Pain Disability Index",
+     "EuroSCORE II"
+    ],
+    "conditions": [
+     "Medical/neurological"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40210978",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Formal thought disorder clusters across psychotic and affective disorders and gray matter structure",
+  "samples": [
+   {
+    "name": "MACS cohort of the FOR2107 consortium",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 1032,
+    "n_derived": false,
+    "n_quote": "1 032 patients (aged 18–65) who met DSM-IV-TR criteria (SCID-I diagnosed) for MDD ( *n* = 800, f = 529/m = 271), BD ( *n* = 125, f = 66/m = 59), SSD ( *n* = 107, SZ ( *n* = 67, f = 30/m = 37) and SZA ( *n* = 40, f = 22/m = 18))",
+    "groups": [
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 800
+     },
+     {
+      "label": "BD",
+      "condition": "Bipolar disorder",
+      "n": 125
+     },
+     {
+      "label": "SSD",
+      "condition": "Schizophrenia/psychosis",
+      "n": 107
+     }
+    ],
+    "pct_female": 62.69,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": 18,
+    "age_max": 65,
+    "age_group": "Adults",
+    "demog_quote": "1 032 patients (aged 18–65) who met DSM-IV-TR criteria (SCID-I diagnosed) for MDD ( *n* = 800, f = 529/m = 271), BD ( *n* = 125, f = 66/m = 59), SSD ( *n* = 107, SZ ( *n* = 67, f = 30/m = 37) and SZA ( *n* = 40, f = 22/m = 18))",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg",
+     "Münster"
+    ],
+    "recruitment": "Clinic",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Clinical interview/rating",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "sMRI": "T1, CAT12"
+    },
+    "instruments": [
+     "SCID-I",
+     "SAPS",
+     "SANS",
+     "YMRS",
+     "HAM-D"
+    ],
+    "conditions": [
+     "Major depression",
+     "Bipolar disorder",
+     "Schizophrenia/psychosis"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41388755",
+  "paper_type": "Systematic review/meta-analysis",
+  "species": "Human",
+  "design": "Evidence synthesis",
+  "approach": [],
+  "topic": "Randomised trials of drug treatments for adult social anxiety disorder since 2015",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "CRD420251122423"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41129939",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "NLP",
+   "Conventional statistics"
+  ],
+  "topic": "Metaphor and idiom use in picture-description speech across diagnoses and controls",
+  "samples": [
+   {
+    "name": "Marburg/Münster Affective Disorders Cohort Study (MACS)",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 157,
+    "n_derived": false,
+    "n_quote": "N = 157 German native speakers (n = 70 HC and n = 87 patients meeting Diagnostic and Statistical Manual of Mental Disorders, Fourth Edition (DSM-IV-TR) criteria (Wittchen, 1997) for MDD (N = 49), BD (N = 19), and SZ (N = 19)",
+    "groups": [
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 70
+     },
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 49
+     },
+     {
+      "label": "BD",
+      "condition": "Bipolar disorder",
+      "n": 19
+     },
+     {
+      "label": "SZ",
+      "condition": "Schizophrenia/psychosis",
+      "n": 19
+     }
+    ],
+    "pct_female": 59.87,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "sex                        | f: 42                | m: 28              | f: 33                 | m:16                | f: 14                | m: 5               | f: 5                 | m: 14",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Speech/language",
+     "Clinical interview/rating",
+     "Behavioural task"
+    ],
+    "modality_detail": {
+     "Speech/language": "picture description, transcribed, metaphors/idioms annotated"
+    },
+    "instruments": [
+     "SCID-I",
+     "HAM-D",
+     "SANS",
+     "SAPS",
+     "YMRS"
+    ],
+    "conditions": [
+     "Major depression",
+     "Bipolar disorder",
+     "Schizophrenia/psychosis",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41160917",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Case-control",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Brain regional vulnerability indices with fitness and anthropometry in schizophrenia versus controls",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 85,
+    "n_derived": true,
+    "n_quote": "we combined RVIs with detailed anthropometric and fitness assessments in 42 schizophrenia patients and 43 matched healthy controls",
+    "groups": [
+     {
+      "label": "SZ",
+      "condition": "Schizophrenia/psychosis",
+      "n": 42
+     },
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 43
+     }
+    ],
+    "pct_female": 31.76,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "males                  | 29            |      |            29 |\n| females                | 13            |      |            14",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Frankfurt"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Physiology",
+     "Clinical interview/rating"
+    ],
+    "modality_detail": {
+     "sMRI": "3T Siemens Prisma, FreeSurfer cortical thickness",
+     "Physiology": "VO2max, body composition, handgrip, jump"
+    },
+    "instruments": [
+     "CDSS",
+     "WHODAS",
+     "Chester step test"
+    ],
+    "conditions": [
+     "Schizophrenia/psychosis",
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not available",
+   "url": null,
+   "quote": "The authors do not have permission to share data.",
+   "code_available": null,
+   "preregistered": true,
+   "registration_id": "DRKS00023907"
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41275967",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Computational modelling",
+   "Conventional statistics"
+  ],
+  "topic": "Resting-state network coactivation probabilities in current and remitted depression versus controls",
+  "samples": [
+   {
+    "name": "Marburg-Münster Affective Disorders Cohort Study (MACS)",
+    "canonical": "FOR2107",
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 867,
+    "n_derived": false,
+    "n_quote": "in 867 participants, including 487 healthy control participants (HCs), 175 patients with current MDD (cMDD), and 205 patients with remitted MDD (rMDD)",
+    "groups": [
+     {
+      "label": "HC",
+      "condition": "Healthy/general population",
+      "n": 487
+     },
+     {
+      "label": "cMDD",
+      "condition": "Major depression",
+      "n": 175
+     },
+     {
+      "label": "rMDD",
+      "condition": "Major depression",
+      "n": 205
+     }
+    ],
+    "pct_female": 61.13,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "Female | 295 (60.57%)  | 134 (65.37%)  | 101 (57.71%)",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Marburg",
+     "Münster"
+    ],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "rs-fMRI",
+     "Clinical interview/rating"
+    ],
+    "modality_detail": {
+     "rs-fMRI": "3T, 8 min eyes closed, FSL, 7 RSNs"
+    },
+    "instruments": [
+     "SCID-I",
+     "HAMD-17"
+    ],
+    "conditions": [
+     "Major depression",
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "38337673",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Lifestyle index, insulin resistance and inflammation in overweight adults",
+  "samples": [
+   {
+    "name": "mPRIME",
+    "canonical": null,
+    "kind": "Named cohort",
+    "role": "primary",
+    "n_analysed": 99,
+    "n_derived": false,
+    "n_quote": "Our analysis includes 99 participants (57 females and 42 males) aged between 18 and 78 years.",
+    "groups": [],
+    "pct_female": 57.58,
+    "pct_female_derived": true,
+    "age_mean": null,
+    "age_sd": null,
+    "age_min": 18,
+    "age_max": 78,
+    "age_group": "Adults",
+    "demog_quote": "Our analysis includes 99 participants (57 females and 42 males) aged between 18 and 78 years.",
+    "countries": [
+     "DE"
+    ],
+    "sites": [
+     "Frankfurt"
+    ],
+    "recruitment": "Community",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": "web dietary recall plus 3 food records in one week; 7-day wrist accelerometer",
+    "modalities": [
+     "EMA",
+     "Actigraphy/wearable",
+     "Blood biomarkers",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "Actigraphy/wearable": "Movisens Move3/Move4 wrist sensor"
+    },
+    "instruments": [
+     "myfood24",
+     "HEI-NVS",
+     "HOMA-IR"
+    ],
+    "conditions": [
+     "Medical/neurological"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42787508",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Intensive longitudinal (EMA)",
+  "approach": [
+   "Network (idiographic/time-varying)"
+  ],
+  "topic": "Idiographic EMA networks with versus without adaptive-process items in students",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 45,
+    "n_derived": false,
+    "n_quote": "The final sample consisted of 45 students from German universities",
+    "groups": [],
+    "pct_female": 73.6,
+    "pct_female_derived": false,
+    "age_mean": 25.19,
+    "age_sd": 4.65,
+    "age_min": 21,
+    "age_max": 40,
+    "age_group": "Adults",
+    "demog_quote": "Participants ranged in age from 21 to 40 years ( *M* = 25.19, *SD* = 4.65). The majority of the sample identified as female (73.6%)",
+    "countries": [
+     "DE"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": true,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": "3 prompts/day (6am, 12pm, 6pm) for about 5 weeks, VAS",
+    "modalities": [
+     "EMA"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "Vacay Status-PBT app"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "New data collection"
+   }
+  ],
+  "open_science": {
+   "data_access": "Restricted/controlled",
+   "url": null,
+   "quote": "The data underlying the results presented in this study are available from the Department of Clinical Psychology and Psychotherapy at Goethe University Frankfurt (contact via stangier@psych.uni-frankfurt.de).",
+   "code_available": true,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40169979",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Anxiety sensitivity and mindfulness Observe facet item functioning in Japanese clinical panel",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 1521,
+    "n_derived": false,
+    "n_quote": "We examined a clinical sample of 1521 Japanese individuals",
+    "groups": [
+     {
+      "label": "PD",
+      "condition": "Anxiety disorders",
+      "n": 198
+     },
+     {
+      "label": "SAD",
+      "condition": "Anxiety disorders",
+      "n": 116
+     },
+     {
+      "label": "OCD",
+      "condition": "OCD",
+      "n": 66
+     },
+     {
+      "label": "MDD",
+      "condition": "Major depression",
+      "n": 406
+     },
+     {
+      "label": "MDD with anxiety/related",
+      "condition": "Mixed/transdiagnostic",
+      "n": 636
+     },
+     {
+      "label": "Anxiety/related",
+      "condition": "Anxiety disorders",
+      "n": 99
+     }
+    ],
+    "pct_female": 51,
+    "pct_female_derived": false,
+    "age_mean": 42.42,
+    "age_sd": 9.49,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "PD ( *n* = 198), social anxiety disorder (SAD; *n* = 116), obsessive compulsive disorder (OCD; *n* = 66), major depressive disorder (MDD; *n* = 406), comorbid MDD with anxiety and related disorder ( *n* = 636) or comorbid anxiety and related disorders ( *n* = 99). The mean age in this sample was 42.42 ( *SD =* 9.49), 51% were female",
+    "countries": [
+     "JP"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "FFMQ",
+     "ASI-3"
+    ],
+    "conditions": [
+     "Anxiety disorders",
+     "Major depression",
+     "OCD"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40717812",
+  "paper_type": "Commentary",
+  "species": "None",
+  "design": "Not applicable",
+  "approach": [
+   "Network (idiographic/time-varying)"
+  ],
+  "topic": "Conceptual proposal of a multimodal dynamical network approach for clinical research",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40210648",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Network (cross-sectional)"
+  ],
+  "topic": "Network of depression, anxiety, loneliness and life satisfaction in Japanese adults",
+  "samples": [
+   {
+    "name": null,
+    "canonical": null,
+    "kind": "Study sample",
+    "role": "primary",
+    "n_analysed": 476,
+    "n_derived": false,
+    "n_quote": "leaving a final sample of 476 participants (mean age = 45.59, SD = 13.55; 235 males, 241 females)",
+    "groups": [
+     {
+      "label": "Male",
+      "condition": "Healthy/general population",
+      "n": 235
+     },
+     {
+      "label": "Female",
+      "condition": "Healthy/general population",
+      "n": 241
+     }
+    ],
+    "pct_female": 50.63,
+    "pct_female_derived": true,
+    "age_mean": 45.59,
+    "age_sd": 13.55,
+    "age_min": null,
+    "age_max": null,
+    "age_group": "Adults",
+    "demog_quote": "leaving a final sample of 476 participants (mean age = 45.59, SD = 13.55; 235 males, 241 females)",
+    "countries": [
+     "JP"
+    ],
+    "sites": [],
+    "recruitment": "Online",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "Questionnaire"
+    ],
+    "modality_detail": {},
+    "instruments": [
+     "PHQ-9",
+     "GAD-7",
+     "UCLA Loneliness Scale",
+     "SWLS"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "41642335",
+  "paper_type": "Review",
+  "species": "Human",
+  "design": "Evidence synthesis",
+  "approach": [],
+  "topic": "Narrative review of risk factors for depressive relapse and recurrence",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "42000906",
+  "paper_type": "Original",
+  "species": "Human",
+  "design": "Cross-sectional",
+  "approach": [
+   "Conventional statistics"
+  ],
+  "topic": "Cortical thickness and surface area signatures of schizotypy in healthy individuals across ENIGMA sites",
+  "samples": [
+   {
+    "name": "ENIGMA Schizotypy Working Group",
+    "canonical": "ENIGMA",
+    "kind": "Consortium",
+    "role": "primary",
+    "n_analysed": 2730,
+    "n_derived": false,
+    "n_quote": "This study included 2730 unmedicated healthy individuals with varying levels of positive and negative schizotypy",
+    "groups": [],
+    "pct_female": null,
+    "pct_female_derived": false,
+    "age_mean": 30.1,
+    "age_sd": null,
+    "age_min": 12,
+    "age_max": 68,
+    "age_group": "All ages",
+    "demog_quote": "Sample-size average of mean (range) age across samples for this meta-analysis was 30.1 (12–68) years",
+    "countries": [],
+    "sites": [],
+    "recruitment": "Mixed",
+    "longitudinal": false,
+    "waves": null,
+    "followup_months": null,
+    "ema_detail": null,
+    "modalities": [
+     "sMRI",
+     "Questionnaire"
+    ],
+    "modality_detail": {
+     "sMRI": "FreeSurfer, DKT atlas, ENIGMA protocols; 31 sites"
+    },
+    "instruments": [
+     "SPQ",
+     "CAPE",
+     "O-LIFE",
+     "Chapman scales",
+     "RISC"
+    ],
+    "conditions": [
+     "Healthy/general population"
+    ],
+    "reuse": "Existing dataset"
+   }
+  ],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "38889066",
+  "paper_type": "Review",
+  "species": "Human",
+  "design": "Evidence synthesis",
+  "approach": [],
+  "topic": "Mindfulness-based interventions as adjunct treatment for OCD",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40063161",
+  "paper_type": "Review",
+  "species": "None",
+  "design": "Not applicable",
+  "approach": [],
+  "topic": "Critical discussion of I-PACE model of behavioural addictions",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "39668233",
+  "paper_type": "Review",
+  "species": "Human",
+  "design": "Evidence synthesis",
+  "approach": [],
+  "topic": "Narrative review of placebo effects in antidepressant treatment",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": null,
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ },
+ {
+  "pmid": "40268759",
+  "paper_type": "Commentary",
+  "species": "None",
+  "design": "Not applicable",
+  "approach": [],
+  "topic": "Editorial pledge on truthful communication of mental health science",
+  "samples": [],
+  "open_science": {
+   "data_access": "Not stated",
+   "url": null,
+   "quote": "Data availability is not applicable as no new data were created or analysed.",
+   "code_available": null,
+   "preregistered": null,
+   "registration_id": null
+  },
+  "evidence": "Full text"
+ }
+]

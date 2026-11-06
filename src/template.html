@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DYNAMIC Data Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js" integrity="sha384-SM54CE5h+qdDI046d2Y5ym7wq1kq4uxcQ1cqGq5/+5jrE5tPLeDJSq711Q8sIska" crossorigin="anonymous"></script>
+<style>
+/* Layout: a library catalogue. Sticky header + one filter rail scoping every view; dataset is the unit, each carries a fixed-position modality fingerprint.
+   Theme: Ayu Light Bordered (ayu@8.0.1 light.js): one editor surface, ui.line hairlines, orange common.accent. Type: Geist / Geist Mono. Single light theme by choice. */
+:root{
+  --paper:#FCFCFC; --ink:#5C6166; --strong:#2E3338; --muted:#787B80; --faint:#ADAEB1; --rule:#6B7D8F1F; --rule2:#6B7D8F14; --ctl:#6B7D8F40;
+  --accent:#FFAA33; --accent-ink:#9A5B00; --link:#2A7DBB; --mark:#399EE6; --soft:#FFAA3326; --sel:#56728F1F; --warn:#B86A14; --warnbg:#FA8D3E1F; --ok:#3F8A1F;
+  --f-img:#399EE6; --f-ephys:#FA8D3E; --f-digital:#4CBF99; --f-bio:#A37ACC; --f-clin:#86B300; --f-cog:#55B4D4; --f-lang:#F07171;
+  --display:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.45 var(--body)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--link)}
+h1,h2,h3{color:var(--strong);text-wrap:balance;margin:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)} .small{font-size:12px}
+header.top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{display:flex;flex-direction:column;gap:8px;padding:12px 20px 0;max-width:1640px;margin:0 auto}
+.brand{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+h1{font:600 21px/1.15 var(--display);letter-spacing:-.02em}
+.brand .src{margin-left:auto;font-size:12px;color:var(--muted)}
+nav.tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:-1px}
+nav.tabs a{padding:7px 12px;text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;font-weight:500}
+nav.tabs a:hover{color:var(--strong)}
+nav.tabs a.on{color:var(--strong);border-bottom-color:var(--accent)}
+.wrap{display:grid;grid-template-columns:272px minmax(0,1fr);max-width:1640px;margin:0 auto}
+aside.rail{border-right:1px solid var(--rule);padding:14px 14px 40px 20px;position:sticky;top:96px;align-self:start;max-height:calc(100vh - 96px);overflow:auto}
+main{padding:14px 20px 60px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.answer{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;padding-bottom:10px;border-bottom:1px solid var(--rule2)}
+.answer b{font:500 20px/1 var(--mono);color:var(--strong)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip{display:inline-flex;gap:5px;align-items:center;border:1px solid var(--ctl);background:var(--paper);border-radius:6px;padding:2px 8px;font-size:12px;cursor:pointer}
+.chip:hover{background:var(--sel)}
+.chip.on{background:var(--soft);border-color:var(--accent);color:var(--strong)}
+.chip .x{color:var(--muted)} .chip.fil{background:var(--soft);border-color:transparent;color:var(--strong)}
+.lnk{background:none;border:0;padding:0;color:var(--link);cursor:pointer;font-size:12px;text-decoration:underline}
+.search{width:100%;padding:7px 10px;border:1px solid var(--ctl);border-radius:7px;background:var(--paper);margin-bottom:10px}
+.fgroup{border-top:1px solid var(--rule2);padding:9px 0}
+.fgroup>summary{cursor:pointer;font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);list-style-position:outside}
+.frow{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:6px;align-items:center;width:100%;border:0;background:none;padding:2px 3px;border-radius:4px;cursor:pointer;text-align:left;font-size:13px;min-height:24px}
+.frow:hover{background:var(--sel)}
+.frow.on{background:var(--soft);color:var(--strong);font-weight:500}
+.frow.zero{color:var(--faint)}
+.frow .sw{width:10px;height:10px;border-radius:2px;background:var(--faint)}
+.frow .ct{font:12px var(--mono);color:var(--muted)}
+.famh{font-weight:600;color:var(--strong)}
+.indent{margin-left:12px}
+.fnote{display:flex;gap:6px;align-items:center;font-size:12px;margin:5px 0 3px}
+.seg{display:inline-flex;border:1px solid var(--ctl);border-radius:6px;overflow:hidden}
+.seg button{border:0;background:none;padding:2px 9px;font-size:12px;cursor:pointer;color:var(--muted)}
+.seg button.on{background:var(--soft);color:var(--strong);font-weight:500}
+.rng{display:flex;gap:6px;align-items:center;margin-top:6px}
+.rng input[type=number]{width:74px;padding:3px 5px;border:1px solid var(--rule);border-radius:5px;font:12px var(--mono)}
+.panel{border:1px solid var(--rule);border-radius:10px;padding:14px;min-width:0}
+.panel>header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin-bottom:8px}
+.panel h2{font:600 16px/1.25 var(--display);letter-spacing:-.01em}
+.hint{font-size:12px;color:var(--muted);max-width:75ch}
+.grid2{display:grid;gap:14px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.grid3{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.scroll{overflow-x:auto}
+.tile{border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
+.tile b{display:block;font:600 23px/1.15 var(--body);letter-spacing:-.02em;color:var(--strong)}
+.tile span{font-size:12px;color:var(--muted)}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(308px,1fr))}
+.card{border:1px solid var(--rule);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;cursor:pointer;background:var(--paper);text-align:left;width:100%}
+.card:hover{border-color:var(--accent)}
+.card.sl{box-shadow:inset 0 0 0 1px var(--accent)}
+.card h3{font:600 15px/1.25 var(--display);letter-spacing:-.01em;overflow-wrap:anywhere}
+.card .stat{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.card .stat b{font:500 18px var(--mono);color:var(--strong)}
+.card .row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
+.tag.t1{border-color:var(--accent);color:var(--accent-ink)}
+.tag.warn{border-color:transparent;background:var(--warnbg);color:var(--warn)}
+.tag.btn{cursor:pointer;background:var(--paper)} .tag.btn:hover{background:var(--sel)}
+.tags{display:flex;gap:4px;flex-wrap:wrap}
+.slbtn{border:1px solid var(--ctl);background:var(--paper);border-radius:5px;font-size:11px;padding:1px 7px;cursor:pointer;white-space:nowrap}
+.slbtn.on{background:var(--soft);border-color:var(--accent);color:var(--strong)}
+table.t{border-collapse:collapse;width:100%;font-size:13px}
+table.t th{position:sticky;top:0;background:var(--paper);text-align:left;font-weight:600;font-size:12px;color:var(--muted);border-bottom:1px solid var(--rule);padding:5px 8px;white-space:nowrap}
+table.t th[data-sort]{cursor:pointer} table.t th[data-sort]:hover{color:var(--strong)}
+table.t td{border-bottom:1px solid var(--rule2);padding:5px 8px;vertical-align:top}
+table.t tr.cl{cursor:pointer} table.t tr.cl:hover td{background:var(--sel)}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+svg text{font-family:var(--body);fill:var(--ink)}
+svg .mono{font-family:var(--mono)}
+.hit{cursor:pointer}
+#tt{position:fixed;z-index:60;pointer-events:none;background:var(--strong);color:#fff;font-size:12px;line-height:1.35;padding:6px 8px;border-radius:6px;max-width:330px;display:none}
+#tt b{color:#fff}
+.scrim{position:fixed;inset:0;background:#2E33382e;z-index:40;display:none}
+.scrim.on{display:block}
+aside.drawer{position:fixed;top:0;right:0;bottom:0;width:min(620px,100%);background:var(--paper);border-left:1px solid var(--rule);z-index:50;transform:translateX(102%);transition:transform .16s;overflow:auto;padding:18px 20px 40px;visibility:hidden}
+aside.drawer.on{transform:none;visibility:visible}
+@media (prefers-reduced-motion:reduce){aside.drawer{transition:none}}
+aside.drawer h2{font:600 21px/1.2 var(--display);letter-spacing:-.02em;overflow-wrap:anywhere}
+aside.drawer h3{font:600 14px var(--body);margin:16px 0 6px}
+.close{float:right;border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:2px 9px;cursor:pointer}
+.box{border:1px solid var(--rule);border-radius:8px;padding:9px 11px;margin:7px 0}
+blockquote{margin:6px 0 0;padding:0 0 0 9px;border-left:2px solid var(--rule);font-size:12.5px;color:var(--ink)}
+.notice{background:var(--warnbg);border-radius:8px;padding:8px 11px;font-size:13px;color:#7A4A10}
+.kv{display:grid;grid-template-columns:130px minmax(0,1fr);gap:3px 12px;font-size:13px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--strong);color:#fff;padding:7px 12px;border-radius:7px;z-index:70;font-size:13px;display:none}
+.toast.on{display:block}
+dialog{border:1px solid var(--rule);border-radius:10px;max-width:640px;width:90%}
+dialog textarea{width:100%;height:240px;font:12px var(--mono)}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:3px}
+.field select,.field input{width:100%;padding:5px 7px;border:1px solid var(--ctl);border-radius:6px;background:var(--paper)}
+.planbar{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));align-items:end}
+.more{display:block;margin:10px auto 0;padding:5px 14px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);cursor:pointer}
+.legend{display:flex;gap:4px 14px;flex-wrap:wrap;font-size:12px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.empty{padding:26px;text-align:center;color:var(--muted)}
+@media(max-width:1000px){.wrap{grid-template-columns:minmax(0,1fr)}aside.rail{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:12px 16px}.grid2{grid-template-columns:minmax(0,1fr)}main{padding:12px 16px 40px}.brand .src{margin-left:0}.top-in{padding:10px 16px 0}}
+@media(max-width:1000px){header.top{position:static}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div class="brand"><h1>DYNAMIC Data Catalogue</h1><span class="muted small">Which cohorts, data types and participants the centre's papers actually analysed</span><span class="src" id="src"></span></div>
+  <nav class="tabs" aria-label="Views" id="tabs"></nav>
+</div></header>
+<div class="wrap">
+  <aside class="rail" aria-label="Filters"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search"><div id="facets"></div></aside>
+  <main>
+    <div class="answer" id="answer"></div>
+    <div class="chips" id="active"></div>
+    <div id="view" style="display:flex;flex-direction:column;gap:14px;min-width:0"></div>
+  </main>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Details"></aside>
+<div id="tt" role="tooltip"></div>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="copydlg"><p class="small">Copying was blocked here. Select the text and copy it yourself.</p><textarea id="copytxt" aria-label="Text to copy"></textarea><p><button class="slbtn" id="copyclose">Close</button></p></dialog>
+<script>
+const D=/*__DATA__*/null;
+/* ---------- helpers ---------- */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+const fmt=n=>n==null?"–":Math.round(n).toLocaleString("en");
+const uniq=a=>[...new Set(a)];
+const PAP=Object.fromEntries(D.papers.map(p=>[p.id,p]));
+const DSB=Object.fromEntries(D.datasets.map(d=>[d.id,d]));
+const S=D.samples;
+S.forEach(s=>{s.P=PAP[s.p];s.D=DSB[s.ds]});
+const FAM=D.families;
+const FAMOF={},MODCOL={};FAM.forEach(f=>f.m.forEach(m=>{FAMOF[m]=f.id;MODCOL[m]=`var(--f-${f.id})`}));
+const FAML=Object.fromEntries(FAM.map(f=>[f.id,f.l]));
+const MODS=FAM.flatMap(f=>f.m);
+const POOL=new Set(["Consortium","Registry","Meta-analysis pool"]);
+const toast=m=>{const t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1800)};
+async function copy(txt,msg){try{await navigator.clipboard.writeText(txt);toast(msg||"Copied")}catch(e){$("copytxt").value=txt;$("copydlg").showModal()}}
+$("copyclose").onclick=()=>$("copydlg").close();
+/* fingerprint: one square per modality, fixed position, grouped by family: same place on every dataset */
+function fp(mods,sz=9){const has=new Set(mods);let x=0,o="";const g=2,gg=7;
+  FAM.forEach(f=>{f.m.forEach(m=>{o+=`<rect x="${x}" y="0" width="${sz}" height="${sz}" rx="1.5" fill="${has.has(m)?`var(--f-${f.id})`:"var(--rule2)"}"${has.has(m)?"":` stroke="var(--rule)" stroke-width=".5"`}><title>${esc(m)}${has.has(m)?"":" (not used)"}</title></rect>`;x+=sz+g});x+=gg-g});
+  return `<svg width="${x}" height="${sz}" role="img" aria-label="Modalities: ${esc(mods.join(", ")||"none")}">${o}</svg>`}
+function fpKey(){return `<div class="legend">${FAM.map(f=>`<span><i style="background:var(--f-${f.id})"></i>${esc(f.l)}</span>`).join("")}</div>`}
+/* ---------- filter state ---------- */
+const FIELDS=[
+ ["cond","Condition",s=>s.c],["kind","Dataset type",s=>[s.k]],["age","Age group",s=>[s.ag]],["design","Study design",s=>[s.P.de]],
+ ["rec","Recruitment",s=>[s.rec]],["reuse","Data origin",s=>[s.re]],["access","Data access",s=>[s.P.ac]],["approach","Analytic approach",s=>s.P.ap],
+ ["ctry","Country",s=>s.ct],["year","Year",s=>[String(s.P.y)]]];
+const FL=Object.fromEntries(FIELDS.map(f=>[f[0],f[1]]));
+const blank=()=>{const f={mods:new Set(),modMode:"any",fam:new Set(),text:"",nmin:null,nmax:null,lon:false,tab1:false,ds:new Set()};FIELDS.forEach(x=>f[x[0]]=new Set());return f};
+let F=blank();
+const sl=new Set(); // shortlist of dataset ids
+function match(s,skip){
+  for(const [k,,g] of FIELDS){if(k===skip||!F[k].size)continue;if(!g(s).some(v=>F[k].has(v)))return false}
+  if(skip!=="mods"&&F.mods.size){const has=[...F.mods].map(m=>s.m.includes(m));if(F.modMode==="all"?!has.every(Boolean):!has.some(Boolean))return false}
+  if(skip!=="fam"&&F.fam.size&&!s.m.some(m=>F.fam.has(FAMOF[m])))return false;
+  if(F.ds.size&&skip!=="ds"&&!F.ds.has(s.ds))return false;
+  if(F.nmin!=null&&(s.n==null||s.n<F.nmin))return false;
+  if(F.nmax!=null&&(s.n==null||s.n>F.nmax))return false;
+  if(F.lon&&!s.lon)return false;
+  if(F.tab1&&!s.D.tab1)return false;
+  if(F.text){const h=(s.D.name+" "+(s.nm||"")+" "+s.P.t+" "+s.P.au+" "+s.P.j+" "+s.P.pmid+" "+s.ins.join(" ")+" "+s.P.tp).toLowerCase();if(!F.text.toLowerCase().split(/\s+/).every(w=>h.includes(w)))return false}
+  return true}
+const sel=()=>S.filter(s=>match(s));
+function toggle(k,v){F[k].has(v)?F[k].delete(v):F[k].add(v);render()}
+/* ---------- aggregation ---------- */
+function agg(samples){const m=new Map();samples.forEach(s=>{(m.get(s.ds)||m.set(s.ds,[]).get(s.ds)).push(s)});
+  return [...m.entries()].map(([id,ss])=>{const d=DSB[id],ns=ss.map(x=>x.n).filter(x=>x!=null),big=ss.filter(x=>x.n!=null).sort((a,b)=>b.n-a.n)[0]||ss[0],fs=ss.filter(x=>x.f!=null&&x.n).sort((a,b)=>b.n-a.n)[0]||ss.find(x=>x.f!=null),ag=ss.filter(x=>x.am!=null||x.a0!=null);
+    return{id,d,ss,n:ns.length?Math.max(...ns):null,big,papers:uniq(ss.map(x=>x.p)),years:uniq(ss.map(x=>x.P.y)).sort(),mods:uniq(ss.flatMap(x=>x.m)),conds:uniq(ss.flatMap(x=>x.c)),ins:uniq(ss.flatMap(x=>x.insn)),f:fs?fs.f:null,a0:ag.length&&ag.some(x=>x.a0!=null)?Math.min(...ag.filter(x=>x.a0!=null).map(x=>x.a0)):null,a1:ag.length&&ag.some(x=>x.a1!=null)?Math.max(...ag.filter(x=>x.a1!=null).map(x=>x.a1)):null,am:(ag.find(x=>x.am!=null)||{}).am??null,lon:ss.some(x=>x.lon),pool:POOL.has(d.kind)||d.pool}})}
+const deDup=ag=>ag.filter(a=>!a.pool&&a.n!=null).reduce((t,a)=>t+a.n,0);
+const ageText=a=>a.a0!=null&&a.a1!=null?`${a.a0}–${a.a1} y`:a.a0!=null?`from ${a.a0} y`:a.a1!=null?`up to ${a.a1} y`:a.am!=null?`mean ${a.am} y`:"age not reported";
+const nameOf=d=>d.name;
+/* ---------- facets ---------- */
+let openFacet=new Set(["mods","cond","kind","age"]);
+function renderFacets(){
+  let o="";
+  const ctM={},ctF={};S.filter(s=>match(s,"mods")).forEach(s=>s.m.forEach(m=>ctM[m]=(ctM[m]||0)+1));
+  S.filter(s=>match(s,"fam")).forEach(s=>uniq(s.m.map(m=>FAMOF[m])).forEach(f=>ctF[f]=(ctF[f]||0)+1));
+  o+=`<details class="fgroup" data-f="mods" ${openFacet.has("mods")?"open":""}><summary>Data modality</summary><div class="fnote">Match <span class="seg"><button data-modmode="any" class="${F.modMode==="any"?"on":""}">any</button><button data-modmode="all" class="${F.modMode==="all"?"on":""}">all</button></span> selected, same sample</div>`;
+  FAM.forEach(f=>{o+=`<button class="frow famh ${F.fam.has(f.id)?"on":""}" data-tog="fam" data-v="${f.id}"><span class="sw" style="background:var(--f-${f.id})"></span><span>${esc(f.l)}</span><span class="ct">${ctF[f.id]||0}</span></button>`;
+    f.m.forEach(m=>{const c=ctM[m]||0;o+=`<button class="frow indent ${F.mods.has(m)?"on":""} ${c?"":"zero"}" data-tog="mods" data-v="${esc(m)}" style="width:calc(100% - 12px)"><span></span><span>${esc(m)}</span><span class="ct">${c}</span></button>`})});
+  o+=`</details>`;
+  FIELDS.forEach(([k,l,g])=>{const ct={};S.filter(s=>match(s,k)).forEach(s=>g(s).forEach(v=>{if(v!=null)ct[v]=(ct[v]||0)+1}));
+    const all=D.facets[k];
+    o+=`<details class="fgroup" data-f="${k}" ${openFacet.has(k)||F[k].size?"open":""}><summary>${esc(l)}</summary>${all.map(v=>{const c=ct[v]||0;return `<button class="frow ${F[k].has(v)?"on":""} ${c?"":"zero"}" data-tog="${k}" data-v="${esc(v)}"><span></span><span>${esc(v)}</span><span class="ct">${c}</span></button>`}).join("")}</details>`});
+  o+=`<details class="fgroup" open><summary>Sample</summary><div class="rng"><label class="small" for="nmin">n from</label><input id="nmin" type="number" min="0" value="${F.nmin??""}"><label class="small" for="nmax">to</label><input id="nmax" type="number" min="0" value="${F.nmax??""}"></div>
+   <label class="fnote"><input id="flon" type="checkbox" ${F.lon?"checked":""}> Longitudinal only</label>
+   <label class="fnote"><input id="ftab" type="checkbox" ${F.tab1?"checked":""}> Listed in Vollantrag Tab. 1 only</label></details>`;
+  const fc=$("facets"),st=fc.parentElement.scrollTop;fc.innerHTML=o;fc.parentElement.scrollTop=st;
+  fc.querySelectorAll("details[data-f]").forEach(d=>d.addEventListener("toggle",()=>{d.open?openFacet.add(d.dataset.f):openFacet.delete(d.dataset.f)}));
+  $("nmin").onchange=e=>{F.nmin=e.target.value===""?null:+e.target.value;render()};
+  $("nmax").onchange=e=>{F.nmax=e.target.value===""?null:+e.target.value;render()};
+  $("flon").onchange=e=>{F.lon=e.target.checked;render()};
+  $("ftab").onchange=e=>{F.tab1=e.target.checked;render()};
+}
+function renderActive(){const c=[];
+  F.mods.forEach(v=>c.push(["mods",v,"Modality"]));F.fam.forEach(v=>c.push(["fam",v,"Family",FAML[v]]));
+  FIELDS.forEach(([k,l])=>F[k].forEach(v=>c.push([k,v,l])));
+  F.ds.forEach(v=>c.push(["ds",v,"Dataset",DSB[v].name]));
+  let o=c.map(([k,v,l,show])=>`<button class="chip fil" data-tog="${k}" data-v="${esc(v)}"><span class="muted">${esc(l)}</span> ${esc(show||v)} <span class="x" aria-hidden="true">×</span><span class="vh" style="position:absolute;left:-9999px">remove</span></button>`).join("");
+  if(F.nmin!=null||F.nmax!=null)o+=`<button class="chip fil" data-clr="n"><span class="muted">n</span> ${F.nmin??0}–${F.nmax??"∞"} <span class="x">×</span></button>`;
+  if(F.lon)o+=`<button class="chip fil" data-clr="lon">Longitudinal <span class="x">×</span></button>`;
+  if(F.tab1)o+=`<button class="chip fil" data-clr="tab1">Tab. 1 datasets <span class="x">×</span></button>`;
+  if(F.text)o+=`<button class="chip fil" data-clr="text"><span class="muted">Text</span> ${esc(F.text)} <span class="x">×</span></button>`;
+  const any=o!=="";
+  o+=RECIPES.map((r,i)=>`<button class="chip" data-recipe="${i}">${esc(r[0])}</button>`).join("");
+  if(any)o+=`<button class="lnk" data-clr="all">Clear all</button>`;
+  $("active").innerHTML=o}
+const RECIPES=[
+ ["Depression × sMRI",()=>{F.cond.add("Major depression");F.mods.add("sMRI")}],
+ ["Any EMA",()=>{F.mods.add("EMA")}],
+ ["Speech or video",()=>{F.mods.add("Speech/language");F.mods.add("Video/nonverbal")}],
+ ["Children & adolescents",()=>{["Children","Adolescents","Youth (mixed)"].forEach(a=>F.age.add(a))}],
+ ["Open data",()=>{F.access.add("Open repository")}],
+ ["Longitudinal, n ≥ 500",()=>{F.lon=true;F.nmin=500}],
+];
+function renderAnswer(){const ss=sel(),a=agg(ss),ps=uniq(ss.map(s=>s.p)),pl=a.filter(x=>x.pool).length,nm=a.filter(x=>x.d.named).length;
+  $("answer").innerHTML=`<span><b>${a.length}</b> datasets <span class="small muted">(${nm} named)</span></span><span><b>${ss.length}</b> analysed samples</span><span><b>${ps.length}</b> papers</span><span data-tip="Largest analysed n per dataset, never summed across papers. ${pl} consortia, registries and meta-analytic pools are listed but not counted. Overlap between datasets is not checked."><b>${fmt(deDup(a))}</b> participants <span class="small muted">de-duplicated by dataset ⓘ</span></span>`}
+/* ---------- router ---------- */
+const VIEWS=[["browse","Catalogue"],["landscape","Coverage"],["people","Participants"],["connections","Connections"],["availability","Available vs analysed"],["planner","Pooling planner"],["method","Method & trust"]];
+let view="browse";
+function route(){const h=location.hash.slice(1);view=VIEWS.some(v=>v[0]===h)?h:"browse";render()}
+window.addEventListener("hashchange",route);
+$("tabs").innerHTML=VIEWS.map(v=>`<a href="#${v[0]}" data-v="${v[0]}">${v[1]}</a>`).join("");
+$("tabs").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();try{location.hash=a.dataset.v}catch(_){}view=a.dataset.v;render();window.scrollTo(0,0)});
+function render(){document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.dataset.v===view));renderFacets();renderActive();renderAnswer();({browse:vBrowse,landscape:vLand,people:vPeople,connections:vConn,availability:vAvail,planner:vPlan,method:vMethod})[view]()}
+/* ---------- CATALOGUE ---------- */
+let unit="datasets",layout="cards",sortKey="named",limit=36,hideSingle=false,tblSort=[ "n",-1];
+function vBrowse(){const ss=sel();
+ const ctl=`<div class="row" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+  <span class="seg" role="group" aria-label="Unit">${["datasets","samples","papers"].map(u=>`<button data-unit="${u}" class="${unit===u?"on":""}">${u[0].toUpperCase()+u.slice(1)}</button>`).join("")}</span>
+  ${unit==="datasets"?`<span class="seg" role="group" aria-label="Layout">${["cards","table"].map(u=>`<button data-layout="${u}" class="${layout===u?"on":""}">${u[0].toUpperCase()+u.slice(1)}</button>`).join("")}</span>
+  <label class="small">Sort <select id="sortk" style="padding:2px 4px;border:1px solid var(--rule);border-radius:5px">${[["named","Named & reused first"],["n","Largest n"],["papers","Most papers"],["recent","Newest"],["az","A–Z"]].map(o=>`<option value="${o[0]}" ${sortKey===o[0]?"selected":""}>${o[1]}</option>`).join("")}</select></label>
+  <label class="small"><input id="hsingle" type="checkbox" ${hideSingle?"checked":""}> Hide single-study samples</label>`:""}
+  <span style="margin-left:auto;display:flex;gap:8px"><button class="slbtn" id="copycsv">Copy CSV</button><button class="slbtn" id="copybib">Copy references</button></span></div>`;
+ let body="";
+ if(!ss.length)body=`<div class="empty">No analysed samples match. Remove a filter above.</div>`;
+ else if(unit==="datasets"){let a=agg(ss);if(hideSingle)a=a.filter(x=>x.d.named);
+  const srt={named:(x,y)=>(y.d.named-x.d.named)||(y.papers.length-x.papers.length)||((y.n||0)-(x.n||0)),n:(x,y)=>(y.n||0)-(x.n||0),papers:(x,y)=>y.papers.length-x.papers.length,recent:(x,y)=>Math.max(...y.years)-Math.max(...x.years),az:(x,y)=>x.d.name.localeCompare(y.d.name)};a.sort(srt[sortKey]);
+  if(layout==="cards"){body=`<div class="small muted">Each square below is a modality in a fixed position, so two datasets compare at a glance.</div>${fpKey()}<div class="cards">${a.slice(0,limit).map(card).join("")}</div>${a.length>limit?`<button class="more" id="more">Show all ${a.length}</button>`:""}`}
+  else{const k=tblSort;const cols=[["name","Dataset",x=>x.d.name],["kind","Type",x=>x.d.kind],["n","Largest n",x=>x.n??-1],["p","Papers",x=>x.papers.length],["f","% female",x=>x.f??-1],["a","Age span",x=>x.a0??x.am??-1]];
+   const sg=cols.find(c=>c[0]===k[0])[2];a.sort((x,y)=>{const A=sg(x),B=sg(y);return(A>B?1:A<B?-1:0)*k[1]});
+   body=`<div class="scroll"><table class="t"><thead><tr>${cols.map(c=>`<th data-sort="${c[0]}" class="${["n","p","f"].includes(c[0])?"n":""}">${c[1]}${k[0]===c[0]?(k[1]>0?" ↑":" ↓"):""}</th>`).join("")}<th>Modalities</th><th></th></tr></thead><tbody>${a.map(x=>`<tr class="cl" data-ds="${esc(x.id)}" tabindex="0"><td style="color:var(--strong);font-weight:500">${esc(x.d.name)}${x.d.tab1?` <span class="tag t1">Tab. 1</span>`:""}</td><td class="small">${esc(x.d.kind)}</td><td class="n">${x.pool?`<span data-tip="Pooled: not counted in totals">(${fmt(x.n)})</span>`:fmt(x.n)}</td><td class="n">${x.papers.length}</td><td class="n">${x.f??"–"}</td><td class="small">${ageText(x)}</td><td>${fp(x.mods,8)}</td><td><button class="slbtn ${sl.has(x.id)?"on":""}" data-sl="${esc(x.id)}">${sl.has(x.id)?"Listed":"Shortlist"}</button></td></tr>`).join("")}</tbody></table></div>`}
+ }else if(unit==="samples"){const r=[...ss].sort((a,b)=>(b.n||0)-(a.n||0));
+  body=`<div class="scroll"><table class="t"><thead><tr><th>Dataset</th><th>Paper</th><th class="n">n</th><th>Groups</th><th class="n">% F</th><th>Age</th><th>Design</th><th>Modalities</th></tr></thead><tbody>${r.slice(0,limit*3).map(s=>`<tr class="cl" data-paper="${s.p}" tabindex="0"><td style="color:var(--strong);font-weight:500">${esc(s.D.name)}</td><td class="small">${esc(s.P.au)} ${s.P.y}</td><td class="n">${fmt(s.n)}</td><td class="small">${esc(s.g.slice(0,3).map(g=>`${g.l} ${g.n??""}`).join(", "))}</td><td class="n">${s.f??"–"}</td><td class="small">${ageText({a0:s.a0,a1:s.a1,am:s.am})}</td><td class="small">${esc(s.P.de)}</td><td>${fp(s.m,8)}</td></tr>`).join("")}</tbody></table></div>${r.length>limit*3?`<button class="more" id="more">Show all ${r.length}</button>`:""}`
+ }else{const ids=uniq(ss.map(s=>s.p)).map(i=>PAP[i]).sort((a,b)=>b.y-a.y||a.au.localeCompare(b.au));
+  const none=D.papers.filter(p=>!S.some(s=>s.p===p.id));
+  body=`<div class="scroll"><table class="t"><thead><tr><th>Paper</th><th>Journal</th><th>Year</th><th>Type</th><th>Data access</th></tr></thead><tbody>${ids.slice(0,limit*3).map(p=>`<tr class="cl" data-paper="${p.id}" tabindex="0"><td><span style="color:var(--strong)">${esc(p.t)}</span><br><span class="small muted">${esc(p.au)}</span></td><td class="small">${esc(p.j)}</td><td class="num small">${p.y}</td><td class="small">${esc(p.ty)}</td><td class="small">${esc(p.ac)}</td></tr>`).join("")}</tbody></table></div>${ids.length>limit*3?`<button class="more" id="more">Show all ${ids.length}</button>`:""}<p class="small muted">${none.length} further papers report no participant data of their own (reviews, commentaries, theory). They are in the library and not in these counts.</p>`}
+ $("view").innerHTML=`<section class="panel"><header><h2>Catalogue</h2><span class="hint">Everything analysed in the ${D.meta.papers} papers of this snapshot. A dataset groups all papers that analysed it. Click a card for its sheet and the sentence each number comes from.</span></header><div style="display:flex;flex-direction:column;gap:10px">${ctl}${body}</div></section>`;
+ const m=$("more");if(m)m.onclick=()=>{limit=1e5;render()};
+ const sk=$("sortk");if(sk)sk.onchange=e=>{sortKey=e.target.value;render()};
+ const hs=$("hsingle");if(hs)hs.onchange=e=>{hideSingle=e.target.checked;render()};
+ $("copycsv").onclick=()=>copy(csvOf(ss),"CSV copied");
+ $("copybib").onclick=()=>copy(uniq(ss.map(s=>s.p)).map(i=>{const p=PAP[i];return `${p.au} (${p.y}). ${p.t} ${p.j}.${p.doi?` https://doi.org/${p.doi}`:""}`}).join("\n"),"References copied");
+}
+function csvOf(ss){const q=v=>`"${String(v??"").replace(/"/g,'""')}"`;
+ return ["dataset,kind,pmid,first_author,year,n,pct_female,age_mean,age_min,age_max,age_group,design,recruitment,conditions,modalities,instruments,data_access,n_quote"].concat(ss.map(s=>[s.D.name,s.k,s.P.pmid,s.P.au,s.P.y,s.n,s.f,s.am,s.a0,s.a1,s.ag,s.P.de,s.rec,s.c.join("; "),s.m.join("; "),s.ins.join("; "),s.P.ac,s.nq].map(q).join(","))).join("\n")}
+function ageBar(a){const W=90,x=v=>v/90*W;if(a.a0==null&&a.a1==null&&a.am==null)return"";const l=a.a0??a.am,r=a.a1??a.am;return `<svg width="${W}" height="10" aria-hidden="true"><line x1="0" x2="${W}" y1="5" y2="5" stroke="var(--rule)"/><line x1="${x(Math.min(l,90))}" x2="${x(Math.min(r,90))}" y1="5" y2="5" stroke="var(--mark)" stroke-width="3" stroke-linecap="round"/>${a.am!=null?`<circle cx="${x(a.am)}" cy="5" r="3" fill="var(--strong)"/>`:""}</svg>`}
+function card(x){const d=x.d;return `<div class="card ${sl.has(x.id)?"sl":""}" data-ds="${esc(x.id)}" role="button" tabindex="0">
+ <div class="row"><h3>${esc(d.name)}</h3><button class="slbtn ${sl.has(x.id)?"on":""}" data-sl="${esc(x.id)}">${sl.has(x.id)?"Listed":"Shortlist"}</button></div>
+ <div class="tags"><span class="tag">${esc(d.kind)}</span>${d.tab1?`<span class="tag t1">Vollantrag Tab. 1</span>`:""}${x.papers.length>1?`<span class="tag warn" data-tip="Same participants across papers: treat as one sample, not as replications.">${x.papers.length} papers, not independent</span>`:""}${x.lon?`<span class="tag">Longitudinal</span>`:""}</div>
+ <div class="stat"><span><b>${x.pool?"("+fmt(x.n)+")":fmt(x.n)}</b> <span class="small muted">${x.pool?"pooled, not counted":"largest n"}</span></span>${x.f!=null?`<span><b>${x.f}%</b> <span class="small muted">female</span></span>`:""}</div>
+ <div class="row"><span class="small muted">${ageText(x)}</span>${ageBar(x)}</div>
+ ${fp(x.mods)}
+ <div class="small muted">${esc(x.conds.slice(0,4).join(" · ")||"Condition not coded")}${x.conds.length>4?" …":""}</div></div>`}
+/* ---------- COVERAGE ---------- */
+let rowBy="cond",measure="papers",matTable=false;
+function vLand(){
+ $("view").innerHTML=`<section class="panel"><header><h2>What was analysed, in whom</h2><span class="seg" style="margin-left:0">${[["cond","Condition"],["kind","Dataset type"],["age","Age group"],["design","Design"]].map(o=>`<button data-rowby="${o[0]}" class="${rowBy===o[0]?"on":""}">${o[1]}</button>`).join("")}</span><span class="seg">${[["papers","Papers"],["datasets","Datasets"],["people","Participants"]].map(o=>`<button data-meas="${o[0]}" class="${measure===o[0]?"on":""}">${o[1]}</button>`).join("")}</span><span class="seg"><button data-mt="0" class="${matTable?"":"on"}">Chart</button><button data-mt="1" class="${matTable?"on":""}">Table</button></span></header>
+ <p class="hint">Circle area = ${measure==="people"?"participants, largest n per dataset; pools excluded":measure}. Faint ring = whole library, so filters visibly shrink circles. Scale stays fixed. Blank cells are gaps nobody has published on. Click a cell to filter.</p><div class="scroll" id="mat"></div>${fpKey()}</section>
+ <section class="panel"><header><h2>Which data come together</h2><span class="hint">The 14 most common modality combinations within one sample. Click a column to require exactly that set.</span></header><div class="scroll" id="upset"></div></section>`;
+ matTable?matrixTable():matrix();upset()}
+function cellVal(ss,m){const c=ss.filter(s=>s.m.includes(m));if(measure==="papers")return uniq(c.map(s=>s.p)).length;if(measure==="datasets")return uniq(c.map(s=>s.ds)).length;return deDup(agg(c))}
+function rowsFor(){const f=FIELDS.find(x=>x[0]===rowBy);return{rows:D.facets[rowBy],get:f[2]}}
+function matrixTable(){const{rows,get}=rowsFor(),cur=sel();$("mat").innerHTML=`<table class="t"><thead><tr><th></th>${MODS.map(m=>`<th class="n" style="writing-mode:vertical-rl;transform:rotate(180deg);text-align:left">${esc(m)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>{const ss=cur.filter(s=>get(s).includes(r));return `<tr><td>${esc(r)}</td>${MODS.map(m=>{const v=cellVal(ss,m);return `<td class="n">${v||""}</td>`}).join("")}</tr>`}).join("")}</tbody></table>`}
+function matrix(){const{rows,get}=rowsFor(),cur=sel(),host=$("mat");
+ const L=172,T=150,TOTW=56,W=Math.max(host.clientWidth||900,L+MODS.length*27+TOTW+24),famGap=8;
+ const cw=Math.min(40,(W-L-TOTW-famGap*6-10)/MODS.length),ch=Math.min(38,cw+2);
+ let x=L;const xs={},fb=[];FAM.forEach(f=>{const x0=x;f.m.forEach(m=>{xs[m]=x+cw/2;x+=cw});fb.push([f,x0,x]);x+=famGap});
+ const H=T+rows.length*ch+6;const lib={};let mx=0;
+ rows.forEach(r=>{const ss=S.filter(s=>get(s).includes(r));MODS.forEach(m=>{const v=cellVal(ss,m);lib[r+"|"+m]=v;if(v>mx)mx=v})});
+ const rad=v=>v?Math.max(2.2,Math.sqrt(v/mx)*(Math.min(cw,ch)/2-1)):0;
+ let o=`<svg width="${x+TOTW}" height="${H}" role="img" aria-label="Matrix of ${rowBy} by data modality">`;
+ fb.forEach(([f,a,b])=>{o+=`<rect x="${a}" y="${T-5}" width="${b-a}" height="3" rx="1.5" fill="var(--f-${f.id})"/>`});
+ MODS.forEach(m=>{o+=`<g class="hit" data-tog="mods" data-v="${esc(m)}"><text transform="translate(${xs[m]+3},${T-10}) rotate(-52)" font-size="11.5" style="${F.mods.has(m)?"font-weight:600;fill:var(--strong)":""}">${esc(m)}</text></g>`});
+ const tog=rowBy;
+ rows.forEach((r,i)=>{const y=T+i*ch,ss=cur.filter(s=>get(s).includes(r));const on=F[tog].has(r),total=measure==="papers"?uniq(ss.map(s=>s.p)).length:measure==="datasets"?uniq(ss.map(s=>s.ds)).length:deDup(agg(ss));
+  o+=`<line x1="0" x2="${x+TOTW-8}" y1="${y+ch}" y2="${y+ch}" stroke="var(--rule2)"/>`;
+  o+=`<g class="hit" data-tog="${tog}" data-v="${esc(r)}"><rect x="0" y="${y}" width="${L-6}" height="${ch}" fill="transparent"/><text x="${L-10}" y="${y+ch/2+4}" text-anchor="end" font-size="12.5" style="${on?"font-weight:600;fill:var(--strong)":""}">${esc(r)}</text></g>`;
+  o+=`<text class="mono" x="${x+TOTW-12}" y="${y+ch/2+4}" text-anchor="end" font-size="11.5" style="fill:var(--muted)">${fmt(total)}</text>`;
+  MODS.forEach(m=>{const v=cellVal(ss,m),l=lib[r+"|"+m],cx=xs[m],cy=y+ch/2;
+   if(l)o+=`<circle cx="${cx}" cy="${cy}" r="${rad(l)}" fill="none" stroke="var(--faint)" stroke-width="1"/>`;
+   if(v)o+=`<circle cx="${cx}" cy="${cy}" r="${rad(v)}" fill="${MODCOL[m]}" stroke="var(--paper)" stroke-width="1"/>`;
+   if(l)o+=`<rect class="hit" data-cell="${esc(r)}|${esc(m)}" data-tip="<b>${esc(r)} × ${esc(m)}</b><br>${fmt(v)} ${measure} in selection, ${fmt(l)} in library" x="${cx-cw/2}" y="${y}" width="${cw}" height="${ch}" fill="transparent"/>`})});
+ o+=`<text x="${x+TOTW-12}" y="${T-10}" text-anchor="end" font-size="11" style="fill:var(--muted)">Total</text></svg>`;host.innerHTML=o}
+function upset(){const cur=sel(),m=new Map();cur.forEach(s=>{if(!s.m.length)return;const k=MODS.filter(x=>s.m.includes(x)).join("|");(m.get(k)||m.set(k,[]).get(k)).push(s)});
+ const top=[...m.entries()].sort((a,b)=>b[1].length-a[1].length).slice(0,14);if(!top.length){$("upset").innerHTML=`<div class="empty">Nothing to combine in this selection.</div>`;return}
+ const used=MODS.filter(x=>top.some(([k])=>k.split("|").includes(x)));
+ const L=160,cw=Math.max(30,Math.min(56,(($("upset").clientWidth||800)-L-10)/top.length)),BH=110,PAD=16,rh=19,T=BH+PAD+14,W=L+top.length*cw+10,H=T+used.length*rh+4,mx=top[0][1].length;
+ let o=`<svg width="${W}" height="${H}" role="img" aria-label="Modality combinations">`;
+ used.forEach((u,i)=>{const y=T+i*rh;o+=`<g class="hit" data-tog="mods" data-v="${esc(u)}"><text x="${L-10}" y="${y+13}" text-anchor="end" font-size="12">${esc(u)}</text></g><line x1="${L}" x2="${W-6}" y1="${y+rh}" y2="${y+rh}" stroke="var(--rule2)"/>`});
+ top.forEach(([k,ss],c)=>{const cx=L+c*cw+cw/2,h=ss.length/mx*BH,ms=k.split("|"),ix=ms.map(z=>used.indexOf(z)),sel2=F.modMode==="all"&&F.mods.size===ms.length&&ms.every(z=>F.mods.has(z));
+  o+=`<rect x="${cx-9}" y="${PAD+BH-h+4}" width="18" height="${h}" rx="3" fill="${sel2?"var(--accent)":"var(--f-img)"}"/><text class="mono" x="${cx}" y="${PAD+BH-h}" text-anchor="middle" font-size="11">${ss.length}</text>`;
+  if(ix.length>1)o+=`<line x1="${cx}" x2="${cx}" y1="${T+Math.min(...ix)*rh+rh/2}" y2="${T+Math.max(...ix)*rh+rh/2}" stroke="var(--strong)" stroke-width="2"/>`;
+  used.forEach((u,i)=>{const on=ms.includes(u);o+=`<circle cx="${cx}" cy="${T+i*rh+rh/2}" r="${on?5:3}" fill="${on?MODCOL[u]:"var(--rule)"}" stroke="${on?"var(--strong)":"none"}" stroke-width=".6"/>`});
+  o+=`<rect class="hit" data-combo="${esc(k)}" data-tip="<b>${ms.map(esc).join(" + ")}</b><br>${ss.length} samples, ${fmt(deDup(agg(ss)))} participants de-duplicated" x="${cx-cw/2}" y="0" width="${cw}" height="${H}" fill="transparent"/>`});
+ $("upset").innerHTML=o+"</svg>"}
+/* ---------- PARTICIPANTS ---------- */
+function median(a){if(!a.length)return null;const b=[...a].sort((x,y)=>x-y),i=b.length>>1;return b.length%2?b[i]:(b[i-1]+b[i])/2}
+function vPeople(){const cur=sel(),hum=cur.filter(s=>s.k!=="Meta-analysis pool"),ns=hum.map(s=>s.n).filter(x=>x!=null),fs=hum.map(s=>s.f).filter(x=>x!=null),am=hum.map(s=>s.am).filter(x=>x!=null);
+ const tiles=[[fmt(median(ns)),"median analysed n per sample"],[fs.length?median(fs).toFixed(0)+"%":"–","median share female"],[am.length?median(am).toFixed(1)+" y":"–","median of mean ages"],[hum.filter(s=>s.ag==="Children"||s.ag==="Adolescents"||s.ag==="Youth (mixed)").length,"samples include minors or youth"],[hum.filter(s=>s.ct.some(c=>c!=="DE")).length,"samples include non-German sites"],[hum.filter(s=>s.lon).length,"longitudinal samples"]];
+ $("view").innerHTML=`<div class="grid3">${tiles.map(t=>`<div class="tile"><b>${t[0]}</b><span>${t[1]}</span></div>`).join("")}</div>
+ <div class="grid2"><section class="panel"><header><h2>Age and sex of each sample</h2></header><p class="hint">Each bubble is one sample at its reported mean age and share female; area = n. Grey = library outside the current filter. Hover a point, click to open its dataset.</p><div id="scat"></div></section>
+ <section class="panel"><header><h2>Age span of samples</h2></header><p class="hint">Line = reported age range, dot = mean. Sorted by youngest. Shows at once which ages have no data.</p><div id="span" style="max-height:440px;overflow:auto"></div></section></div>
+ <section class="panel"><header><h2>Sample size by condition</h2></header><p class="hint">Each dot is one sample, on a log scale. Hollow = pooled (consortium, registry, meta-analysis). Tick = median. Samples listing several conditions appear in each row.</p><div class="scroll" id="swarm"></div></section>
+ <section class="panel"><header><h2>What papers fail to report</h2></header><p class="hint">Share of samples with each detail traced to a verbatim quote. A short bar can mean the paper did not report it, or that extraction missed it (Method tab).</p><div id="rep"></div></section>`;
+ scatter(cur);ageSpan(cur);swarm(cur);report(cur)}
+function scatter(cur){const host=$("scat"),W=Math.max(320,host.clientWidth),H=340,m={l:44,r:12,t:10,b:36};
+ const x=d3.scaleLinear([0,80],[m.l,W-m.r]),y=d3.scaleLinear([0,100],[H-m.b,m.t]),r=d3.scaleSqrt([0,7500],[3,26]).clamp(true);
+ const pts=S.filter(s=>s.am!=null&&s.f!=null&&!POOL.has(s.k));const on=new Set(cur.map(s=>s.id));
+ const KC={"Named cohort":"var(--f-img)","Trial":"var(--f-ephys)","Study sample":"var(--f-digital)","Public dataset":"var(--f-img)"};
+ let o=`<svg width="${W}" height="${H}" id="scatsvg" role="img" aria-label="Mean age against percent female per sample">`;
+ x.ticks(8).forEach(t=>o+=`<line x1="${x(t)}" x2="${x(t)}" y1="${m.t}" y2="${H-m.b}" stroke="var(--rule2)"/><text class="mono" x="${x(t)}" y="${H-m.b+15}" text-anchor="middle" font-size="11" style="fill:var(--muted)">${t}</text>`);
+ [0,25,50,75,100].forEach(t=>o+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y(t)}" y2="${y(t)}" stroke="${t===50?"var(--faint)":"var(--rule2)"}"/><text class="mono" x="${m.l-6}" y="${y(t)+4}" text-anchor="end" font-size="11" style="fill:var(--muted)">${t}%</text>`);
+ o+=`<text x="${(W+m.l)/2}" y="${H-4}" text-anchor="middle" font-size="12" style="fill:var(--muted)">Mean age, years</text><text transform="translate(12,${(H-m.b)/2}) rotate(-90)" text-anchor="middle" font-size="12" style="fill:var(--muted)">Female</text>`;
+ pts.sort((a,b)=>(b.n||0)-(a.n||0)).forEach(s=>{const a=on.has(s.id);o+=`<circle cx="${x(s.am)}" cy="${y(s.f)}" r="${r(s.n||1)}" fill="${a?(KC[s.k]||"var(--f-img)"):"var(--rule)"}" fill-opacity="${a?.72:.5}" stroke="var(--paper)" stroke-width="1.5"/>`});
+ host.innerHTML=o+`</svg><div class="legend">${[["Named cohort or public dataset","--f-img"],["Trial","--f-ephys"],["Study sample","--f-digital"]].map(k=>`<span><i style="background:var(${k[1]})"></i>${k[0]}</span>`).join("")}<span>${pts.length} of ${S.filter(s=>!POOL.has(s.k)).length} samples report both mean age and sex</span></div>`;
+ const del=d3.Delaunay.from(pts,p=>x(p.am),p=>y(p.f)),sv=$("scatsvg"),tt=$("tt");
+ const near=e=>{const b=sv.getBoundingClientRect(),i=del.find(e.clientX-b.left,e.clientY-b.top);const p=pts[i];return Math.hypot(x(p.am)-(e.clientX-b.left),y(p.f)-(e.clientY-b.top))<30?p:null};
+ sv.onmousemove=e=>{const p=near(e);if(p){showTip(e,`<b>${esc(p.D.name)}</b><br>${esc(p.P.au)} ${p.P.y}<br>n ${fmt(p.n)} · ${p.f}% female · mean age ${p.am}`);sv.style.cursor="pointer"}else{tt.style.display="none";sv.style.cursor=""}};
+ sv.onmouseleave=()=>tt.style.display="none";sv.onclick=e=>{const p=near(e);if(p)openDS(p.ds)}}
+function ageSpan(cur){const host=$("span"),W=Math.max(300,host.clientWidth-16),on=new Set(cur.map(s=>s.id));
+ const pts=S.filter(s=>(s.a0!=null||s.a1!=null)&&!POOL.has(s.k)).map(s=>({s,l:s.a0??s.am??s.a1,r:s.a1??s.am??s.a0})).sort((a,b)=>a.l-b.l||a.r-b.r);
+ const rh=7,m={l:6,r:10,t:22},x=d3.scaleLinear([0,90],[m.l,W-m.r]),H=m.t+pts.length*rh+6;
+ let o=`<svg width="${W}" height="${H}" role="img" aria-label="Reported age ranges per sample">`;
+ d3.range(0,91,10).forEach(t=>o+=`<line x1="${x(t)}" x2="${x(t)}" y1="${m.t-4}" y2="${H}" stroke="${t===18?"var(--faint)":"var(--rule2)"}"/><text class="mono" x="${x(t)}" y="${m.t-8}" text-anchor="middle" font-size="11" style="fill:var(--muted)">${t}</text>`);
+ pts.forEach(({s,l,r},i)=>{const y=m.t+i*rh+3,a=on.has(s.id);o+=`<g class="hit" data-ds="${esc(s.ds)}" data-tip="<b>${esc(s.D.name)}</b><br>${esc(s.P.au)} ${s.P.y}<br>Age ${l}–${r}${s.am!=null?`, mean ${s.am}`:""} · n ${fmt(s.n)}"><rect x="0" y="${y-3.5}" width="${W}" height="${rh}" fill="transparent"/><line x1="${x(l)}" x2="${x(Math.max(r,l+.6))}" y1="${y}" y2="${y}" stroke="${a?"var(--mark)":"var(--rule)"}" stroke-width="2.5" stroke-linecap="round"/>${s.am!=null?`<circle cx="${x(s.am)}" cy="${y}" r="2.2" fill="${a?"var(--strong)":"var(--faint)"}"/>`:""}</g>`});
+ host.innerHTML=o+"</svg>"}
+function swarm(cur){const host=$("swarm"),W=Math.max(640,host.clientWidth),L=172,rows=D.facets.cond.filter(c=>S.some(s=>s.c.includes(c)&&s.n)),rh=46,T=8,H=T+rows.length*rh+30;
+ const x=d3.scaleLog([5,400000],[L,W-16]).clamp(true),on=new Set(cur.map(s=>s.id));
+ let o=`<svg width="${W}" height="${H}" role="img" aria-label="Sample size by condition">`;
+ [10,100,1000,10000,100000].forEach(t=>o+=`<line x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H-26}" stroke="var(--rule2)"/><text class="mono" x="${x(t)}" y="${H-10}" text-anchor="middle" font-size="11" style="fill:var(--muted)">${t>=1000?t/1000+"k":t}</text>`);
+ rows.forEach((c,i)=>{const yc=T+i*rh+rh/2,ss=S.filter(s=>s.c.includes(c)&&s.n);const nodes=ss.map(s=>({s,x:x(s.n),y:yc}));const sim=d3.forceSimulation(nodes).force("x",d3.forceX(d=>x(d.s.n)).strength(1)).force("y",d3.forceY(yc).strength(.09)).force("c",d3.forceCollide(3.4)).stop();for(let k=0;k<60;k++)sim.tick();
+  o+=`<g class="hit" data-tog="cond" data-v="${esc(c)}"><text x="${L-12}" y="${yc+4}" text-anchor="end" font-size="12.5" style="${F.cond.has(c)?"font-weight:600;fill:var(--strong)":""}">${esc(c)}</text></g><line x1="${L}" x2="${W-16}" y1="${yc+rh/2}" y2="${yc+rh/2}" stroke="var(--rule2)"/>`;
+  const act=ss.filter(s=>on.has(s.id));const mdn=median(act.map(s=>s.n));if(mdn)o+=`<line x1="${x(mdn)}" x2="${x(mdn)}" y1="${yc-rh/2+3}" y2="${yc+rh/2-3}" stroke="var(--strong)" stroke-width="2"/>`;
+  nodes.forEach(n=>{const y=Math.max(yc-rh/2+3,Math.min(yc+rh/2-3,n.y)),a=on.has(n.s.id),p=POOL.has(n.s.k);o+=`<g class="hit" data-ds="${esc(n.s.ds)}" data-tip="<b>${esc(n.s.D.name)}</b><br>${esc(n.s.P.au)} ${n.s.P.y} · n ${fmt(n.s.n)}${p?" (pooled)":""}"><circle cx="${n.x}" cy="${y}" r="6" fill="transparent"/><circle cx="${n.x}" cy="${y}" r="3" fill="${p?"var(--paper)":a?"var(--f-img)":"var(--rule)"}" stroke="${p?(a?"var(--mark)":"var(--faint)"):"var(--paper)"}" stroke-width="${p?1.4:.6}"/></g>`})});
+ host.innerHTML=o+"</svg>"}
+function report(cur){const ss=cur.filter(s=>s.k!=="Meta-analysis pool"),N=ss.length||1;const has=[["Sample size",s=>s.n!=null],["Age group",s=>s.ag&&s.ag!=="Not reported"],["Country",s=>s.ct.length],["Instruments named",s=>s.ins.length],["Share female",s=>s.f!=null],["Age range",s=>s.a0!=null||s.a1!=null],["Mean age",s=>s.am!=null],["Group sizes",s=>s.g.length],["Named site",s=>s.st.length],["Recruitment route",s=>s.rec!=="Not reported"],["Data-access statement",s=>s.P.ac!=="Not stated"],["Pre-registration",s=>s.P.pre===true]];
+ const rows=has.map(([l,g])=>[l,ss.filter(g).length]).sort((a,b)=>b[1]-a[1]);
+ $("rep").innerHTML=`<table class="t" style="max-width:720px"><tbody>${rows.map(([l,c])=>`<tr><td style="width:190px">${l}</td><td><div style="height:8px;border-radius:4px;background:var(--rule2)"><div style="height:8px;border-radius:4px;background:var(--f-img);width:${(c/N*100).toFixed(1)}%"></div></div></td><td class="n" style="width:70px">${Math.round(c/N*100)}%</td></tr>`).join("")}</tbody></table>`}
+/* ---------- CONNECTIONS ---------- */
+function vConn(){$("view").innerHTML=`<section class="panel"><header><h2>Condition → dataset → data type</h2></header><p class="hint">Ribbon width = samples, split evenly when a sample covers several conditions or data families. Hover a node to trace it; click to filter.</p><div class="scroll" id="sankey"></div></section>
+ <section class="panel"><header><h2>Which datasets speak the same language</h2></header><p class="hint">Datasets linked when their papers report at least 2 of the same instruments; line weight grows with overlap (BDI-II and BDI count as one family). Dense neighbourhoods are the realistic pooling candidates. Node area = largest n. Only instruments named in the extracted text count, so a missing link is not proof of no overlap.</p><div id="net"></div></section>
+ <section class="panel"><header><h2>Reuse: the same participants, again</h2></header><p class="hint">Datasets analysed in two or more papers. Dot = paper, by year; these are not independent replications. Below the chart: named datasets feeding into consortium or derived samples.</p><div class="scroll" id="tracks"></div></section>`;
+ sankey();network();tracks()}
+function sankey(){const cur=sel(),host=$("sankey");if(!cur.length){host.innerHTML=`<div class="empty">Nothing selected.</div>`;return}
+ const W=Math.max(780,host.clientWidth),a=agg(cur),top=new Set(a.filter(x=>x.d.named&&!x.pool).sort((p,q)=>q.ss.length-p.ss.length).slice(0,10).map(x=>x.id));
+ const dg=s=>top.has(s.ds)?s.D.name:POOL.has(s.k)?"Consortia & pools":s.D.named?"Other named datasets":"Single-study samples";
+ const L=new Map();const add=(u,v,w)=>{const k=u+"\t"+v;L.set(k,(L.get(k)||0)+w)};
+ cur.forEach(s=>{const cs=s.c.length?s.c:["Not coded"],fs=uniq(s.m.map(m=>FAMOF[m]));cs.forEach(c=>add("c:"+c,"d:"+dg(s),1/cs.length));(fs.length?fs:["none"]).forEach(f=>add("d:"+dg(s),"f:"+f,1/(fs.length||1)))});
+ const ids=uniq([...L.keys()].flatMap(k=>k.split("\t")));const nodes=ids.map(id=>({id})),links=[...L.entries()].map(([k,v])=>{const[u,t]=k.split("\t");return{source:u,target:t,value:v}});
+ const H=Math.max(420,ids.filter(i=>i.startsWith("d:")).length*34);
+ const g=d3.sankey().nodeId(d=>d.id).nodeWidth(11).nodePadding(9).nodeSort((p,q)=>q.value-p.value).extent([[170,6],[W-225,H-6]])({nodes,links});
+ const col=n=>n.id.startsWith("f:")?(n.id==="f:none"?"var(--faint)":`var(--f-${n.id.slice(2)})`):n.id.startsWith("c:")?"var(--strong)":"var(--mark)";
+ const lab=n=>{const x=n.id.slice(2);return n.id.startsWith("f:")?(FAML[x]||"No modality coded"):x};const short=s=>s.length>36?s.slice(0,35)+"…":s;
+ const path=d3.sankeyLinkHorizontal();
+ let o=`<svg width="${W}" height="${H}" id="sks" role="img" aria-label="Flow from condition through dataset to data family">`;
+ g.links.forEach(l=>{o+=`<path class="sk" d="${path(l)}" fill="none" stroke="${l.target.id.startsWith("f:")?col(l.target):"var(--faint)"}" stroke-opacity=".36" stroke-width="${Math.max(1,l.width)}" data-a="${esc(l.source.id)}" data-b="${esc(l.target.id)}"><title>${esc(lab(l.source))} → ${esc(lab(l.target))}: ${l.value.toFixed(1)}</title></path>`});
+ g.nodes.forEach(n=>{const left=n.x0<W/2&&n.id.startsWith("c:"),right=n.id.startsWith("f:"),tx=left?n.x0-6:right?n.x1+6:n.x1+6,an=left?"end":"start";const[fld,val]=n.id.startsWith("c:")?["cond",n.id.slice(2)]:n.id.startsWith("f:")?["fam",n.id.slice(2)]:[null,null];const dsid=n.id.startsWith("d:")?(a.find(x=>x.d.name===n.id.slice(2))||{}).id:null;
+  o+=`<g class="hit skn" data-n="${esc(n.id)}" ${fld&&val!=="Not coded"&&val!=="none"?`data-tog="${fld}" data-v="${esc(val)}"`:dsid?`data-ds="${esc(dsid)}"`:""} data-tip="<b>${esc(lab(n))}</b><br>${n.value.toFixed(0)} samples"><rect x="${n.x0}" y="${n.y0}" width="${n.x1-n.x0}" height="${Math.max(2,n.y1-n.y0)}" rx="2" fill="${col(n)}"/><text x="${tx}" y="${(n.y0+n.y1)/2+4}" text-anchor="${an}" font-size="12" style="paint-order:stroke;stroke:var(--paper);stroke-width:3px">${esc(short(lab(n)))}</text></g>`});
+ host.innerHTML=o+"</svg>";
+ const sv=$("sks");sv.querySelectorAll(".skn").forEach(e=>{e.onmouseenter=()=>{const id=e.dataset.n;sv.querySelectorAll(".sk").forEach(p=>{p.setAttribute("stroke-opacity",p.dataset.a===id||p.dataset.b===id?.8:.08)})};e.onmouseleave=()=>sv.querySelectorAll(".sk").forEach(p=>p.setAttribute("stroke-opacity",.36))})}
+function network(){const host=$("net"),W=Math.max(420,host.clientWidth),H=500,a=agg(sel()).filter(x=>x.ins.length>=2&&!x.pool).sort((p,q)=>(q.d.named-p.d.named)||((q.n||0)-(p.n||0))).slice(0,90);
+ if(a.length<2){host.innerHTML=`<div class="empty">Fewer than two datasets with three or more named instruments in this selection.</div>`;return}
+ let nodes=a.map(x=>({id:x.id,x0:x,name:x.d.name,r:Math.max(4,Math.sqrt(x.n||1)/2.2)}));nodes.forEach(n=>n.r=Math.min(n.r,26));
+ const links=[];for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const A=new Set(nodes[i].x0.ins),sh=nodes[j].x0.ins.filter(z=>A.has(z));if(sh.length>=2)links.push({source:nodes[i].id,target:nodes[j].id,sh})}
+ const tot=nodes.length,lk=new Set(links.flatMap(l=>[l.source,l.target]));nodes=nodes.filter(n=>lk.has(n.id));
+ if(nodes.length<2){host.innerHTML=`<div class="empty">No two datasets in this selection share two or more named instruments.</div>`;return}
+ const sim=d3.forceSimulation(nodes).force("l",d3.forceLink(links).id(d=>d.id).distance(l=>110/Math.sqrt(l.sh.length)).strength(.25)).force("c",d3.forceManyBody().strength(-70)).force("xx",d3.forceX(W/2).strength(.07)).force("yy",d3.forceY(H/2).strength(.1)).force("co",d3.forceCollide(d=>d.r+3)).stop();for(let k=0;k<280;k++)sim.tick();
+ {const ex=d3.extent(nodes,n=>n.x),ey=d3.extent(nodes,n=>n.y),px=70,py=34,sx=(W-2*px)/((ex[1]-ex[0])||1),sy=(H-2*py)/((ey[1]-ey[0])||1);nodes.forEach(n=>{n.x=px+(n.x-ex[0])*sx;n.y=py+(n.y-ey[0])*sy})}
+ const KC={"Named cohort":"var(--f-img)","Public dataset":"var(--f-img)","Trial":"var(--f-ephys)","Study sample":"var(--f-digital)"};
+ const deg={};links.forEach(l=>{deg[l.source.id]=(deg[l.source.id]||0)+1;deg[l.target.id]=(deg[l.target.id]||0)+1});
+ let o=`<svg width="${W}" height="${H}" id="netsvg" role="img" aria-label="Datasets sharing instruments">`;
+ links.forEach(l=>o+=`<line class="nl" data-a="${esc(l.source.id)}" data-b="${esc(l.target.id)}" x1="${l.source.x}" y1="${l.source.y}" x2="${l.target.x}" y2="${l.target.y}" stroke="var(--faint)" stroke-opacity=".5" stroke-width="${Math.min(4,.6+(l.sh.length-2)*.5)}"/>`);
+ nodes.forEach(n=>{o+=`<g class="hit nn" data-ds="${esc(n.id)}" data-id="${esc(n.id)}" data-tip="<b>${esc(n.name)}</b><br>n ${fmt(n.x0.n)} · ${n.x0.ins.length} instruments · linked to ${deg[n.id]||0}<br>${esc(n.x0.ins.slice(0,10).join(", "))}"><circle cx="${n.x}" cy="${n.y}" r="${Math.max(n.r,10)}" fill="transparent"/><circle cx="${n.x}" cy="${n.y}" r="${n.r}" fill="${KC[n.x0.d.kind]||"var(--f-img)"}" fill-opacity=".85" stroke="var(--paper)" stroke-width="2"/></g>`});
+ nodes.filter(n=>n.x0.d.named).forEach(n=>{const right=n.x<W-150;o+=`<text x="${right?n.x+n.r+3:n.x-n.r-3}" y="${n.y+4}" text-anchor="${right?"start":"end"}" font-size="11.5" pointer-events="none" style="fill:var(--strong);paint-order:stroke;stroke:var(--paper);stroke-width:3px">${esc(n.name.length>24?n.name.slice(0,23)+"…":n.name)}</text>`});
+ host.innerHTML=o+`</svg><div class="legend">${[["Named cohort or public dataset","--f-img"],["Trial","--f-ephys"],["Study sample","--f-digital"]].map(k=>`<span><i style="background:var(${k[1]})"></i>${k[0]}</span>`).join("")}<span>${links.length} links among ${nodes.length} datasets; ${tot-nodes.length} more share fewer than 2 instruments with any other</span></div>`;
+ const sv=$("netsvg");sv.querySelectorAll(".nn").forEach(e=>{e.onmouseenter=()=>{const id=e.dataset.id;sv.querySelectorAll(".nl").forEach(l=>{const h=l.dataset.a===id||l.dataset.b===id;l.setAttribute("stroke-opacity",h?1:.1);l.setAttribute("stroke",h?"var(--accent)":"var(--faint)")})};e.onmouseleave=()=>sv.querySelectorAll(".nl").forEach(l=>{l.setAttribute("stroke-opacity",.5);l.setAttribute("stroke","var(--faint)")})})}
+function tracks(){const a=agg(sel()).filter(x=>x.papers.length>=2).sort((p,q)=>q.papers.length-p.papers.length);const host=$("tracks");
+ const fed=D.feeds.filter(f=>sel().some(s=>s.id===f.sample));
+ if(!a.length&&!fed.length){host.innerHTML=`<div class="empty">No dataset is reused in this selection.</div>`;return}
+ const yrs=D.facets.year.map(Number).sort();const W=Math.max(640,host.clientWidth),L=210,R=270,rh=30,T=22,H=T+a.length*rh+6,x=d3.scalePoint(yrs,[L+50,W-R-70]);const lg=d3.scaleLog([10,10000],[0,R-170]).clamp(true);
+ let o=`<svg width="${W}" height="${H}" role="img" aria-label="Datasets analysed in several papers">`;
+ yrs.forEach(y=>o+=`<text class="mono" x="${x(y)}" y="13" text-anchor="middle" font-size="11" style="fill:var(--muted)">${y}</text><line x1="${x(y)}" x2="${x(y)}" y1="18" y2="${H}" stroke="var(--rule2)"/>`);
+ a.forEach((d,i)=>{const y=T+i*rh+rh/2;o+=`<g class="hit" data-ds="${esc(d.id)}"><rect x="0" y="${y-rh/2}" width="${W}" height="${rh}" fill="transparent"/><text x="${L-10}" y="${y+4}" text-anchor="end" font-size="12.5" style="fill:var(--strong)">${esc(d.d.name.length>30?d.d.name.slice(0,29)+"…":d.d.name)}</text><line x1="${L}" x2="${W-R}" y1="${y+rh/2}" y2="${y+rh/2}" stroke="var(--rule2)"/>`;
+  yrs.forEach(yr=>{const ss=d.ss.filter(s=>s.P.y===yr);ss.forEach((s,j)=>{o+=`<circle cx="${x(yr)+(j-(ss.length-1)/2)*Math.min(7.5,110/ss.length)}" cy="${y}" r="3.2" fill="var(--mark)" stroke="var(--paper)" stroke-width=".8"><title>${esc(s.P.au)} ${s.P.y}, n ${fmt(s.n)}</title></circle>`})});
+  o+=`<rect x="${W-R+14}" y="${y-3}" width="${d.n?lg(Math.max(d.n,10)):0}" height="6" rx="3" fill="var(--f-img)"/><text class="mono" x="${W-R+14+(d.n?lg(Math.max(d.n,10)):0)+5}" y="${y+4}" font-size="11.5">n ${fmt(d.n)} · ${d.papers.length} papers</text></g>`});
+ const fx=fed.length?`<div class="small" style="margin-top:8px"><b style="color:var(--strong)">Feeding consortia:</b> ${fed.map(f=>`${esc(DSB[f.from]?.name||f.from)} → <button class="lnk" data-paper="${S.find(s=>s.id===f.sample).p}">${esc(S.find(s=>s.id===f.sample).D.name)}</button> <span class="muted">“${esc(f.quote)}”</span>`).join(" · ")}</div>`:"";
+ host.innerHTML=(a.length?o+"</svg>":"")+fx}
+/* ---------- AVAILABLE VS ANALYSED ---------- */
+let availMode="all";
+function vAvail(){const FAMS=FAM.map(f=>f.id),cur=sel(),usedAll=agg(S),used=agg(cur);
+ const byId=Object.fromEntries(used.map(a=>[a.id,a])),allId=Object.fromEntries(usedAll.map(a=>[a.id,a]));
+ const rows=D.tab1.map(t=>({t,a:byId[t.ds],all:allId[t.ds]}));
+ const pub=rows.filter(r=>r.all).length;
+ const shown=rows.filter(r=>availMode==="all"||(availMode==="pub"?r.all:!r.all)).sort((p,q)=>(!!q.all-!!p.all)||((q.all?.papers.length||0)-(p.all?.papers.length||0))||q.t.n-p.t.n);
+ const pct=Math.round(rows.filter(r=>r.all).reduce((t,r)=>t+r.t.n,0)/rows.reduce((t,r)=>t+r.t.n,0)*100);
+ const nu=agg(S).filter(a=>a.d.named&&!a.d.tab1&&!a.pool).length;
+ const cw=52,L=196,RM=250,T=150,rh=26,W=L+FAMS.length*cw+RM,H=T+shown.length*rh+6;
+ let o=`<svg width="${W}" height="${H}" role="img" aria-label="Datasets by data family">`;
+ FAMS.forEach((f,i)=>{o+=`<text transform="translate(${L+i*cw+cw/2+3},${T-8}) rotate(-38)" font-size="11.5">${esc(FAML[f])}</text>`});
+ shown.forEach((r,i)=>{const y=T+i*rh,cy=y+rh/2;o+=`<line x1="0" x2="${W}" y1="${y+rh}" y2="${y+rh}" stroke="var(--rule2)"/>`;
+  o+=`<g ${r.all?`class="hit" data-ds="${esc(r.t.ds)}"`:""} data-tip="<b>${esc(r.t.name)}</b> · approx. n ${fmt(r.t.n)} · ${esc(r.t.dx)}<br>Responsible: ${esc(r.t.pi)}<br>${esc(r.t.note)}"><rect x="0" y="${y}" width="${L}" height="${rh}" fill="transparent"/><text x="${L-10}" y="${cy+4}" text-anchor="end" font-size="12.5" style="${r.all?"fill:var(--strong);font-weight:500":"fill:var(--muted)"}">${esc(r.t.name)}</text></g>`;
+  const mods=r.a?r.a.mods:[];const pubf=new Set(mods.map(m=>FAMOF[m]));
+  FAMS.forEach((f,j)=>{const cx=L+j*cw+cw/2,av=r.t.avail[f],P=pubf.has(f);
+   if(av)o+=`<circle cx="${cx}" cy="${cy}" r="8" fill="none" stroke="var(--f-${f})" stroke-width="1.5" ${av==="part"?'stroke-dasharray="2.5 2.5"':""}/>`;
+   if(P)o+=`<circle cx="${cx}" cy="${cy}" r="5" fill="var(--f-${f})"/>`;
+   o+=`<rect x="${cx-13}" y="${y}" width="26" height="${rh}" fill="transparent" data-tip="<b>${esc(r.t.name)} · ${esc(FAML[f])}</b><br>${av==="part"?"Partly available":av?"Available":"Not listed"} in Tab. 1${P?`<br>Published: ${esc(mods.filter(m=>FAMOF[m]===f).join(", "))}`:""}"/>`});
+  o+=`<text class="mono" x="${L+FAMS.length*cw+12}" y="${cy+4}" font-size="11.5" style="fill:var(--muted)">${r.all?`${r.all.papers.length} paper${r.all.papers.length>1?"s":""}`:"not yet in a paper"}</text>`});
+ const pl=D.planned.map(p=>`<tr><td style="color:var(--strong)">${esc(p.name)}</td><td class="n">${fmt(p.n)}</td><td class="small">${esc(p.dx)}</td><td class="small">${esc(p.pi)}</td><td>${fp(p.mods,8)}</td><td class="small muted">${esc(p.src)}</td></tr>`).join("");
+ $("view").innerHTML=`<div class="grid3"><div class="tile"><b>${pub} of ${rows.length}</b><span>Tab. 1 datasets already named in a paper</span></div><div class="tile"><b>${rows.length-pub}</b><span>listed but not traceable to any paper yet</span></div><div class="tile"><b>${nu}</b><span>named datasets in papers, outside Tab. 1</span></div></div>
+ <section class="panel"><header><h2>What the proposal lists, against what papers used</h2><span class="seg">${[["all","All 41"],["pub","Published on"],["un","Not yet"]].map(o=>`<button data-avail="${o[0]}" class="${availMode===o[0]?"on":""}">${o[1]}</button>`).join("")}</span></header>
+ <p class="hint">Ring = available according to Vollantrag Anhang Tab. 1 (dashed = partly). Filled dot = at least one paper analysed that data family, in the current filter. Tab. 1 records availability per family, except for what its remarks column names. Dot without ring: used, though the table did not list it. “Not yet in a paper” means no paper named it in text we read; a paper may use it without naming it.</p><div class="scroll">${o}</svg></div>${fpKey()}</section>
+ <section class="panel"><header><h2>New DYNAMIC cohorts, planned in the proposal</h2><span class="hint">Targets from the Vollantrag, not results. Recruitment progress is not in the papers.</span></header><div class="scroll"><table class="t"><thead><tr><th>Cohort</th><th class="n">Planned n</th><th>Population</th><th>Responsible</th><th>Planned modalities</th><th>Source</th></tr></thead><tbody>${pl}</tbody></table></div></section>`}
+/* ---------- PLANNER ---------- */
+const P={cond:"Major depression",m1:"sMRI",m2:"",min:50,age:"",inst:"",nopool:true,lon:false};
+function vPlan(){const a=agg(S).filter(x=>{if(P.nopool&&x.pool)return false;if(P.cond&&!x.conds.includes(P.cond))return false;if(P.m1&&!x.mods.includes(P.m1))return false;if(P.m2&&!x.mods.includes(P.m2))return false;if(P.min&&(x.n==null||x.n<P.min))return false;if(P.lon&&!x.lon)return false;if(P.age&&!x.ss.some(s=>s.ag===P.age))return false;if(P.inst&&!x.ins.includes(P.inst))return false;return true}).sort((p,q)=>(q.n||0)-(p.n||0));
+ const ub=a.reduce((t,x)=>t+(x.n||0),0);
+ const insCnt={};a.forEach(x=>x.ins.forEach(i=>insCnt[i]=(insCnt[i]||0)+1));
+ const topI=Object.entries(insCnt).sort((p,q)=>q[1]-p[1]).slice(0,14).map(e=>e[0]);
+ const allIns=uniq(S.flatMap(s=>s.insn)).sort();
+ const opt=(arr,v,e="Any")=>`<option value="">${e}</option>`+arr.map(o=>`<option ${o===v?"selected":""}>${esc(o)}</option>`).join("");
+ const shortl=[...sl].map(id=>agg(S).find(x=>x.id===id)).filter(Boolean);
+ $("view").innerHTML=`<section class="panel"><header><h2>Plan a pooled or replication analysis</h2></header><p class="hint">State what you need; the planner works per dataset, across all its papers, so a modality may come from a different paper of that cohort. Check with the holders whether both exist for the same people.</p>
+ <div class="planbar"><div class="field"><label for="pc">Condition</label><select id="pc">${opt(D.facets.cond,P.cond)}</select></div><div class="field"><label for="pm1">Needs modality</label><select id="pm1">${opt(MODS,P.m1)}</select></div><div class="field"><label for="pm2">and modality</label><select id="pm2">${opt(MODS,P.m2)}</select></div><div class="field"><label for="pi">and instrument</label><select id="pi">${opt(allIns,P.inst)}</select></div><div class="field"><label for="pa">Age group</label><select id="pa">${opt(D.facets.age,P.age)}</select></div><div class="field"><label for="pn">Minimum n per dataset</label><input id="pn" type="number" min="0" value="${P.min}"></div><label class="fnote"><input id="pl" type="checkbox" ${P.lon?"checked":""}> Longitudinal only</label><label class="fnote"><input id="pp" type="checkbox" ${P.nopool?"checked":""}> Leave out consortia and pools</label></div></section>
+ <div class="grid3"><div class="tile"><b>${a.length}</b><span>datasets meet this</span></div><div class="tile"><b>≤ ${fmt(ub)}</b><span>upper bound on pooled n: largest n per dataset, all groups, overlap unchecked</span></div><div class="tile"><b>${topI.filter(i=>insCnt[i]===a.length).length||0}</b><span>instruments common to all${a.length?" "+a.length:""}, as reported</span></div></div>
+ <section class="panel"><header><h2>Candidates</h2><button class="slbtn" id="addall">Shortlist all</button></header><div class="scroll">${a.length?`<table class="t"><thead><tr><th>Dataset</th><th class="n">Largest n</th><th>Holder or contact</th><th>Modalities</th><th>Access stated</th><th></th></tr></thead><tbody>${a.map(x=>`<tr class="cl" data-ds="${esc(x.id)}" tabindex="0"><td style="color:var(--strong);font-weight:500">${esc(x.d.name)}</td><td class="n">${fmt(x.n)}</td><td class="small">${esc(holder(x))}</td><td>${fp(x.mods,8)}</td><td class="small">${esc(uniq(x.ss.map(s=>s.P.ac)).join("; "))}</td><td><button class="slbtn ${sl.has(x.id)?"on":""}" data-sl="${esc(x.id)}">${sl.has(x.id)?"Listed":"Shortlist"}</button></td></tr>`).join("")}</tbody></table>`:`<div class="empty">No dataset meets all of this. Relax one requirement above.</div>`}</div></section>
+ ${a.length>1&&topI.length?`<section class="panel"><header><h2>Instrument overlap</h2><span class="hint">Reported instruments, grouped into families. Columns on the left are shared most widely; these are the phenotypes you can harmonise without bridging.</span></header><div class="scroll"><table class="t"><thead><tr><th>Dataset</th>${topI.map(i=>`<th style="writing-mode:vertical-rl;transform:rotate(180deg);height:90px;text-align:left">${esc(i)}</th>`).join("")}</tr></thead><tbody>${a.slice(0,24).map(x=>`<tr><td>${esc(x.d.name)}</td>${topI.map(i=>`<td style="text-align:center">${x.ins.includes(i)?`<span aria-label="yes" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--mark)"></span>`:""}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`:""}
+ <section class="panel"><header><h2>Shortlist (${shortl.length})</h2>${shortl.length?`<button class="slbtn" id="copyreq">Copy data request</button><button class="lnk" id="clrsl">Clear shortlist</button>`:""}</header>${shortl.length?compare(shortl):`<p class="small muted">Add datasets from any card or table to compare them here, and draft a request to their holders.</p>`}</section>`;
+ const bind=(id,k,num)=>{$(id).onchange=e=>{P[k]=e.target.type==="checkbox"?e.target.checked:num?(+e.target.value||0):e.target.value;render()}};
+ bind("pc","cond");bind("pm1","m1");bind("pm2","m2");bind("pi","inst");bind("pa","age");bind("pn","min",1);bind("pl","lon");bind("pp","nopool");
+ $("addall").onclick=()=>{a.forEach(x=>sl.add(x.id));render()};
+ const cr=$("copyreq");if(cr){cr.onclick=()=>copy(request(shortl),"Draft request copied");$("clrsl").onclick=()=>{sl.clear();render()}}}
+function holder(x){if(x.d.tab1!=null&&x.d.tab1!==false){const t=D.tab1.find(t=>t.ds===x.id);if(t)return t.pi+" (Tab. 1)"}const p=x.ss.map(s=>s.P).sort((a,b)=>b.y-a.y)[0];return p?(p.la?p.la+" (last author, "+p.y+")":"see paper"):"see paper"}
+function compare(list){const rows=[["Type",x=>esc(x.d.kind)],["Largest n",x=>fmt(x.n)],["Female",x=>x.f!=null?x.f+"%":"–"],["Age",x=>ageText(x)],["Longitudinal",x=>x.lon?"Yes":"Not reported"],["Papers",x=>x.papers.length],["Conditions",x=>esc(x.conds.join(", "))],["Modalities",x=>fp(x.mods,8)+`<div class="small muted" style="margin-top:3px">${esc(x.mods.join(", "))}</div>`],["Instruments",x=>esc(x.ins.join(", ")||"–")],["Holder or contact",x=>esc(holder(x))],["Access stated",x=>esc(uniq(x.ss.map(s=>s.P.ac)).join("; "))]];
+ return `<div class="scroll"><table class="t"><thead><tr><th></th>${list.map(x=>`<th style="white-space:normal;min-width:190px;color:var(--strong)">${esc(x.d.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr><td class="muted small" style="white-space:nowrap">${r[0]}</td>${list.map(x=>`<td class="small">${r[1](x)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`}
+function request(list){return `Subject: DYNAMIC data request: ${P.cond||"analysis"} ${[P.m1,P.m2].filter(Boolean).join(" + ")}\n\nDear colleagues,\n\nWe are planning an analysis of ${P.cond||"[population]"} using ${[P.m1,P.m2].filter(Boolean).join(" and ")||"[modalities]"}. The DYNAMIC catalogue lists the following datasets as candidates. Could you tell us whether these data exist for the same participants, and on what terms they could be shared?\n\n`+list.map(x=>`- ${x.d.name}, largest analysed n ${fmt(x.n)}. Contact: ${holder(x)}. Key paper: ${x.ss[0].P.au} ${x.ss[0].P.y}${x.ss[0].P.doi?`, https://doi.org/${x.ss[0].P.doi}`:""}`).join("\n")+`\n\nResearch question: [one sentence]\nVariables needed: [list]\n\nWith thanks,\n[name]`}
+/* ---------- METHOD ---------- */
+function vMethod(){const m=D.meta,q=m.qc,a=m.agree;
+ $("view").innerHTML=`<div class="grid3"><div class="tile"><b>${m.papers}</b><span>papers in snapshot ${esc(m.snapshot)}</span></div><div class="tile"><b>${q.quotes}</b><span>verbatim quotes, all found in the source text by machine</span></div><div class="tile"><b>${m.fulltext}</b><span>papers read from full text; ${m.papers-m.fulltext} abstract or metadata only</span></div><div class="tile"><b>${a?a.n_exact+"%":"–"}</b><span>of largest n repeated exactly in a blind second extraction of ${a?a.papers:"–"} papers</span></div></div>
+ <section class="panel"><header><h2>How to read these numbers</h2></header><div style="max-width:72ch;display:flex;flex-direction:column;gap:8px">
+ <p style="margin:0"><b style="color:var(--strong)">Analysed, not collected.</b> Sample sizes are what a paper analysed. A cohort's real size may be larger, and Vollantrag Tab. 1 gives its planned size.</p>
+ <p style="margin:0"><b style="color:var(--strong)">Participants are never summed across papers.</b> Totals take the largest n per dataset. Consortia, registries and meta-analytic pools are listed but not counted. Overlap between different datasets is not checked, so the total is an upper bound.</p>
+ <p style="margin:0"><b style="color:var(--strong)">Every number has a source.</b> Sample sizes, sex and age sit inside a quote that a script found in the paper. Numbers computed from counts are marked as derived. The quote proves the sentence exists, not that it was read correctly. The second extraction below tests repeatability only, so spot-check any number you plan to rely on.</p>
+ <p style="margin:0"><b style="color:var(--strong)">Access is what the paper states.</b> It is no statement of what the holder would share today. Holders come from Tab. 1; for other datasets the page shows the latest paper's last author as a starting point.</p>
+ <p style="margin:0"><b style="color:var(--strong)">Preprints are excluded</b>, as in the rest of the DYNAMIC library.</p></div></section>
+ <section class="panel"><header><h2>Second extraction, ${a?a.papers:"–"} randomly chosen papers</h2><span class="hint">A second agent read the same text packets without seeing the first result. Same model, same packets, so this measures repeatability: errors both make stay invisible. A later hand scan of the full texts corrected 12 dataset links and added 4 links from named cohorts into consortium or derived samples; this check flagged none of them, and for BANDA both passes made the same mistake.</span></header>${a?`<table class="t" style="max-width:720px"><thead><tr><th>Field</th><th class="n">Agreement</th><th>How measured</th></tr></thead><tbody>${a.rows.map(r=>`<tr><td>${esc(r[0])}</td><td class="n">${r[1]}%</td><td class="small muted">${esc(r[2])}</td></tr>`).join("")}</tbody></table>`:`<p class="small muted">Not available.</p>`}</section>
+ <section class="panel"><header><h2>Known gaps</h2></header><ul style="margin:0;padding-left:18px;max-width:75ch">${m.gaps.map(g=>`<li>${esc(g)}</li>`).join("")}</ul></section>
+ <section class="panel"><header><h2>What this mockup takes from the atlas proposals, and what it adds</h2></header><div class="scroll"><table class="t"><thead><tr><th>Idea</th><th>Source</th><th>Here</th></tr></thead><tbody>${m.lineage.map(r=>`<tr><td>${esc(r[0])}</td><td class="small muted">${esc(r[1])}</td><td class="small">${esc(r[2])}</td></tr>`).join("")}</tbody></table></div></section>`}
+/* ---------- DRAWER ---------- */
+function openDrawer(html){const d=$("drawer");d.innerHTML=`<button class="close" id="dclose">Close</button>`+html;d.classList.add("on");$("scrim").classList.add("on");d.scrollTop=0;$("dclose").focus();$("dclose").onclick=closeDrawer}
+function closeDrawer(){$("drawer").classList.remove("on");$("scrim").classList.remove("on")}
+$("scrim").onclick=closeDrawer;
+function sampleBox(s,withPaper){const g=s.g.length?`<div class="small" style="margin-top:3px">${s.g.map(x=>`${esc(x.l)}${x.n!=null?` <span class="num">${x.n}</span>`:""}`).join(" · ")}</div>`:"";
+ const qs=[s.nq,s.dq].filter(Boolean).concat(s.xq||[]);
+ return `<div class="box">${withPaper?`<button class="lnk" data-paper="${s.p}" style="font-size:13px">${esc(s.P.au)} ${s.P.y}. ${esc(s.P.t)}</button><br>`:""}<span class="tag">${esc(s.role||"primary")}</span> <b class="num" style="color:var(--strong)">n ${fmt(s.n)}</b>${s.nd?` <span class="tag">derived</span>`:""}${s.f!=null?` · ${s.f}% female${s.fd?" (derived)":""}`:""} · ${ageText({a0:s.a0,a1:s.a1,am:s.am})}${s.am!=null&&s.asd!=null?` (mean ${s.am}, SD ${s.asd})`:""}${g}
+ ${qs.map(q=>`<blockquote>“${esc(q)}”</blockquote>`).join("")}${s.qn?`<div class="small muted" style="margin-top:4px">${esc(s.qn)}</div>`:""}${s.ema?`<div class="small" style="margin-top:4px">EMA: ${esc(s.ema)}</div>`:""}${Object.keys(s.md||{}).length?`<div class="small muted" style="margin-top:4px">${Object.entries(s.md).map(([k,v])=>`${esc(k)}: ${esc(v)}`).join(" · ")}</div>`:""}</div>`}
+function openDS(id){const x=agg(S).find(a=>a.id===id);if(!x)return;const d=x.d,t=D.tab1.find(t=>t.ds===id),feeds=D.feeds.filter(f=>f.from===id);
+ openDrawer(`<span class="small muted">${esc(d.kind)}</span><h2>${esc(d.name)}</h2>${d.aliases.length?`<p class="small muted" style="margin:3px 0">Also written as: ${esc(d.aliases.join("; "))}</p>`:""}
+ <div class="chips" style="margin:8px 0"><button class="slbtn ${sl.has(id)?"on":""}" data-sl="${esc(id)}">${sl.has(id)?"On shortlist":"Add to shortlist"}</button><button class="slbtn" data-ds-filter="${esc(id)}">${F.ds.has(id)?"Remove from filter":"Filter views to this dataset"}</button></div>
+ ${x.papers.length>1?`<div class="notice">Analysed in ${x.papers.length} papers. Treat their findings as one sample, not as ${x.papers.length} replications.</div>`:""}
+ <dl class="kv" style="margin-top:12px"><dt>Largest analysed n</dt><dd class="num">${x.pool?"("+fmt(x.n)+"), not counted in totals":fmt(x.n)}</dd>${t?`<dt>Size in proposal</dt><dd><span class="num">approx. ${fmt(t.n)}</span>, ${esc(t.dx)} <span class="small muted">(Tab. 1)</span></dd><dt>Responsible PI</dt><dd>${esc(t.pi)}</dd><dt>Proposal remark</dt><dd>${esc(t.note)} <span class="small muted">(translated)</span></dd><dt>Longitudinal (Tab. 1)</dt><dd>${t.long==="J"?"Yes":t.long==="T"?"Partly":"No"}</dd>`:`<dt>Contact to start with</dt><dd>${esc(holder(x))}</dd>`}
+ <dt>Conditions</dt><dd>${esc(x.conds.join(", ")||"–")}</dd><dt>Age</dt><dd>${ageText(x)}</dd><dt>Countries</dt><dd>${esc(uniq(x.ss.flatMap(s=>s.ct)).join(", ")||"–")}</dd><dt>Sites</dt><dd>${esc(uniq(x.ss.flatMap(s=>s.st)).join(", ")||"–")}</dd><dt>Instruments</dt><dd>${esc(uniq(x.ss.flatMap(s=>s.ins)).join(", ")||"–")}</dd></dl>
+ <h3>Modalities across its papers</h3>${fp(x.mods,12)}<div class="tags" style="margin-top:6px">${x.mods.map(m=>`<button class="tag btn" data-tog="mods" data-v="${esc(m)}">${esc(m)}</button>`).join("")}</div>
+ ${feeds.length?`<h3>Also feeds</h3>${feeds.map(f=>{const s=S.find(z=>z.id===f.sample);return `<div class="box small"><button class="lnk" data-paper="${s.p}">${esc(s.D.name)} (${esc(s.P.au)} ${s.P.y})</button><blockquote>“${esc(f.quote)}”</blockquote></div>`}).join("")}`:""}
+ <h3>Every paper that analysed it</h3>${x.ss.sort((a,b)=>b.P.y-a.P.y).map(s=>sampleBox(s,true)).join("")}`)}
+function openPaper(id){const p=PAP[id],ss=S.filter(s=>s.p===id);
+ openDrawer(`<span class="small muted">${esc(p.ty)}${p.ev!=="Full text"?` · ${esc(p.ev)}`:""}</span><h2 style="font-size:20px">${esc(p.t)}</h2><p class="small" style="margin:6px 0">${esc(p.auf)}</p><p class="small muted" style="margin:4px 0">${esc(p.j)}, ${p.y} · PMID <a href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/">${p.pmid}</a>${p.pmcid?` · <a href="https://pmc.ncbi.nlm.nih.gov/articles/${p.pmcid}/">${p.pmcid}</a>`:""}${p.doi?` · <a href="https://doi.org/${esc(p.doi)}">DOI</a>`:""}</p>
+ <p>${esc(p.tp)}</p><div class="tags"><span class="tag">${esc(p.de)}</span>${p.ap.map(a=>`<button class="tag btn" data-tog="approach" data-v="${esc(a)}">${esc(a)}</button>`).join("")}</div>
+ <h3>Analysed samples</h3>${ss.length?ss.map(s=>`<div class="small" style="margin-top:6px"><button class="lnk" data-ds="${esc(s.ds)}">${esc(s.D.name)}</button></div>`+sampleBox(s,false)).join(""):`<p class="small muted">No participant data of its own.</p>`}
+ <h3>Data access, as stated</h3><div class="box small"><b>${esc(p.ac)}</b>${p.url?` · <a href="${esc(p.url)}">${esc(p.url)}</a>`:""}${p.acq?`<blockquote>“${esc(p.acq)}”</blockquote>`:""}${p.pre?`<div style="margin-top:4px">Pre-registered${p.reg?`: ${esc(p.reg)}`:""}</div>`:""}${p.code?`<div style="margin-top:4px">Code available</div>`:""}</div>`)}
+/* ---------- global events ---------- */
+function showTip(e,html){const t=$("tt");t.innerHTML=html;t.style.display="block";const r=t.getBoundingClientRect();let x=e.clientX+14,y=e.clientY+12;if(x+r.width>innerWidth-8)x=e.clientX-r.width-12;if(y+r.height>innerHeight-8)y=e.clientY-r.height-10;t.style.left=x+"px";t.style.top=y+"px"}
+document.addEventListener("mousemove",e=>{const el=e.target.closest&&e.target.closest("[data-tip]");if(el)showTip(e,el.dataset.tip);else if(!e.target.closest||!e.target.closest("#scatsvg"))$("tt").style.display="none"});
+document.addEventListener("click",e=>{const t=e.target,c=s=>t.closest&&t.closest(s);let el;
+ if(el=c("[data-sl]")){e.stopPropagation();const i=el.dataset.sl;sl.has(i)?sl.delete(i):sl.add(i);if($("drawer").classList.contains("on")&&c("#drawer"))openDS(i);render();return}
+ if(el=c("[data-ds-filter]")){const i=el.dataset.dsFilter;F.ds.has(i)?F.ds.delete(i):F.ds.add(i);closeDrawer();render();return}
+ if(el=c("[data-modmode]")){F.modMode=el.dataset.modmode;render();return}
+ if(el=c("[data-unit]")){unit=el.dataset.unit;limit=36;render();return}
+ if(el=c("[data-layout]")){layout=el.dataset.layout;render();return}
+ if(el=c("[data-sort]")){const k=el.dataset.sort;tblSort=tblSort[0]===k?[k,-tblSort[1]]:[k,-1];render();return}
+ if(el=c("[data-rowby]")){rowBy=el.dataset.rowby;render();return}
+ if(el=c("[data-meas]")){measure=el.dataset.meas;render();return}
+ if(el=c("[data-mt]")){matTable=el.dataset.mt==="1";render();return}
+ if(el=c("[data-avail]")){availMode=el.dataset.avail;render();return}
+ if(el=c("[data-recipe]")){F=blank();RECIPES[+el.dataset.recipe][1]();$("q").value="";render();return}
+ if(el=c("[data-clr]")){const k=el.dataset.clr;if(k==="all"){F=blank();$("q").value=""}else if(k==="n"){F.nmin=F.nmax=null}else if(k==="text"){F.text="";$("q").value=""}else F[k]=false;render();return}
+ if(el=c("[data-cell]")){const[r,m]=el.dataset.cell.split("|");F[rowBy].has(r)&&F.mods.has(m)?(F[rowBy].delete(r),F.mods.delete(m)):(F[rowBy].add(r),F.mods.add(m));render();return}
+ if(el=c("[data-combo]")){const ms=el.dataset.combo.split("|"),same=F.modMode==="all"&&F.mods.size===ms.length&&ms.every(m=>F.mods.has(m));F.mods=new Set(same?[]:ms);F.modMode=same?"any":"all";render();return}
+ if(el=c("[data-tog]")){const inDrawer=c("#drawer");toggle(el.dataset.tog,el.dataset.v);if(inDrawer)closeDrawer();return}
+ if(el=c("[data-paper]")){openPaper(el.dataset.paper);return}
+ if(el=c("[data-ds]")){openDS(el.dataset.ds);return}
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();if(e.key==="Enter"&&e.target.matches&&e.target.matches("[data-ds],[data-paper]")&&e.target.tagName!=="BUTTON")e.target.click()});
+let qT;$("q").addEventListener("input",e=>{clearTimeout(qT);qT=setTimeout(()=>{F.text=e.target.value.trim();render()},160)});
+const LINKS=/*__LINKS__*/{home:"index.html",explore:"explore.html",catalogue:"catalogue.html"};
+$("src").innerHTML=`<a href="${LINKS.home}">Data Universe ↗</a> · <a href="${LINKS.explore}">Explore ↗</a> · Snapshot ${D.meta.snapshot} · ${D.meta.papers} papers · full-text extraction · every quote machine-checked`;
+let rT;new ResizeObserver(()=>{clearTimeout(rT);rT=setTimeout(()=>{if(["landscape","people","connections"].includes(view))render()},180)}).observe(document.querySelector("main"));
+route();
+</script>
+</body>
+</html>

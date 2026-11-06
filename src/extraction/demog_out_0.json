@@ -1,0 +1,443 @@
+[
+{
+"pmid": "38337673",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 49.8,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"mean age 49.8 years)"
+]
+},
+{
+"pmid": "38555826",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 34.94,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(35.3*43+34.5*36)/79",
+"quotes": [
+"| age [years]           | 35.3               | ± 12.3           | 34.5               | ± 12.2           |",
+"schizophrenia patients (SZ, n = 43) with sex- and age-matched healthy controls (HC, n = 36)"
+]
+},
+{
+"pmid": "38801091",
+"i": 0,
+"pct_female": 51.44,
+"pct_female_derived": true,
+"age_mean": null,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "107/(107+101)*100",
+"quotes": [
+"| Sex, n                                             | F = 67, M = 48   | F = 107, M = 101    | F = 44, M = 43   | 0.432    |"
+]
+},
+{
+"pmid": "38903470",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 36.4,
+"age_mean_derived": false,
+"age_sd": 13.75,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"aged between 18 and 71 years ( *M* = 36.40, SD = 13.75)"
+]
+},
+{
+"pmid": "39186743",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 33.25,
+"age_mean_derived": false,
+"age_sd": 11.91,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"rather young ( *M* = 33.25, *SD* = 11.91)"
+]
+},
+{
+"pmid": "39412777",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 16.88,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(17.3*214+16.35*172)/386",
+"quotes": [
+"214 autistic individuals, mean [SD] age, 17.3 [5.4] years;",
+"172 neurotypical individuals, mean [SD] age, 16.35 [5.7] years;"
+]
+},
+{
+"pmid": "39412777",
+"i": 1,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 14.17,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(14.31*49+14.10*97)/146",
+"quotes": [
+"49 autistic individuals, mean [SD] age, 14.31 [2.4] years;",
+"97 neurotypical individuals, mean [SD] age, 14.10 [2.5] years;"
+]
+},
+{
+"pmid": "39487121",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 41.39,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(42.03*33+40.46*24+41.43*30)/87",
+"quotes": [
+"| Age                    | 42.03 (13.74)    | 40.46 (11.54)    | 41.43 (13.44)    | 0.904            |   0.964 |              0.002 |",
+"N* = 87 (HC = 33, MDD = 24, SSD = 30)"
+]
+},
+{
+"pmid": "39615758",
+"i": 0,
+"pct_female": 63.54,
+"pct_female_derived": true,
+"age_mean": 34.45,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "pct: (63.5*52+63.6*44)/96; age: (36.7*52+31.8*44)/96",
+"quotes": [
+"ipants with MDD (MDDs) (female 63.5 %, mean age 36.7 years) and 44 unaffected controls (CTRLs) (female 63.6 %, mean age 31.8 years)",
+"The current sample includes 52"
+]
+},
+{
+"pmid": "39693869",
+"i": 0,
+"pct_female": 93.62,
+"pct_female_derived": true,
+"age_mean": null,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(24+20)/47*100",
+"quotes": [
+"| Gender (F/M/ D)  | 24/0/0                       | 20/3/0                        |"
+]
+},
+{
+"pmid": "39701384",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 15.97,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(17.09*288+13.66*140)/428",
+"quotes": [
+"| Age, Years         | 17.09 (5.43)              | 13.66 (3.76)              ",
+"288 of these participants had a clinical diagnosis of autism",
+"and 140 served as nonautistic control participants"
+]
+},
+{
+"pmid": "39868023",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 24.12,
+"age_mean_derived": false,
+"age_sd": 6.99,
+"age_min": 18,
+"age_max": 75,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"On average, participants were 24.12 years old (SD = 6.99) ranging from 18 to 75 years."
+]
+},
+{
+"pmid": "39876999",
+"i": 0,
+"pct_female": 64.29,
+"pct_female_derived": true,
+"age_mean": 32.5,
+"age_mean_derived": false,
+"age_sd": 13.22,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(28-10)/28*100",
+"quotes": [
+"Twenty-eight healthy individuals participated in this study (Male = 10, Mean age = 32.5, SD = 13.22)."
+]
+},
+{
+"pmid": "40082694",
+"i": 0,
+"pct_female": 14.8,
+"pct_female_derived": false,
+"age_mean": null,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"| Sex (female)            | Sex (female)            | 46                | 46                | 22.5              | 22.5              | 17                              | 14.8                            | 29                  | 32.6 "
+]
+},
+{
+"pmid": "40082694",
+"i": 1,
+"pct_female": 32.6,
+"pct_female_derived": false,
+"age_mean": null,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"| Sex (female)            | Sex (female)            | 46                | 46                | 22.5              | 22.5              | 17                              | 14.8                            | 29                  | 32.6 "
+]
+},
+{
+"pmid": "40691132",
+"i": 0,
+"pct_female": 36.2,
+"pct_female_derived": true,
+"age_mean": 17.32,
+"age_mean_derived": false,
+"age_sd": 5.91,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(90+11)/279*100",
+"quotes": [
+"They included 254 typically developing participants (90 female, 164 male) and 25 individuals with mild intellectual disability (ID;",
+"11 female, 14 male;",
+"between the ages of 7 and 31 years (mean age = 17.32 ± 5.91 years)."
+]
+},
+{
+"pmid": "40817168",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 40.9,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": 20,
+"age_max": 62,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"our participant demographics differed with an older average age of 40.9 years",
+"aged 20-62 years"
+]
+},
+{
+"pmid": "40948223",
+"i": 0,
+"pct_female": 51.31,
+"pct_female_derived": true,
+"age_mean": 41.1,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "pct (79+78)/306*100; age (41.0*153+41.2*153)/306",
+"quotes": [
+"One hundred fifty-three BD patients ( *n* = 79 female, *M* *age* = 41.0 years",
+"153 HCs ( *n* = 78 female, *M* *age* = 41.2 years"
+]
+},
+{
+"pmid": "40991280",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 35.78,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(36.37*405+35.33*527)/932",
+"quotes": [
+"A total of 405 patients with MDD",
+"mean [SD] age, 36.37 [13.33] years) and 527 healthy controls",
+"mean [SD] age, 35.33 [13.13] years)"
+]
+},
+{
+"pmid": "41076451",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 48.51,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(45.3*62+52.2*54)/116",
+"quotes": [
+"| Age (years)              | 62          | 45.3        | 15.4        | 54          | 52.2        | 12.3        | 0.009       |"
+]
+},
+{
+"pmid": "41106527",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 22.9,
+"age_mean_derived": false,
+"age_sd": 4.2,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "",
+"quotes": [
+"| age (SD)                     | 22.9 (4.2)                | 23.7 (4.5)                 | 22.3 (3.5)                     | 22.8 (4.5)             | F 1= 1.08, p = 0.35     |"
+]
+},
+{
+"pmid": "41129939",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 43.18,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(44.11*70+42.04*49+44.16*19+41.74*19)/157",
+"quotes": [
+"| age                        | 44.11                | 13.00              | 42.04                 | 13.95               | 44.16                | 12.78              | 41.74                | 11.44              | 0.647  |    0.55 |",
+"| sex                        | f: 42                | m: 28              | f: 33                 | m:16                | f: 14                | m: 5               | f: 5                 | m: 14              | 0.008  |    4.05 |"
+]
+},
+{
+"pmid": "41160917",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 34.5,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(34.2*42+34.8*43)/85",
+"quotes": [
+"| age (years)            | 34.2          | 10.3 |          34.8 | 11.5 |"
+]
+},
+{
+"pmid": "41197413",
+"i": 0,
+"pct_female": null,
+"pct_female_derived": false,
+"age_mean": 39.3,
+"age_mean_derived": true,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "(44.63*319+38.55*308+35.97*440)/1067",
+"quotes": [
+"319 Japanese (mean age = 44.63",
+"308 Germans (mean age = 38.55",
+"440 Americans (mean age =35.97"
+]
+},
+{
+"pmid": "41202447",
+"i": 0,
+"pct_female": 77.5,
+"pct_female_derived": true,
+"age_mean": null,
+"age_mean_derived": false,
+"age_sd": null,
+"age_min": null,
+"age_max": null,
+"n_analysed": null,
+"n_analysed_derived": false,
+"derivation": "31/40*100",
+"quotes": [
+"Forty participants (M = 26.18, SD = 6.47, 31 females, 1 non-binary)"
+]
+}
+]
