@@ -123,12 +123,14 @@ dialog textarea{width:100%;height:240px;font:12px var(--mono)}
 .empty{padding:26px;text-align:center;color:var(--muted)}
 @media(max-width:1000px){.wrap{grid-template-columns:minmax(0,1fr)}aside.side{position:static;padding:14px 16px 0}nav.ch{flex-direction:row;flex-wrap:wrap}nav.ch a{border-left:0;border-bottom:3px solid transparent;border-radius:7px 7px 0 0}nav.ch a.on{border-bottom-color:var(--accent)}.grid2{grid-template-columns:minmax(0,1fr)}main{padding:16px 16px 40px}.top-in{padding:10px 16px}}
 @media(max-width:1000px){header.top{position:static}}
+/*__SHELL_CSS__*/
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1>Data Catalogue</h1></div><nav class="sitenav" id="sitenav" aria-label="Site"></nav><span class="small muted" id="src"></span><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft"></div></header>
+<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1>Data Catalogue</h1></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft"></div></header>
+<div class="subbar"><div class="subbar-in"><span class="src" id="src"></span><nav class="sitenav" id="sitenav" aria-label="Site"></nav></div></div>
 <div class="wrap">
-  <aside class="side"><div class="sidet">Views</div><nav class="ch" aria-label="Views" id="tabs"></nav></aside>
+  <aside class="side"><div class="sidebox"><div class="sidet">Views</div><nav class="ch" aria-label="Views" id="tabs"></nav></div></aside>
   <main>
     <div id="vh"></div>
     <div class="fbwrap"><div class="fblabel">Search and filter</div><div class="fbrow"><input id="q" class="search" type="search" placeholder="Search dataset, paper, author, instrument…" aria-label="Search"><span id="facets"></span></div><div id="fbpop"></div></div>
@@ -320,7 +322,7 @@ function vPeople(){const cur=sel(),hum=cur.filter(s=>s.k!=="Meta-analysis pool")
  <div class="grid2"><section class="panel"><header><h2>Age and sex of each sample</h2></header><p class="hint">Each bubble is one sample at its reported mean age and share female; area = n. Grey = library outside the current filter. Hover a point, click to open its dataset.</p><div id="scat"></div></section>
  <section class="panel"><header><h2>Age span of samples</h2></header><p class="hint">Line = reported age range, dot = mean. Sorted by youngest. Shows at once which ages have no data.</p><div id="span" style="max-height:440px;overflow:auto"></div></section></div>
  <section class="panel"><header><h2>Sample size by condition</h2></header><p class="hint">Each dot is one sample, on a log scale. Hollow = pooled (consortium, registry, meta-analysis). Tick = median. Samples listing several conditions appear in each row.</p><div class="scroll" id="swarm"></div></section>
- <section class="panel"><header><h2>What papers fail to report</h2></header><p class="hint">Share of samples with each detail traced to a verbatim quote. A short bar can mean the paper did not report it, or that extraction missed it (Method tab).</p><div id="rep"></div></section>`;
+ <section class="panel"><header><h2>What papers fail to report</h2></header><p class="hint">Share of samples with each detail traced to a verbatim quote. A short bar can mean the paper did not report it, or that extraction missed it.</p><div id="rep"></div></section>`;
  scatter(cur);ageSpan(cur);swarm(cur);report(cur)}
 function scatter(cur){const host=$("scat"),W=Math.max(320,host.clientWidth),H=340,m={l:44,r:12,t:10,b:36};
  const x=d3.scaleLinear([0,80],[m.l,W-m.r]),y=d3.scaleLinear([0,100],[H-m.b,m.t]),r=d3.scaleSqrt([0,7500],[3,26]).clamp(true);

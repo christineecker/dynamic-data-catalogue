@@ -7,7 +7,7 @@ Two pages, both built from the same `catalogue.json`:
 | Page | For whom |
 |---|---|
 | [index.html](index.html) · Data Universe | A story of the data: every analysed sample in one picture, then breadth, multimodality, cohorts, people, growth and what pooling makes possible |
-| [catalogue.html](catalogue.html) · Catalogue | Researchers: filters, dataset cards and tables, CSV export, coverage map, participant charts, instrument network, available-vs-analysed, pooling planner with shortlist, method notes and known gaps |
+| [catalogue.html](catalogue.html) · Catalogue | Researchers: filters, dataset cards and tables, CSV export, coverage map, participant charts, instrument network, available-vs-analysed, pooling planner with shortlist |
 
 ## How the numbers are made
 

@@ -140,11 +140,13 @@ blockquote{margin:6px 0 0;padding:0 0 0 9px;border-left:2px solid var(--rule);fo
 
 footer{font-size:12.5px;color:var(--muted);max-width:80ch;margin-top:30px}
 @media(max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}.claim{font-size:24px}.hero .claim{font-size:30px}main{padding:0 16px 60px}.top-in{padding:10px 16px}}
+/*__SHELL_CSS__*/
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1 id="ptitle">Data Universe</h1></div><nav class="sitenav" id="sitenav" aria-label="Site"></nav><span class="small muted" id="src"></span><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft" style="height:34px;width:auto;mix-blend-mode:multiply;margin-left:auto"><nav class="ch" id="nav" aria-label="Chapters"></nav></div></header>
-<main id="main"></main>
+<header class="top"><div class="top-in"><div class="brandlogos"><img src="/*__LOGO_DYN__*/" alt="DYNAMIC"><h1 id="ptitle">Data Universe</h1></div><img class="lw" src="/*__LOGO_LOEWE__*/" alt="LOEWE: Exzellente Forschung für Hessens Zukunft" style="mix-blend-mode:multiply"></div></header>
+<div class="subbar"><div class="subbar-in"><span class="src" id="src"></span><nav class="sitenav" id="sitenav" aria-label="Site"></nav></div></div>
+<div class="wrap"><aside class="side"><div class="sidebox"><div class="sidet">Chapters</div><nav class="ch" id="nav" aria-label="Chapters"></nav></div></aside><main id="main"></main></div>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="Dataset sheet"></aside>
 <div id="tt" role="tooltip"></div>
@@ -188,7 +190,7 @@ const STORY=`
 <section class="chapter hero" id="universe"><div class="eyebrow">Every analysed sample, in one picture</div><div class="herohead">
  <h2 class="claim">Papers from the centre have analysed <span class="hi">${fmt(TOTAL)} people</span> across ${D.datasets.length} datasets and ${modsUsed} kinds of data.</h2>
  <p class="lede">One circle per analysed sample, from the full text of ${D.meta.papers} papers (${yrs[0]}–${yrs[yrs.length-1]}). Area = participants analysed. Colour = the most distinctive data family the sample holds, so a cohort with brain imaging shows blue even when it also has questionnaires. Hollow circles are consortia, registries and meta-analytic pools: shown, never counted. Regroup to see the same people by condition, data family, dataset type, age or year. Click any circle for its dataset sheet and the sentence each number comes from.</p>
- <p class="lede" style="margin-top:10px"><b>Looking for the tool?</b> The <a href="${LINKS.catalogue}">Catalogue</a> filters and compares these datasets, and adds the coverage map, participant charts, instrument network and method notes.</p></div>
+ <p class="lede" style="margin-top:10px"><b>Looking for the tool?</b> The <a href="${LINKS.catalogue}">Catalogue</a> filters and compares these datasets, and adds the coverage map, participant charts and instrument network.</p></div>
  <div class="viz"><header><span class="seg" id="ugroup"></span><span class="hint">Hover a circle. Labels show samples per group.</span></header><div id="uni"></div>${famLegend(`<span><i class="hollow"></i>Pooled, not counted</span>`)}</div>
  <div class="stats">
   <div class="stat"><b>${fmt(TOTAL)}</b><span>participants, largest n per dataset, pools excluded</span></div>
